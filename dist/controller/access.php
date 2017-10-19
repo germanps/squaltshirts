@@ -12,7 +12,8 @@
 		 $email . " - " .
 		 $pwd . " - ";
 
-
+	/*Nuevo commit en develop*/
+	
 	$usu_resul = $conexion->query($user_query);
 	$usu_rows = $usu_resul->num_rows;
 	if (!empty($nom_usu) && !empty($ape_usu) && !empty($email) && !empty($pwd)) {
