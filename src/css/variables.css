@@ -1,0 +1,28 @@
+:root {
+	/*Colors*/
+	--white: #ffffff;
+	--black: #000000;
+	--concrete: #f2f2f2;
+	--vermilion: #FE4918;
+	--grenadier: #E33000;
+	--mineshaft: #353535;
+	--mercury: #e1e1e1;
+	--abbey: #2e2e2e;
+	--gray: #868686;
+	--opaWhite: rgba(255, 255, 255, .8);
+	--opaBlack: rgba(0, 0, 0, .55);
+	/*Admin Page Only*/
+	--ebonyClark: #24323D;
+	--mountainMeadow: #1AB188;
+
+	/*Fonts*/
+	--oswald: 'Oswald', sans-serif;
+	--ptsans: 'PT Sans', sans-serif;
+	--opensans: 'Open Sans', sans-serif;;
+}
+
+/*  ============ Custom media queries ============ */
+@custom-media --mobile (min-width: 480px);
+@custom-media --tablet (min-width: 768px);
+@custom-media --desktop (min-width: 992px);
+@custom-media --retina (-webkit-min-device-pixel-ratio: 2);

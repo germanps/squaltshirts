@@ -1,0 +1,6 @@
+
+node_modules
+/dist/img
+/dist/video
+/dist/fonts
+database/
