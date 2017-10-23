@@ -2,7 +2,7 @@
 	$host = 'localhost';
 	$user = 'root';
 	$pass = '';
-	$db_name = 'squaltshirtsbysqualo';
+	$db_name = 'squal_tshirts';
 
 	$conexion = new mysqli($host, $user, $pass, $db_name) or die('Error de conexión con la base de datos');
 

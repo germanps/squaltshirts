@@ -179,8 +179,9 @@ a{
 
 /* ====== ADMIN FORM HOME PAGE ====== */
 .admin-page{
-    background-color: var(--ebonyClark);
+    background-color: var(--white);
     height: 100vh;
+    
     .admin-form-wrapper{
         display: flex;
         justify-content: center;
@@ -193,7 +194,7 @@ a{
             color: var(--white);
             outline: 1px solid var(--white);
             outline-offset: -8px;
-            background-color: var(--mountainMeadow);
+            background-color: var(--vermilion);
             padding: .5rem 1.5rem;
         }
     }
@@ -220,17 +221,21 @@ a{
         .form-input{
 
             input{
-                background-color: transparent;
+                background-color: var(--transparent);
                 border: 1px solid var(--mercury);
-                color: var(--mercury);
+                color: var(--abbey);
                 padding: 1rem 1.5rem;
                 width: 100%;
                 outline: none;
+                &:focus{
+                    border-color: var(--vermilion);
+                }
             }
 
             input[type="submit"]{
-                background-color: var(--mountainMeadow);
-                border-color: var(--mountainMeadow);
+                background-color: var(--vermilion);
+                border-color: var(--vermilion);
+                color: var(--white);
                 font-size: 1.5rem;
                 max-height: 52px;
                 line-height: 20px;
@@ -241,9 +246,9 @@ a{
 
                 &:hover{
                     background-color: var(--transparent);
-                    color: var(--vermilion);
-                    border-color: var(--vermilion);
-                    outline: 1px solid var(--vermilion);
+                    color: var(--mountainMeadow);
+                    border-color: var(--mountainMeadow);
+                    outline: 1px solid var(--mountainMeadow);
                     outline-offset: -2px;
                 }
                 &:active{
@@ -263,14 +268,15 @@ a{
     border-top: 5px solid var(--abbey);
 }
 .header-menu{
-    .header-menu-toolbar{
-        margin-top: 2rem;
+    .header-menu-toolbar{  
 
         .header-list{
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-height: 100px;
+
             .header-list-item{
                 display: inline-block;
 
@@ -337,8 +343,8 @@ a{
                                 left: -10px;
                                 width: 0px;
                                 height: 0px;
-                                border-top: 10px solid transparent;
-                                border-bottom: 10px solid transparent;
+                                border-top: 10px solid var(--transparent);
+                                border-bottom: 10px solid var(--transparent);
                                 border-right: 10px solid var(--black);
                             }
                         }

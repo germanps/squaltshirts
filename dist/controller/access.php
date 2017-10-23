@@ -1,6 +1,5 @@
 <?php 
 	session_start();
-	echo "Entra access <br>";
 	require('conexion.php');
 	$nom_usu = $_POST['nombre'];
 	$ape_usu = $_POST['apellido'];
@@ -19,11 +18,13 @@
 		while($fila = $usu_resul->fetch_array()){
 			extract($fila);
 			if ($nombre == $nom_usu && $apellido == $apellido && $email == $email && $password == $pwd) {
-				echo "coincide usuario<br>";
-				if ($tipo_usuario == 1) {
-					header('Location:../view/view_admin.php');
-				}else{;
-					header('Location:../view/view_usu.php');
+				//echo "coincide usuario<br>";
+				if ($tipo_usuario == 0) {
+					$_SESSION['admin_user'] = $nom_usu;
+					header('Location:../view/admin.php');
+				}else{
+					$_SESSION['usu_user'] = $nom_usu;
+					header('Location:../view/store.php');
 				}
 				
 			}else{

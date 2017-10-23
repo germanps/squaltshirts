@@ -11,6 +11,7 @@
 	--gray: #868686;
 	--opaWhite: rgba(255, 255, 255, .8);
 	--opaBlack: rgba(0, 0, 0, .55);
+	--transparent: transparent;
 	/*Admin Page Only*/
 	--ebonyClark: #24323D;
 	--mountainMeadow: #1AB188;
@@ -25,4 +26,4 @@
 @custom-media --mobile (min-width: 480px);
 @custom-media --tablet (min-width: 768px);
 @custom-media --desktop (min-width: 992px);
-@custom-media --retina (-webkit-min-device-pixel-ratio: 2);
+@custom-media --retina (-webkit-min-device-pixel-ratio: 2); 
