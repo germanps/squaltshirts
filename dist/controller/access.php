@@ -6,10 +6,10 @@
 	$email = $_POST['email'];
 	$pwd = $_POST['password'];
 
-	echo $nom_usu . " - " .
+	/*echo $nom_usu . " - " .
 		 $ape_usu . " - " .
 		 $email . " - " .
-		 $pwd . " - ";
+		 $pwd . " - ";*/
 
 	/*Nuevo commit en develop*/
 	
