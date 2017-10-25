@@ -231,7 +231,7 @@
 			</div>
 		</div>
 
-		<!--================================================ MODALS ================================================-->
+		<!--=============== MODALS ===================-->
 		<!--=========== Add User ===========-->
 		<div id="userModal" class="user-modal modal">
 			<div class="modal-content">
@@ -239,27 +239,27 @@
 					<h2>Añadir usuario</h2>
 					<i class="fa fa-times" id="cerrar-modal"></i>
 				</div>
-				<form method='post' action='../controller/new_user.php' role="form" >
+				<form class="form-modal" method='post' action='../controller/new_user.php' role="form" >
 	                <div class="modal-body">
 	                    <div class="form-group">
 	                        <label for="nameUserId">Nombre</label>
-	                        <input name="nameUser" type="text" id="nameUserId" placeholder="Nombre" class="form-control" required/>
+	                        <input name="nameUser" type="text" id="nameUserId" placeholder="" class="form-control" required/>
 	                    </div>
 
 	                    <div class="form-group">
 	                        <label for="passwordUserId">Password</label>
-	                        <input name="passwordUser" type="text" id="passwordUserId" placeholder="Password" class="form-control" required/>
+	                        <input name="passwordUser" type="text" id="passwordUserId" placeholder="" class="form-control" required/>
 	                    </div>
 
 	                    <div class="form-group">
-	                        <label for="tipoUserId">Tipo usuario => (0:admin # 1:normal)</label>
-	                        <input name="tipoUser" type="text" id="tipoUserId" placeholder="Tipo usuario" class="form-control" required/>
+	                        <label for="tipoUserId">Tipo usuario</label>
+	                        <input name="tipoUser" type="text" id="tipoUserId" placeholder="1 Admin 0 Usuario" class="form-control" required/>
 	                    </div>
 
 	                </div>
 	                <div class="modal-footer">
-	                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-	                    <button type="submit" class="btn btn-primary">Añadir usuario</button>
+	                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+	                    <button type="submit" class="btn btn-success">Añadir usuario</button>
 	                </div>
 	            </form>
 			</div>
