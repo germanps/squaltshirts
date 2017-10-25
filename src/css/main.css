@@ -471,7 +471,8 @@ a{
                         display: inline-block;
                     }
                     .form-control{
-                        width: calc(100% - 125px);  
+                        width: calc(100% - 125px); 
+                        color: var(--black);
                     }
                 }
             }

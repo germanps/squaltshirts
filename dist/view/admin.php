@@ -245,10 +245,19 @@
 	                        <label for="nameUserId">Nombre</label>
 	                        <input name="nameUser" type="text" id="nameUserId" placeholder="" class="form-control" required/>
 	                    </div>
+	                    <div class="form-group">
+	                        <label for="apellidoUserId">Apellido</label>
+	                        <input name="apellidoUser" type="text" id="apellidoUserId" placeholder="" class="form-control" required/>
+	                    </div>
 
 	                    <div class="form-group">
 	                        <label for="passwordUserId">Password</label>
 	                        <input name="passwordUser" type="text" id="passwordUserId" placeholder="" class="form-control" required/>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label for="emailUserId">Email</label>
+	                        <input name="emailUser" type="text" id="emailUserId" placeholder="" class="form-control" required/>
 	                    </div>
 
 	                    <div class="form-group">
