@@ -5,13 +5,6 @@
 	$ape_usu = $_POST['apellido'];
 	$email = $_POST['email'];
 	$pwd = $_POST['password'];
-
-	/*echo $nom_usu . " - " .
-		 $ape_usu . " - " .
-		 $email . " - " .
-		 $pwd . " - ";*/
-
-	/*Nuevo commit en develop*/
 	
 	$usu_resul = $conexion->query($user_query);
 	$usu_rows = $usu_resul->num_rows;
@@ -20,7 +13,7 @@
 			extract($fila);
 			if ($nombre == $nom_usu && $apellido == $apellido && $email == $email && $password == $pwd) {
 				//echo "coincide usuario<br>";
-				if ($tipo_usuario == 0) {
+				if ($tipo_usuario == 1) {
 					$_SESSION['admin_user'] = $nom_usu;
 					header('Location:../view/admin.php');
 				}else{

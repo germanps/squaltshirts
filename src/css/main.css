@@ -234,9 +234,28 @@ a{
                 padding: 1rem 1.5rem;
                 width: 100%;
                 outline: none;
+                transition: .5s all ease;
+
                 &:focus{
-                    border-color: var(--vermilion);
-                }
+                    border: 1px solid var(--mountainMeadow);
+
+                    &::-webkit-input-placeholder{
+                        transition: .5s all ease;
+                        color: var(--mountainMeadow);
+                    }
+                     &::-moz-placeholder{
+                        transition: .5s all ease;
+                        color: var(--mountainMeadow);
+                    }
+                    &:-ms-input-placeholder{
+                        transition: .5s all ease;
+                        color: var(--mountainMeadow);
+                    }
+                    &:-moz-placeholder{
+                        transition: .5s all ease;
+                        color: var(--mountainMeadow);
+                    }
+                }  
             }
 
             input[type="submit"]{
@@ -354,6 +373,10 @@ a{
         div{
             display: none;
 
+            &:first-child{
+                display:block;
+            }
+
             .users-header{
                 display: flex;
                 justify-content: space-between;
@@ -404,7 +427,7 @@ a{
 
                     &:last-child{
                         display:flex;
-                        justify-content: space-around;
+                        justify-content: space-between;
                     }
                 }
             }
@@ -473,6 +496,10 @@ a{
                     .form-control{
                         width: calc(100% - 125px); 
                         color: var(--black);
+
+                        &[type="file"]{
+                            color: var(--white);
+                        }
                     }
                 }
             }

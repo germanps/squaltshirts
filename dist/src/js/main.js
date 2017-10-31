@@ -21,7 +21,19 @@ $(document).ready(function() {
 		if ($(this).attr('id') == "addUser") {
 			console.log($(this).attr('id'));
 			$('#userModal').show(100);
-		};
-		
+		}
+		if ($(this).attr('id') == "addTee") {
+			console.log($(this).attr('id'));
+			$('#teeModal').show(100);
+		}
+		if ($(this).attr('id') == "addCat") {
+			console.log($(this).attr('id'));
+			$('#catModal').show(100);
+		}
+
+	});
+	/*Cerrar modales*/
+	$('.btn-cancel').click(function(e) {
+		$('.modal').hide(200);
 	});
 });

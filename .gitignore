@@ -4,3 +4,4 @@ node_modules
 /dist/video
 /dist/fonts
 database/
+dist/src/img

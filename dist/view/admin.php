@@ -37,8 +37,8 @@
 					</li>
 					<li class="admin-options products">
 						<div class="admin-options-content">
-							<i class="fa fa-product-hunt"></i>
-							<p>Productos</p>
+							<i class="fa fa-shirtsinbulk"></i>
+							<p>Camisetas</p>
 						</div>
 					</li>
 					<li class="admin-options categories">
@@ -65,14 +65,14 @@
 							<div class="admin-info-header">
 								<i class="fa fa-user"></i>
 								<span class="admin-name"><?php echo $_SESSION['admin_user'] ?></span>
-								<span id="signOut" class="sign-out">Desconectar</span>
+								<a id="signOut" class="sign-out" href="../controller/disconnect.php">Desconectar</a>
 							</div>
 						</li>
 					</ul>
 				</header>
 				<section id="adminMaincontent" class="admin-main-content">
 					<div class="dashboard">
-						dashboard
+						<h2>Dashboard</h2>
 					</div>
 					<div class="users">
 						<header class="users-header">
@@ -125,14 +125,14 @@
 					</div>
 					<div class="products">
 						<header class="users-header">
-							<h2>Productos</h2>
-							<a id="addProduct" href='#' class='open-modal btn btn-danger btn-sm'>Agregar producto</a>
+							<h2>Camisetas</h2>
+							<a id="addTee" href='#' class='open-modal btn btn-danger btn-sm'>Agregar camiseta</a>
 						</header>
 						<table class="results">
 	                        <thead>
 	                            <tr>
 	                                <th class='text-muted'>Item nº</th>
-	                                <th>ID producto</th>
+	                                <th>ID camiseta</th>
 	                                <th>Nombre</th>
 	                                <th>Descripción</th>
 	                                <th>Cantidad</th>
@@ -183,14 +183,14 @@
 					<div class="categories">
 						<header class="users-header">
 							<h2>Categorias</h2>
-							<a id="addCategory" href='#' class='open-modal btn btn-danger btn-sm'>Agregar categoria</a>
+							<a id="addCat" href='#' class='open-modal btn btn-danger btn-sm'>Agregar categoria</a>
 						</header>
 						<table class="results">
 	                        <thead>
 	                            <tr>
 	                                <th class='text-muted'>Item nº</th>
 	                                <th>ID categoria</th>
-	                                <th>Nombre</th>
+	                                <th>Nombre categoria</th>
 	                                <th class="text-right">Acciones</th>
 	                            </tr>
 	                        </thead>
@@ -224,7 +224,20 @@
 					</div>
 					<div class="sales">
 						<h2>Ventas</h2>
-						
+						<?php 
+							$img_query = "select imagen from camiseta where id_camiseta = 2";
+							$img_resul = $conexion->query($img_query);
+	                        $img_rows = $img_resul->num_rows;
+	                        if($img_rows == 0){
+	                        	echo "No se encuentra la imagen";
+	                        }else{
+	                        	while ($fila_img = $img_resul->fetch_array()) {
+	                        		extract($fila_img);
+	                        	}
+	                        }
+						 ?>
+						 <p>Imagen de prueba</p>
+						 <img src="../src/img/camisetas/<?php echo $imagen ?>" alt="">
 					</div>
 
 				</section>
@@ -237,7 +250,6 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h2>Añadir usuario</h2>
-					<i class="fa fa-times" id="cerrar-modal"></i>
 				</div>
 				<form class="form-modal" method='post' action='../controller/new_user.php' role="form" >
 	                <div class="modal-body">
@@ -273,6 +285,102 @@
 	            </form>
 			</div>
 		</div>
+
+
+		<!--=========== Add Tee ===========-->
+		<div id="teeModal" class="tee-modal modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2>Añadir camiseta</h2>
+				</div>
+				<form class="form-modal" method='post' action='../controller/new_tee.php' role="form" enctype="multipart/form-data">
+	                <div class="modal-body">
+	                    <div class="form-group">
+	                        <label for="nameTeeId">Nombre camiseta</label>
+	                        <input name="nameTee" type="text" id="nameTeeId" placeholder="" class="form-control" required/>
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="descriptionId">Descripción</label>
+	                        <textarea name="description" type="text" id="descriptionId" placeholder="" class="form-control" required/></textarea>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label for="amountId">Cantidad</label>
+	                        <input name="amount" type="text" id="amountId" placeholder="" class="form-control" required/>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label for="imageId">Imagen</label>
+	                        <input name="image" type="file" id="imageId" placeholder="Inferior a 1Mb" class="form-control" required/>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label for="prizeId">Precio</label>
+	                        <input name="prize" type="text" id="prizeId" placeholder="" class="form-control" required/>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label for="colorId">Color</label>
+	                        <input name="color" type="text" id="colorId" placeholder="" class="form-control" required/>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label for="sizeId">Talla</label>
+	                        <input name="size" type="text" id="sizeId" placeholder="" class="form-control" required/>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label for="catId">Categoria</label>
+	                        <select name="cat" id="catId" class="form-control">
+	                        	<option selected>Categorias</option>
+	                        	<?php 
+
+	                        		$cat_query = "select nombre from categoria";
+	                        		$cat_result = $conexion->query($cat_query);
+	                        		$cat_rows = $cat_result->num_rows;
+	                        		if ($cat_rows == 0) {
+	                        			echo "No se encuentran categorias";
+	                        		}else{
+	                        			while ($fila_cat = $cat_result->fetch_array()) {
+					            			extract($fila_cat);
+					            			echo "<option value='$nombre'>$nombre</option>";
+					            		}
+	                        		}
+
+	                        	?>
+	                        </select>
+	                    </div>
+
+	                </div>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+	                    <button type="submit" class="btn btn-success">Añadir Camiseta</button>
+	                </div>
+	            </form>
+			</div>
+		</div>
+
+		<!--=========== Add Category ===========-->
+		<div id="catModal" class="cat-modal modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2>Añadir categoria</h2>
+				</div>
+				<form class="form-modal" method='post' action='../controller/new_cat.php' role="form" >
+	                <div class="modal-body">
+	                    <div class="form-group">
+	                        <label for="nameCatId">Nombre categoria</label>
+	                        <input name="nameCat" type="text" id="nameCatId" placeholder="" class="form-control" required/>
+	                    </div>
+	                </div>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+	                    <button type="submit" class="btn btn-success">Añadir categoria</button>
+	                </div>
+	            </form>
+			</div>
+		</div>
+
 
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="../src/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
