@@ -11,9 +11,10 @@
 	if (!empty($nom_usu) && !empty($ape_usu) && !empty($email) && !empty($pwd)) {
 		while($fila = $usu_resul->fetch_array()){
 			extract($fila);
-			if ($nombre == $nom_usu && $apellido == $apellido && $email == $email && $password == $pwd) {
+
+			if ($nombre == $nom_usu && $apellido == $ape_usu && $email == $email && $password == $pwd) {
 				//echo "coincide usuario<br>";
-				if ($tipo_usuario == 1) {
+				if ($tipo_usuario == 0) {
 					$_SESSION['admin_user'] = $nom_usu;
 					header('Location:../view/admin.php');
 				}else{

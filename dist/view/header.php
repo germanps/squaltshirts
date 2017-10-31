@@ -41,7 +41,7 @@
                         </li>
                         <li class="header-list-item">
                             <div class="shopping-cart-wrapper">
-                                <a href="../controller/basket.php" id="cartSubmit" class="cart">
+                                <a href="basket.php" id="cartSubmit" class="cart">
                                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                     <span class="basket-number">0</span>
                                 </a>
