@@ -418,6 +418,7 @@ a{
                      a{
                         border-bottom: 1px solid var(--opaBlack);
                         transition: .2s all ease;
+                        cursor: pointer;
 
                         &:hover{
                             color: var(--vermilion);

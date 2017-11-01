@@ -112,8 +112,8 @@
 													<td>$password</td>
 													<td>$tipo_usuario</td>
 													<td>
-														<a href='edit_usu.php?item=$id_usuario' class='btn btn-danger btn-sm'>Edit</a>
-														<a href='drop_usu.php?item=$id_usuario' class='btn btn-danger btn-sm'>Delete</a>
+														<a id='editUser' class='btn btn-danger btn-sm open-modal edit-usu'>Edit</a>
+														<a id='dropUser' class='btn btn-danger btn-sm open-modal delete-usu'>Delete</a>
 	                                                </td>
 												 </tr>";
 												 $contador_usuarios++;
@@ -169,8 +169,8 @@
                                                 <td>$imagen</td>
                                                 <td>$nombre</td>
                                                 <td> 
-                                                    <a href='edit_product.php?item=$id_camiseta' class='btn btn-danger btn-sm'>Edit</a>
-                                                    <a href='drop_product.php?item=$id_camiseta' class='btn btn-danger btn-sm'>Delete</a>
+                                                    <a id='editTee' class='btn btn-danger btn-sm open-modal edit-tee'>Edit</a>
+                                                    <a id='dropTee' class='btn btn-danger btn-sm open-modal delete-tee'>Delete</a>
                                                 </td>
                                              </tr>";
                                              $contador_camiseta++;
@@ -210,8 +210,8 @@
 	                                                <td>$id_categoria</td>
 	                                                <td>$nombre</td>
 	                                                <td>
-	                                                	<a href='edit_cat.php?item=$id_categoria' class='btn btn-danger btn-sm'>Edit</a>
-	                                                	<a href='drop_cat.php?item=$id_categoria' class='btn btn-danger btn-sm'>Delete</a>
+	                                                	<a id='editCat' class='btn btn-danger btn-sm open-modal edit-cat'>Edit</a>
+	                                                	<a id='dropCat' class='btn btn-danger btn-sm open-modal delete-cat'>Delete</a>
 	                                                </td>
 	                                             </tr>";
 	                                             $contador_cat++;
@@ -245,6 +245,7 @@
 		</div>
 
 		<!--=============== MODALS ===================-->
+		<!--============= ADDS =============-->
 		<!--=========== Add User ===========-->
 		<div id="userModal" class="user-modal modal">
 			<div class="modal-content">
@@ -379,6 +380,176 @@
 	                </div>
 	            </form>
 			</div>
+		</div>
+
+		<!--============= EDITS =============-->
+		<!--=========== Edit User ===========-->
+
+		<div class="modal edit-modal" id="editUserModal">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		            <form class="form-modal" method='post' action='../controller/edit_user.php' role="form" >
+		                <div class="modal-body">
+		                	<div class="form-group">
+		                        <label for="set_userId">ID</label>
+		                        <input name="set_userId" type="text" id="set_userId" placeholder="" class="form-control" required readonly />
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="set_userName">Nombre</label>
+		                        <input name="set_userName" type="text" id="set_userName" placeholder="" class="form-control" required/>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="set_userApellido">Apellido</label>
+		                        <input name="set_userApellido" type="text" id="set_userApellido" placeholder="" class="form-control" required/>
+		                    </div>
+
+		                    <div class="form-group">
+		                        <label for="set_userPassword">Password</label>
+		                        <input name="set_userPassword" type="text" id="set_userPassword" placeholder="" class="form-control" required/>
+		                    </div>
+
+		                    <div class="form-group">
+		                        <label for="set_userEmail">Email</label>
+		                        <input name="set_userEmail" type="text" id="set_userEmail" placeholder="" class="form-control" required/>
+		                    </div>
+
+		                    <div class="form-group">
+		                        <label for="set_userTipo">Tipo usuario</label>
+		                        <input name="set_userTipo" type="text" id="set_userTipo" placeholder="1 Admin 0 Usuario" class="form-control" required/>
+		                    </div>
+
+		                </div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+		                    <button type="submit" class="btn btn-success">Editar usuario</button>
+		                </div>
+		            </form>
+		        </div>
+		    </div>
+		</div>
+
+		<!--=========== Edit Tee ===========-->
+
+		<div class="modal edit-modal" id="editTeeModal">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		            <form class="form-modal" method='post' action='../controller/edit_tee.php' role="form" enctype="multipart/form-data">
+		                <div class="modal-body">
+		                	<div class="form-group">
+		                        <label for="set_teeId">ID</label>
+		                        <input name="set_teeId" type="text" id="set_teeId" placeholder="" class="form-control" required readonly />
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="set_teeName">Nombre</label>
+		                        <input name="set_teeName" type="text" id="set_teeName" placeholder="" class="form-control" required/>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="set_teeDescripcion">Descripción</label>
+		                        <input name="set_teeDescripcion" type="text" id="set_teeDescripcion" placeholder="" class="form-control" required/>
+		                    </div>
+
+		                    <div class="form-group">
+		                        <label for="set_teeCantidad">Cantidad</label>
+		                        <input name="set_teeCantidad" type="text" id="set_teeCantidad" placeholder="" class="form-control" required/>
+		                    </div>
+
+		                    <div class="form-group">
+		                        <label for="set_teePrecio">Precio</label>
+		                        <input name="set_teePrecio" type="text" id="set_teePrecio" placeholder="" class="form-control" required/>
+		                    </div>
+
+		                    <div class="form-group">
+		                        <label for="set_teeColor">Color</label>
+		                        <input name="set_teeColor" type="text" id="set_teeColor" placeholder="" class="form-control" required/>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="set_teeTalla">Talla</label>
+		                        <input name="set_teeTalla" type="text" id="set_teeTalla" placeholder="" class="form-control" required/>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="set_teeImagen">Imagen</label>
+		                        <input name="set_teeImagen" type="file" id="set_teeImagen" placeholder="" class="form-control"/>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="set_teeCategoria">Categoria</label>
+		                        <input name="set_teeCategoria" type="text" id="set_teeCategoria" placeholder="" class="form-control" required readonly />
+		                    </div>
+
+		                </div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+		                    <button type="submit" class="btn btn-success">Editar usuario</button>
+		                </div>
+		            </form>
+		        </div>
+		    </div>
+		</div>
+
+
+		<!--=========== Edit Category ===========-->
+
+		<div class="modal edit-modal" id="editCatModal">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		            <form class="form-modal" method='post' action='../controller/edit_cat.php' role="form" >
+		                <div class="modal-body">
+		                	<div class="form-group">
+		                        <label for="set_catId">ID</label>
+		                        <input name="set_catId" type="text" id="set_catId" placeholder="" class="form-control" required readonly />
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="set_catName">Nombre</label>
+		                        <input name="set_catName" type="text" id="set_catName" placeholder="" class="form-control" required/>
+		                    </div>
+		                </div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+		                    <button type="submit" class="btn btn-success">Editar categoria</button>
+		                </div>
+		            </form>
+		        </div>
+		    </div>
+		</div>
+
+
+		<!--============= DROPS =============-->
+		<!-- Delete user -->
+		<div class="modal drop-modal" id="dropUserModal">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">					
+					<div id="deleteUser">
+					<p>Seguro que quieres borrar al usuario con ID: <span id="deleteUserId"></span></p>
+					<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+					<a id="actionDeleteUser">Borrar</a>
+					</div> 
+		        </div>
+		    </div>
+		</div>
+
+		<!-- Delete tee -->
+		<div class="modal drop-modal" id="dropTeeModal">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">					
+					<div id="deleteTee">
+					<p>Seguro que quieres borrar la camiseta con ID: <span id="deleteTeeId"></span></p>
+					<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+					<a id="actionDeleteTee">Borrar</a>
+					</div> 
+		        </div>
+		    </div>
+		</div>
+
+		<!-- Delete category -->
+		<div class="modal drop-modal" id="dropCatModal">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">					
+					<div id="deleteCat">
+					<p>Seguro que quieres borrar la categoria con ID: <span id="deleteCatId"></span></p>
+					<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+					<a id="actionDeleteCat">Borrar</a>
+					</div> 
+		        </div>
+		    </div>
 		</div>
 
 

@@ -1,7 +1,7 @@
 
-$(document).ready(function() {
+jQuery(document).ready(function($) {
 
-	/*Area admin, carga contenido del menu lateral*/
+	/*****Area admin, carga contenido del menu lateral*****/
 	var opt = $('.admin-options');
 	var content = $('#adminMaincontent div');
 
@@ -16,24 +16,113 @@ $(document).ready(function() {
 		});
 	});
 
-	/*Modals*/
+	/*************Modals ADD*************/
 	$('.open-modal').click(function(e) {
+		//Adds
 		if ($(this).attr('id') == "addUser") {
 			console.log($(this).attr('id'));
-			$('#userModal').show(100);
+			$('#userModal').css('display', 'flex');
 		}
 		if ($(this).attr('id') == "addTee") {
 			console.log($(this).attr('id'));
-			$('#teeModal').show(100);
+			$('#teeModal').css('display', 'flex');
 		}
 		if ($(this).attr('id') == "addCat") {
 			console.log($(this).attr('id'));
-			$('#catModal').show(100);
+			$('#catModal').css('display', 'flex');
+		}
+		//Edits
+		if ($(this).attr('id') == "editUser") {
+			$('#editUserModal').css('display', 'flex');
+		}
+		if ($(this).attr('id') == "editTee") {
+			$('#editTeeModal').css('display', 'flex');
+		}
+		if ($(this).attr('id') == "editCat") {
+			$('#editCatModal').css('display', 'flex');
 		}
 
+		//Drops
+		if ($(this).attr('id') == "dropUser") {
+			$('#dropUserModal').css('display', 'flex');
+			var idNombre = $(this).parent('td').parent('tr').find('td:nth-child(2)').text();
+			$('#deleteUserId').text(idNombre);
+			//pasamos el id del usuario a borrar por GET al servidor
+			$('#actionDeleteUser').attr("href", "../controller/delete_user.php?item=" + idNombre );
+		}
+		if ($(this).attr('id') == "dropTee") {
+			$('#dropTeeModal').css('display', 'flex');
+			var idTee = $(this).parent('td').parent('tr').find('td:nth-child(2)').text();
+			$('#deleteTeeId').text(idTee);
+			//pasamos el id de la camiseta a borrar por GET al servidor
+			$('#actionDeleteTee').attr("href", "../controller/delete_tee.php?item=" + idTee );
+		}
+		if ($(this).attr('id') == "dropCat") {
+			$('#dropCatModal').css('display', 'flex');
+			var idCat = $(this).parent('td').parent('tr').find('td:nth-child(2)').text();
+			$('#deleteCatId').text(idCat);
+			//pasamos el id de la categoria a borrar por GET al servidor
+			$('#actionDeleteCat').attr("href", "../controller/delete_cat.php?item=" + idCat );
+		}
+		
 	});
-	/*Cerrar modales*/
+
+
+	/***********Cerrar modales***********/
 	$('.btn-cancel').click(function(e) {
 		$('.modal').hide(200);
+	});
+});
+
+/********Edit values********/
+jQuery(document).ready(function($) {
+	//Edit user data
+	$('.edit-usu').click(function(e) {
+		var self = $(this);
+		var id = self.parent('td').parent('tr').find('td:nth-child(2)').text();
+		var nombre = self.parent('td').parent('tr').find('td:nth-child(3)').text();
+		var apellido = self.parent('td').parent('tr').find('td:nth-child(4)').text();
+		var email = self.parent('td').parent('tr').find('td:nth-child(5)').text();
+		var pass = self.parent('td').parent('tr').find('td:nth-child(6)').text();
+		var tipo = self.parent('td').parent('tr').find('td:nth-child(7)').text();
+		var modal = $('#editUserModal');
+		modal.find('#set_userId').val(id);
+		modal.find('#set_userName').val(nombre);
+		modal.find('#set_userApellido').val(apellido);
+		modal.find('#set_userEmail').val(email);
+		modal.find('#set_userPassword').val(pass);
+		modal.find('#set_userTipo').val(tipo);
+	});
+	//Edti Tee data
+	$('.edit-tee').click(function(e) {
+		var self = $(this);
+		var id = self.parent('td').parent('tr').find('td:nth-child(2)').text();
+		var nombre = self.parent('td').parent('tr').find('td:nth-child(3)').text();
+		var descripcion = self.parent('td').parent('tr').find('td:nth-child(4)').text();
+		var cantidad = self.parent('td').parent('tr').find('td:nth-child(5)').text();
+		var precio = self.parent('td').parent('tr').find('td:nth-child(6)').text();
+		var color = self.parent('td').parent('tr').find('td:nth-child(7)').text();
+		var talla = self.parent('td').parent('tr').find('td:nth-child(8)').text();
+		//var imagen = self.parent('td').parent('tr').find('td:nth-child(9)').text();
+		var cat = self.parent('td').parent('tr').find('td:nth-child(10)').text();
+		var modal = $('#editTeeModal');
+		modal.find('#set_teeId').val(id);
+		modal.find('#set_teeName').val(nombre);
+		modal.find('#set_teeDescripcion').val(descripcion);
+		modal.find('#set_teeCantidad').val(cantidad);
+		modal.find('#set_teePrecio').val(precio);
+		modal.find('#set_teeColor').val(color);
+		modal.find('#set_teeTalla').val(talla);
+		//modal.find('#set_teeImagen').val(imagen);
+		modal.find('#set_teeCategoria').val(cat);
+	});
+	//Edit cat data
+	$('.edit-cat').click(function(e) {
+		var self = $(this);
+		var id = self.parent('td').parent('tr').find('td:nth-child(2)').text();
+		var nombre = self.parent('td').parent('tr').find('td:nth-child(3)').text();
+		var modal = $('#editCatModal');
+		modal.find('#set_catId').val(id);
+		modal.find('#set_catName').val(nombre);
 	});
 });
