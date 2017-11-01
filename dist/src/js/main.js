@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 
 	/*****Area admin, carga contenido del menu lateral*****/
 	var opt = $('.admin-options');
-	var content = $('#adminMaincontent div');
+	var content = $('#adminMaincontent > div');
 
 	opt.click(function(e) {
 		var choosen = this.className.slice(14);	
@@ -14,6 +14,7 @@ jQuery(document).ready(function($) {
 				$(this).hide();
 			}
 		});
+		ajaxSearchAdmin();
 	});
 
 	/*************Modals ADD*************/
@@ -126,3 +127,36 @@ jQuery(document).ready(function($) {
 		modal.find('#set_catName').val(nombre);
 	});
 });
+
+
+/***************** BUSCADOR AJAX *****************/
+function ajaxSearchAdmin(){
+	$('.search').keyup(function(e) {
+		var search = $(this).val();
+		$.ajax({
+			url: '../controller/ajax_search.php',
+			type: 'POST',
+			data: {'search': search},
+			beforeSend: function(){
+
+			}
+		})
+		.done(function(resultado) {
+			console.log("success");
+			$('#resultAjax').html(resultado);
+			compruebaVacio();
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+	});
+}
+function compruebaVacio () {
+	if ($('#userSearch').val() == "") {
+		$('#resultAjax').html("");
+	}
+}

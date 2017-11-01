@@ -23,6 +23,11 @@
     	<div class="admin-flex-container">
 			<aside class="admin-aside">
 				<ul class="admin-list">
+					<li class="admin-options no-hover">
+						<div class="admin-options-content">
+							<i class="fa fa-opencart"></i>
+						</div>
+					</li>
 					<li class="admin-options dashboard">
 						<div class="admin-options-content">
 							<i class="fa fa-dashboard"></i>
@@ -77,8 +82,14 @@
 					<div class="users">
 						<header class="users-header">
 							<h2>Usuarios</h2>
-							<a id="addUser" href='#' class='open-modal btn btn-danger btn-sm'>Agregar usuario</a>
+							<div class="header-actions">
+								<input id="userSearch" name="search" class="search" type="text" placeholder="Buscar">
+								<a id="addUser" href='#' class='open-modal btn btn-danger btn-sm'>Añadir usuario</a>
+							</div>
 						</header>
+						<table id="resultAjax" class="results resultados-ajax">
+
+						</table>
 						<table class="results">
 							<thead>
 			            		<tr>
@@ -116,7 +127,7 @@
 														<a id='dropUser' class='btn btn-danger btn-sm open-modal delete-usu'>Delete</a>
 	                                                </td>
 												 </tr>";
-												 $contador_usuarios++;
+												$contador_usuarios++;
 										}
 									}
 			            		 ?>
@@ -126,7 +137,10 @@
 					<div class="products">
 						<header class="users-header">
 							<h2>Camisetas</h2>
-							<a id="addTee" href='#' class='open-modal btn btn-danger btn-sm'>Agregar camiseta</a>
+							<div class="header-actions">
+								<input id="teeSearch" class="search" type="text" placeholder="Buscar">
+								<a id="addTee" href='#' class='open-modal btn btn-danger btn-sm'>Añadir camiseta</a>
+							</div>
 						</header>
 						<table class="results">
 	                        <thead>
@@ -183,7 +197,10 @@
 					<div class="categories">
 						<header class="users-header">
 							<h2>Categorias</h2>
-							<a id="addCat" href='#' class='open-modal btn btn-danger btn-sm'>Agregar categoria</a>
+							<div class="header-actions">
+								<input id="catSearch" class="search" type="text" placeholder="Buscar">
+								<a id="addCat" href='#' class='open-modal btn btn-danger btn-sm'>Añadir categoria</a>
+							</div>
 						</header>
 						<table class="results">
 	                        <thead>
@@ -225,7 +242,7 @@
 					<div class="sales">
 						<h2>Ventas</h2>
 						<?php 
-							$img_query = "select imagen from camiseta where id_camiseta = 2";
+							$img_query = "select imagen from camiseta where id_camiseta = 1";
 							$img_resul = $conexion->query($img_query);
 	                        $img_rows = $img_resul->num_rows;
 	                        if($img_rows == 0){
@@ -234,6 +251,7 @@
 	                        	while ($fila_img = $img_resul->fetch_array()) {
 	                        		extract($fila_img);
 	                        	}
+	                        	echo "string";
 	                        }
 						 ?>
 						 <p>Imagen de prueba</p>
