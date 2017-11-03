@@ -116,6 +116,10 @@ h1,h2,h3,h4,h5,h6{
     margin: 0;
 }
 
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+     -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
 a{
     text-decoration: none;
     color: var(--mineshaft);
@@ -186,108 +190,143 @@ a{
 }
 
 
-/* ====== ADMIN FORM HOME PAGE ====== */
-.admin-page{
-    background-color: var(--white);
-    height: 100vh;
-    
-    .admin-form-wrapper{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100vh;
+/* ====== ADMIN FORM HOME PAGE && LOGIN====== */
+.login-modal{
+    position: absolute;
+    top: -9999px;
+    width: 100%;
+    transition: .5s all ease;
+    background-color: var(--opaModal);
 
-        h2{
-            margin-top: 0;
-            color: var(--white);
-            outline: 1px solid var(--white);
-            outline-offset: -8px;
-            background-color: var(--vermilion);
-            padding: .5rem 1.5rem;
-        }
-    }
-
-    .form-container{
-
-        &:not(:first-child){
-            margin-top: 1rem;
-        }
-
-        &:first-child{
+    .admin-page{
+        
+        .admin-form-wrapper{
             display: flex;
-            
-            .form-input{
-                &:first-child{
-                    padding-right: .5rem;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+
+            .form-fade{
+                -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+                box-shadow: 0 5px 15px rgba(0,0,0,.5);
+                background-color: var(--white);
+                padding: 2rem;
+                margin-top: 2rem;
+                position: relative;
+            }
+
+            .header-login-wrapper{
+                width: 390px;
+
+                h2{
+                    color: var(--white);
+                    outline: 4px solid var(--white);
+                    outline-offset: -8px;
+                    background-color: var(--vermilion);
+                    padding: .5rem .5rem .8rem 1.5rem;
+                    margin: 1rem auto;
+                    width: 110px;
                 }
-                &:last-child{
-                    padding-left: .5rem;
+                i{
+                    position: absolute;
+                    top: 1rem;
+                    right: 2rem;
+                    font-size: 2rem;
+                    color: var(--vermilion);
+                    transition: .5s all ease;
+                    cursor: pointer;
+
+                    &:hover{
+                        transform: rotate(180deg);
+                    }
                 }
             }
         }
-    
-        .form-input{
 
-            input{
-                background-color: var(--transparent);
-                border: 1px solid var(--mercury);
-                color: var(--abbey);
-                padding: 1rem 1.5rem;
-                width: 100%;
-                outline: none;
-                transition: .5s all ease;
+        .form-container{
 
-                &:focus{
-                    border: 1px solid var(--mountainMeadow);
-
-                    &::-webkit-input-placeholder{
-                        transition: .5s all ease;
-                        color: var(--mountainMeadow);
-                    }
-                     &::-moz-placeholder{
-                        transition: .5s all ease;
-                        color: var(--mountainMeadow);
-                    }
-                    &:-ms-input-placeholder{
-                        transition: .5s all ease;
-                        color: var(--mountainMeadow);
-                    }
-                    &:-moz-placeholder{
-                        transition: .5s all ease;
-                        color: var(--mountainMeadow);
-                    }
-                }  
+            &:not(:first-child){
+                margin-top: 1rem;
             }
 
-            input[type="submit"]{
-                background-color: var(--vermilion);
-                border-color: var(--vermilion);
-                color: var(--white);
-                font-size: 1.5rem;
-                max-height: 52px;
-                line-height: 20px;
-                text-transform: uppercase;
-                outline: 1px solid var(--white);
-                outline-offset: -8px;
-                transition: .2s all ease;
-
-                &:hover{
-                    background-color: var(--transparent);
-                    color: var(--mountainMeadow);
-                    border-color: var(--mountainMeadow);
-                    outline: 1px solid var(--mountainMeadow);
-                    outline-offset: -2px;
+            &:first-child{
+                display: flex;
+                
+                .form-input{
+                    &:first-child{
+                        padding-right: .5rem;
+                    }
+                    &:last-child{
+                        padding-left: .5rem;
+                    }
                 }
-                &:active{
+            }
+        
+            .form-input{
+
+                input{
+                    background-color: var(--transparent);
+                    border: 1px solid var(--mercury);
                     color: var(--mountainMeadow);
-                    border-color: var(--mountainMeadow);
-                     outline: 1px solid var(--mountainMeadow);
+                    padding: 1rem 1.5rem;
+                    width: 100%;
+                    outline: none;
+                    transition: .5s all ease;
+
+                    &:focus{
+                        border: 1px solid var(--mountainMeadow);
+
+                        &::-webkit-input-placeholder{
+                            transition: .5s all ease;
+                            color: var(--mountainMeadow);
+                        }
+                         &::-moz-placeholder{
+                            transition: .5s all ease;
+                            color: var(--mountainMeadow);
+                        }
+                        &:-ms-input-placeholder{
+                            transition: .5s all ease;
+                            color: var(--mountainMeadow);
+                        }
+                        &:-moz-placeholder{
+                            transition: .5s all ease;
+                            color: var(--mountainMeadow);
+                        }
+                    }  
+                }
+
+                input[type="submit"]{
+                    background-color: var(--vermilion);
+                    border-color: var(--vermilion);
+                    color: var(--white);
+                    font-size: 1.5rem;
+                    max-height: 52px;
+                    line-height: 20px;
+                    text-transform: uppercase;
+                    outline: 1px solid var(--white);
+                    outline-offset: -8px;
+                    transition: .2s all ease;
+
+                    &:hover{
+                        background-color: var(--transparent);
+                        color: var(--mountainMeadow);
+                        border-color: var(--mountainMeadow);
+                        outline: 1px solid var(--mountainMeadow);
+                        outline-offset: -2px;
+                    }
+                    &:active{
+                        color: var(--mountainMeadow);
+                        border-color: var(--mountainMeadow);
+                        outline: 1px solid var(--mountainMeadow);
+                    }
                 }
             }
         }
     }
 }
+
+
 /* ====== ADMIN AREA ====== */
 .admin-flex-container{
     display: flex;
@@ -399,7 +438,7 @@ a{
         padding: 1rem;
 
 
-        div{
+        & > div{
             display: none;
 
             &:first-child{
@@ -483,6 +522,10 @@ a{
                     color: var(--white);
                     margin-bottom: 1rem;
 
+                    tr:last-child{
+                        border-bottom: none;
+                    }
+
                     h4{
                         color: var(--mineshaft);
                     }
@@ -492,6 +535,94 @@ a{
                     }
                     .bg-error{
                         background-color: var(--vermilion);
+                    }
+                }
+            }
+        }
+    }
+
+    /***Dashboard***/
+    .dashboard{
+        //min-height: calc(100vh - 155px);
+        min-height: 590px;
+
+        .dashboard-content{
+            display: flex;
+            min-height: 550px;
+
+            .left-info{
+                width: 30%;
+                
+                .lifetime-sales{
+                    padding: 1rem 0;
+                    margin-bottom: 2rem;
+
+                    h4{
+                        margin-bottom: 1rem;
+                        text-transform: uppercase;
+                    }
+                
+                    .lifetime-total-sales{
+                        color: var(--vermilion);
+                        font-size: 2rem;
+                        font-weight: bold;
+                    }
+                }
+                .last-orders{
+                    h4{
+                        margin-bottom: 1rem;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            .right-info{
+                width: 70%;
+
+                .tab-bg-wrapper{
+                    padding: 1rem 0;
+
+                    & > h4{
+                        margin-bottom: 1rem;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .tab-menu{
+                    display: inline-flex;
+                    margin-bottom: 1rem;
+                    border-bottom: 1px solid var(--mineshaft);
+
+                    .tab-title{
+                        background-color: var(--mineshaft);
+                        color: var(--white);
+                        padding: .5rem 2rem;
+                        margin-right: .5rem;
+                        border: 1px solid var(--mineshaft);
+                        border-bottom: none;
+                        transition: .2s all ease;
+                        cursor: pointer;
+
+                        &:last-child{
+                            margin-right: 0;
+                        }
+
+                        &.active{
+                            background-color: var(--mercury) !important;
+                            color: var(--mineshaft) !important;
+                            border-top: 3px solid var(--vermilion);
+                            box-shadow: 0 4px 1px #e1e1e1;
+                            cursor: default;
+                        }
+                    }
+                }
+                .tab-content-wrapper{
+                    .tab-content{
+                        border-bottom: 1px solid var(--mineshaft);
+                        display: none; 
+
+                        &:first-child{
+                            display:block;
+                        }
                     }
                 }
             }
@@ -601,24 +732,27 @@ a{
     }
 }
 
-
-
-
-
-
-
-
-/*======================================================================*/
 /*======================================================================*/
 /*=============================== STORE ===============================*/
-/*======================================================================*/
 /*======================================================================*/
 
 /* ====== HEADER ====== */
 .header{
-    border-top: 5px solid var(--abbey);
+    
+}
+.top-bar{
+    background-color: var(--black);
+    border-bottom: 5px solid var(--vermilion);
+    line-height: 3;
+
+    .top-bar-list{
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .header-menu{
+    margin-top: 1rem;
+
     .header-menu-toolbar{  
 
         .header-list{
@@ -635,7 +769,7 @@ a{
                     h1{
                         font-size: 3rem;
                         font-family: var(--oswald);
-                        color: var(--mercury);
+                        color: var(--black);
                     }
                 }
 
@@ -664,6 +798,31 @@ a{
                             font-size: 1.5rem;
                             cursor: pointer;
                         }
+                    }
+                }
+
+                .login-wrapper{
+                    .login-name{
+                        padding-right: 1rem;
+                        color: var(--vermilion);
+                    }
+                    .disconnect{
+                        cursor: pointer;
+                        transition: .2s ease all;
+                        padding-bottom: .2rem;
+                        border-bottom: 1px solid rgba(0,0,0,.55);
+
+                        &:hover{
+                            color:var(--vermilion);
+                            border-color: var(--vermilion);
+                        }
+                    }
+                    .logeate{
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        font-size: 1.1rem;
+                        padding-top: 1rem;
+                        display: inline-block;
                     }
                 }
 

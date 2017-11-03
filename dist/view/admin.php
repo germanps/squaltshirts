@@ -77,7 +77,100 @@
 				</header>
 				<section id="adminMaincontent" class="admin-main-content">
 					<div class="dashboard">
-						<h2>Dashboard</h2>
+						<div class="users-header">
+							<h2>Dashboard</h2>
+						</div>
+						<div class="dashboard-content">
+							<div class="left-info">
+								<div class="lifetime-sales">
+									<h4>Total Ventas</h4>
+									<span class="lifetime-total-sales">
+										<?php
+
+									    echo "2500 €";
+
+									    ?>
+
+									</span>
+								</div>
+								<div class="last-orders">
+									<h4>Últimas ventas</h4>
+								</div>
+							</div>
+							<div class="right-info">
+								<div class="tab-bg-wrapper">
+									<h4>Resumen</h4>
+									<div id="tabMenu" class="tab-menu">
+										<div class="tab-title active" data-tab="1">
+											<h4>Usuarios</h4>
+										</div>
+										<div class="tab-title" data-tab="2">
+											<h4>Camisetas</h4>
+										</div>
+										<div class="tab-title" data-tab="3">
+											<h4>Categorias</h4>
+										</div>
+										<div class="tab-title" data-tab="4">
+											<h4>Ventas</h4>
+										</div>
+									</div>
+									<div id="tabContent" class="tab-content-wrapper">
+										<div class="tab-content" data-tab="1">
+											<table class="results">
+						                        <thead>
+						                            <tr>
+								            			<th class='text-muted'>Item nº</th>
+								            			<th>ID usuario</th>
+								            			<th>Nombre</th>
+								            			<th>Apellido</th>
+								            			<th>Email</th>
+								            		</tr>
+						                        </thead>
+						                        <tbody>
+													<?php include "tab_user.php" ?>
+												</tbody>
+											</table>
+										</div>
+										<div class="tab-content" data-tab="2">
+											<table class="results">
+						                        <thead>
+						                            <tr>
+						                                <th class='text-muted'>Item nº</th>
+						                                <th>ID camiseta</th>
+						                                <th>Nombre</th>
+						                                <th>Descripción</th>
+						                                <th>Cantidad</th>                          
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                        	<?php include "tab_tee.php" ?>
+						                        </tbody>
+						                    </table>
+										</div>
+										<div class="tab-content" data-tab="3">
+											<table class="results">
+						                        <thead>
+						                            <tr>
+						                                <th class='text-muted'>Item nº</th>
+						                                <th>ID categoria</th>
+						                                <th>Nombre categoria</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <?php include "tab_cat.php" ?>
+						                        </tbody>
+						                        
+						                    </table>
+										</div>
+										<div class="tab-content" data-tab="4">
+											<h4>ventas</h4>
+											<p>Aqui saldrán las ventas</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 					</div>
 					<div class="users">
 						<header class="users-header">
@@ -104,33 +197,7 @@
 			            		</tr>
 			            	</thead>
 			            	<tbody>
-			            		<?php 
-			            			$user_query = "select * from usuario order by id_usuario";
-			            			$usu_resul = $conexion->query($user_query);
-									$usu_rows = $usu_resul->num_rows;
-									$contador_usuarios = 1;
-									if ($usu_rows == 0) {
-										echo "No se encuentras usuarios en la base de datos";
-									}else{
-										while ($fila = $usu_resul->fetch_array()) {
-											extract($fila);
-											echo "<tr>
-													<td class='text-muted'>$contador_usuarios</td>
-													<td>$id_usuario</td>
-													<td>$nombre</td>
-													<td>$apellido</td>
-													<td>$email</td>
-													<td>$password</td>
-													<td>$tipo_usuario</td>
-													<td>
-														<a id='editUser' class='btn btn-danger btn-sm open-modal edit-usu'>Edit</a>
-														<a id='dropUser' class='btn btn-danger btn-sm open-modal delete-usu'>Delete</a>
-	                                                </td>
-												 </tr>";
-												$contador_usuarios++;
-										}
-									}
-			            		 ?>
+			            		<?php include "admin_users_view.php" ?>
 			            	</tbody>
 						</table>
 					</div>
@@ -159,38 +226,7 @@
 	                            </tr>
 	                        </thead>
 	                        <tbody>
-                            <?php 
-                                //$product_query = "select * from productos";
-                                $product_query = "select p.id_camiseta, p.nombre_camiseta, p.descripcion, p.cantidad, p.imagen, p.precio, p.color, p.talla, c.nombre FROM camiseta p, categoria c where c.id_categoria = p.categoria_id_categoria order by id_camiseta;";
-                                $product_resul = $conexion->query($product_query);
-                                $product_rows = $product_resul->num_rows;
-                                $contador_camiseta = 1;
-                                if ($product_rows == 0) {
-                                    echo "No se encuentras productos en la base de datos";
-                                }else{
-                                    while ($fila_product = $product_resul->fetch_array()) {
-                                        extract($fila_product);
-
-                                        echo "<tr>
-                                                <td class='text-muted'>$contador_camiseta</td>
-                                                <td>$id_camiseta</td>
-                                                <td>$nombre_camiseta</td>
-                                                <td>$descripcion</td>
-                                                <td>$cantidad</td>
-                                                <td>$precio</td>
-                                                <td>$color</td>
-                                                <td>$talla</td>
-                                                <td>$imagen</td>
-                                                <td>$nombre</td>
-                                                <td> 
-                                                    <a id='editTee' class='btn btn-danger btn-sm open-modal edit-tee'>Edit</a>
-                                                    <a id='dropTee' class='btn btn-danger btn-sm open-modal delete-tee'>Delete</a>
-                                                </td>
-                                             </tr>";
-                                             $contador_camiseta++;
-	                                    }
-	                                }
-	                             ?>
+                            	<?php include "admin_tee_view.php" ?>
 	                        </tbody>
 						</table>
 					</div>
@@ -212,29 +248,7 @@
 	                            </tr>
 	                        </thead>
 	                        <tbody>
-	                            <?php 
-	                                $cat_query = "select * from categoria order by id_categoria";
-	                                $cat_resul = $conexion->query($cat_query);
-	                                $cat_rows = $cat_resul->num_rows;
-	                                $contador_cat = 1;
-	                                if ($cat_rows == 0) {
-	                                    echo "No se encuentras categorias en la base de datos";
-	                                }else{
-	                                    while ($fila_cat = $cat_resul->fetch_array()) {
-	                                        extract($fila_cat);
-	                                        echo "<tr>
-	                                                <td class='text-muted'>$contador_cat</td>
-	                                                <td>$id_categoria</td>
-	                                                <td>$nombre</td>
-	                                                <td>
-	                                                	<a id='editCat' class='btn btn-danger btn-sm open-modal edit-cat'>Edit</a>
-	                                                	<a id='dropCat' class='btn btn-danger btn-sm open-modal delete-cat'>Delete</a>
-	                                                </td>
-	                                             </tr>";
-	                                             $contador_cat++;
-	                                    }
-	                                }
-	                             ?>
+	                            <?php include "admin_cat_view.php" ?>
 	                        </tbody>
 	                        
 	                    </table>

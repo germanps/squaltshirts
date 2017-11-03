@@ -1,7 +1,7 @@
 <?php 
 	session_start();
-	//include('../view/header.html');
+	//include('../view/header.php');
 	echo "Cerrando sesion...";
 	session_destroy();
-	header('Refresh: 3; url="../index.php"');
+	header('Refresh: 3; url="../view/store.php"');
  ?>

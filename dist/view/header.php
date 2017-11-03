@@ -1,3 +1,8 @@
+<?php 
+    //session_start();
+    require('../controller/conexion.php');
+?>
+
 <!doctype html>
 <html class="no-js" lang="es">
     <head>
@@ -18,6 +23,21 @@
         
         <!-- Header -->
         <header class="header">
+            <div id="topBar" class="top-bar">
+                <div class="container">
+                    <ul class="top-bar-list">
+                        <li class="top-bar-items">
+                            <img src="../src/img/camion.png" alt="envío gratis" title="envío gratis">
+                        </li>
+                        <li class="top-bar-items">
+                            <img src="../src/img/time.png" alt="tiempo de entrega" title="tiempo de entrega">
+                        </li>
+                        <li class="top-bar-items">
+                            <img src="../src/img/satisfaccion.png" alt="satisfaccion" title="tsatisfaccion">
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div class="container header-menu">
             	<div id="haderMenuToolbar" class="header-menu-toolbar">
                     <ul class="header-list">
@@ -39,6 +59,26 @@
                                 </form>
                             </div>
                         </li>
+                         <li class="header-list-item">
+                            <div class="login-wrapper">
+                                
+                                <?php  
+                                    if (isset($_SESSION['usu_user'])) {
+                                        $usuario_registrado = $_SESSION['usu_user'];
+
+                                        echo "
+                                            <span class='login-name'>$usuario_registrado</span>
+                                            <a href='../controller/disconnect.php' class='disconnect'>Desconectar</span>
+                                        ";
+                                    }else{
+                                        $usuario_registrado = "";
+                                        echo "<a id='logeate' href='#'' class='logeate'>Logéate</a>";
+                                    }
+
+                                 ?>
+                                
+                            </div>
+                        </li>
                         <li class="header-list-item">
                             <div class="shopping-cart-wrapper">
                                 <a href="basket.php" id="cartSubmit" class="cart">
@@ -49,5 +89,10 @@
                         </li>
                     </ul>
             	</div>
+                <nav id="navBarMenu" class="nav-bar-menu">
+                    <ul id="menu-categories" class="menu-categories">
+                        
+                    </ul>
+                </nav>
             </div>
         </header> <!-- end header -->

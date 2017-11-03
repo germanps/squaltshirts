@@ -3,14 +3,14 @@
  ?>
   
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Access</title>
   <link rel="stylesheet" href="src/css/main.css">
 </head>
 <body>
-    <div class="admin-page">
+    <!-- <div class="admin-page">
       <div class="container">
         <div class="admin-form-wrapper">
           <h2>Sign In</h2>
@@ -41,6 +41,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
+    <a href="view/store.php">Acceder a la tienda</a>
 </body>
 </html>

@@ -1,8 +1,20 @@
+//Listener para el login
+window.addEventListener('load', logeate, false);
+function logeate (e) {
+	//Abrir login
+	$('#logeate').click(function(e) {
+		$('.login-modal').css('top', '0');
+	});
+	//Cerrar login
+	$('#closeLogin').click(function(e) {
+		$('.login-modal').css('top', '-9999px');
+	});
+}
 
 jQuery(document).ready(function($) {
 
 	/*****Area admin, carga contenido del menu lateral*****/
-	var opt = $('.admin-options');
+	var opt = $('.admin-options:not(:first-child)');
 	var content = $('#adminMaincontent > div');
 
 	opt.click(function(e) {
@@ -160,3 +172,22 @@ function compruebaVacio () {
 		$('#resultAjax').html("");
 	}
 }
+
+/********** TABS **********/
+jQuery(document).ready(function($) {
+	var tabs = $('.tab-content');
+	$('#tabMenu .tab-title').click(function(e) {
+		var self = $(this);
+		var allTabs = $('.tab-title');
+		allTabs.removeClass('active');
+		self.addClass('active');
+		var trigger= self.attr('data-tab');
+		tabs.each(function(index, el) {
+			if ((index+1) == trigger) {
+				$(this).show(200);
+			}else{
+				$(this).hide(200);
+			}
+		});
+	});
+});

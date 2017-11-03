@@ -1,20 +1,14 @@
 <?php 
-	require "conexion.php";
-	if (!isset($_POST['search'])) exit('No se han recibido datos');
-
-	$search = $conexion->real_escape_string($_POST['search']);
-	$query = "select * from usuario where nombre like '%$search%' ";
-	$usu_resul = $conexion->query($query);
+	$user_query = "select * from usuario order by id_usuario";
+	$usu_resul = $conexion->query($user_query);
 	$usu_rows = $usu_resul->num_rows;
 	$contador_usuarios = 1;
 	if ($usu_rows == 0) {
-		echo "<tr><td class='bg-error'>No se encuentras usuarios en la base de datos</td></tr>";
+		echo "No se encuentras usuarios en la base de datos";
 	}else{
-		echo "<h4>Resultados de búsqueda</h4>";
 		while ($fila = $usu_resul->fetch_array()) {
 			extract($fila);
-			echo "
-				<tr>
+			echo "<tr>
 					<td class='text-muted'>$contador_usuarios</td>
 					<td>$id_usuario</td>
 					<td>$nombre</td>
@@ -27,7 +21,7 @@
 						<a id='dropUser' class='btn btn-danger btn-sm open-modal delete-usu'>Delete</a>
                     </td>
 				 </tr>";
-			$contador_usuarios++;
+				$contador_usuarios++;
 		}
 	}
  ?>
