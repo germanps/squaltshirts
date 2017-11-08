@@ -1,5 +1,6 @@
 //Listener para el login
 window.addEventListener('load', logeate, false);
+window.addEventListener('load', buscaAjax, false);
 function logeate (e) {
 	//Abrir login
 	$('#logeate').click(function(e) {
@@ -9,6 +10,12 @@ function logeate (e) {
 	$('#closeLogin').click(function(e) {
 		$('.login-modal').css('top', '-9999px');
 	});
+}
+function buscaAjax(){
+	//Llamada a las funciones que controlan las funciones ajax de los buscadores
+	ajaxSearchAdmin();
+	ajaxSearchCat();
+	ajaxSearchTee();
 }
 
 jQuery(document).ready(function($) {
@@ -26,7 +33,6 @@ jQuery(document).ready(function($) {
 				$(this).hide();
 			}
 		});
-		ajaxSearchAdmin();
 	});
 
 	/*************Modals ADD*************/
@@ -140,39 +146,6 @@ jQuery(document).ready(function($) {
 	});
 });
 
-
-/***************** BUSCADOR AJAX *****************/
-function ajaxSearchAdmin(){
-	$('.search').keyup(function(e) {
-		var search = $(this).val();
-		$.ajax({
-			url: '../controller/ajax_search.php',
-			type: 'POST',
-			data: {'search': search},
-			beforeSend: function(){
-
-			}
-		})
-		.done(function(resultado) {
-			console.log("success");
-			$('#resultAjax').html(resultado);
-			compruebaVacio();
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-		});
-		
-	});
-}
-function compruebaVacio () {
-	if ($('#userSearch').val() == "") {
-		$('#resultAjax').html("");
-	}
-}
-
 /********** TABS **********/
 jQuery(document).ready(function($) {
 	var tabs = $('.tab-content');
@@ -191,3 +164,90 @@ jQuery(document).ready(function($) {
 		});
 	});
 });
+
+
+/***************** BUSCADORES AJAX *****************/
+function ajaxSearchAdmin(){
+	$('#userSearch').keyup(function(e) {
+		var search = $(this).val();
+		$.ajax({
+			url: '../controller/ajax_usu_search.php',
+			type: 'POST',
+			data: {'search': search},
+			beforeSend: function(){
+
+			}
+		})
+		.done(function(resultado) {
+			//console.log("success");
+			$('#resultAjaxUsu').html(resultado);
+		})
+		.fail(function() {
+			//console.log("error");
+		})
+		.always(function() {
+			//console.log("complete");
+			if ($('#userSearch').val() == "") {
+				$('#resultAjaxUsu').html("");
+			};
+		});
+		
+	});
+}
+function ajaxSearchCat(){
+	$('#catSearch').keyup(function(e) {
+		console.log($(this));
+		var search = $(this).val();
+		$.ajax({
+			url: '../controller/ajax_cat_search.php',
+			type: 'POST',
+			data: {'search': search},
+			beforeSend: function(){
+
+			}
+		})
+		.done(function(resultado) {
+			//console.log("success");
+			$('#resultAjaxCat').html(resultado);
+		})
+		.fail(function() {
+			//console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+			if ($('#catSearch').val() == "") {
+				$('#resultAjaxCat').html("");
+			};
+		});
+		
+	});
+}
+function ajaxSearchTee(){
+	$('#teeSearch').keyup(function(e) {
+		console.log($(this));
+		var search = $(this).val();
+		$.ajax({
+			url: '../controller/ajax_tee_search.php',
+			type: 'POST',
+			data: {'search': search},
+			beforeSend: function(){
+
+			}
+		})
+		.done(function(resultado) {
+			//console.log("success");
+			$('#resultAjaxTee').html(resultado);
+		})
+		.fail(function() {
+			//console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+			if ($('#teeSearch').val() == "") {
+				$('#resultAjaxTee').html("");
+			};
+		});
+		
+	});
+}
+

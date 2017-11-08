@@ -180,7 +180,7 @@
 								<a id="addUser" href='#' class='open-modal btn btn-danger btn-sm'>Añadir usuario</a>
 							</div>
 						</header>
-						<table id="resultAjax" class="results resultados-ajax">
+						<table id="resultAjaxUsu" class="results resultados-ajax">
 
 						</table>
 						<table class="results">
@@ -209,6 +209,9 @@
 								<a id="addTee" href='#' class='open-modal btn btn-danger btn-sm'>Añadir camiseta</a>
 							</div>
 						</header>
+						<table id="resultAjaxTee" class="results resultados-ajax">
+
+						</table>
 						<table class="results">
 	                        <thead>
 	                            <tr>
@@ -238,6 +241,9 @@
 								<a id="addCat" href='#' class='open-modal btn btn-danger btn-sm'>Añadir categoria</a>
 							</div>
 						</header>
+						<table id="resultAjaxCat" class="results resultados-ajax">
+
+						</table>
 						<table class="results">
 	                        <thead>
 	                            <tr>
