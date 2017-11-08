@@ -23,9 +23,9 @@
 				}
 				
 			}else{
-				echo "<p>Error, datos introducidos incorrectos</p>";
-				echo "<p>Redireccionando...</p>";
-				header("Refresh: 3; url=".$_SERVER['HTTP_REFERER']);//volvemos atrás
+				//echo "<p>Error, datos introducidos incorrectos</p>";
+				//echo "<p>Redireccionando...</p>";
+				header("Refresh: 0; url=".$_SERVER['HTTP_REFERER']);//volvemos atrás
 			}
 			
 		}
