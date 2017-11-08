@@ -9,6 +9,7 @@
 @import './normalize.css';
 @import './variables.css';
 @import './font-awesome.min.css';
+@import './cubeportfolio.min.css';
 
 
 /* ==========================================================================
@@ -196,6 +197,7 @@ a{
     top: -9999px;
     width: 100%;
     transition: .5s all ease;
+    z-index: 99;
     //background-color: var(--opaModal);
 
     .admin-page{
@@ -567,7 +569,7 @@ a{
                         font-weight: bold;
                     }
                 }
-                .last-orders{
+                .best-order{
                     h4{
                         margin-bottom: 1rem;
                         text-transform: uppercase;
@@ -650,6 +652,14 @@ a{
         align-items: center;
         justify-content: center;
         color: var(--white);
+
+        h3{
+            text-align: left;
+            width: 100%;
+            margin-bottom: 1rem;
+            color: var(--grenadier);
+            text-transform: uppercase;
+        }
 
         .modal-header{
             display: flex;
@@ -864,8 +874,10 @@ a{
     }
 }
 
-
-
+/* ====== SLIDER ====== */
+.home-slider{
+    margin-top: 2REM;
+}
 
 
 

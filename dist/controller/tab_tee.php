@@ -1,6 +1,6 @@
 <?php 
-	$product_query = "select * from camiseta limit 2";
-    //$product_query = "select p.id_camiseta, p.nombre_camiseta, p.descripcion, p.cantidad, p.imagen, p.precio, p.color, p.talla, c.nombre FROM camiseta p, categoria c where c.id_categoria = p.categoria_id_categoria order by id_camiseta;";
+	//$product_query = "select * from camiseta limit 2";
+    $product_query = "SELECT * FROM camiseta WHERE RAND()<(SELECT ((3/COUNT(*))*10) FROM camiseta) ORDER BY RAND() LIMIT 2";
     $product_resul = $conexion->query($product_query);
     $product_rows = $product_resul->num_rows;
     $contador_camiseta = 1;

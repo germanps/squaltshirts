@@ -1,5 +1,6 @@
 <?php 
-	$cat_query = "select * from categoria order by id_categoria limit 2";
+    $cat_query = "SELECT * FROM categoria WHERE RAND()<(SELECT ((3/COUNT(*))*10) FROM categoria) ORDER BY RAND() LIMIT 2";
+	//$cat_query = "select * from categoria order by id_categoria limit 2";
     $cat_resul = $conexion->query($cat_query);
     $cat_rows = $cat_resul->num_rows;
     $contador_cat = 1;

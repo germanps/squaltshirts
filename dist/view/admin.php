@@ -93,8 +93,8 @@
 
 									</span>
 								</div>
-								<div class="last-orders">
-									<h4>Últimas ventas</h4>
+								<div class="best-order">
+									<h4>Mejor Venta</h4>
 								</div>
 							</div>
 							<div class="right-info">
@@ -127,7 +127,7 @@
 								            		</tr>
 						                        </thead>
 						                        <tbody>
-													<?php include "tab_user.php" ?>
+													<?php include "../controller/tab_user.php" ?>
 												</tbody>
 											</table>
 										</div>
@@ -143,7 +143,7 @@
 						                            </tr>
 						                        </thead>
 						                        <tbody>
-						                        	<?php include "tab_tee.php" ?>
+						                        	<?php include "../controller/tab_tee.php" ?>
 						                        </tbody>
 						                    </table>
 										</div>
@@ -157,7 +157,7 @@
 						                            </tr>
 						                        </thead>
 						                        <tbody>
-						                            <?php include "tab_cat.php" ?>
+						                            <?php include "../controller/tab_cat.php" ?>
 						                        </tbody>
 						                        
 						                    </table>
@@ -190,6 +190,7 @@
 			            			<th>ID usuario</th>
 			            			<th>Nombre</th>
 			            			<th>Apellido</th>
+			            			<th>Dni</th>
 			            			<th>Email</th>
 			            			<th>Password</th>
 			            			<th>Tipo usuario</th>
@@ -426,6 +427,7 @@
 		<div class="modal edit-modal" id="editUserModal">
 		    <div class="modal-dialog" role="document">
 		        <div class="modal-content">
+		        	<h3>Editar Usuario</h3>
 		            <form class="form-modal" method='post' action='../controller/edit_user.php' role="form" >
 		                <div class="modal-body">
 		                	<div class="form-group">
@@ -439,6 +441,10 @@
 		                    <div class="form-group">
 		                        <label for="set_userApellido">Apellido</label>
 		                        <input name="set_userApellido" type="text" id="set_userApellido" placeholder="" class="form-control" required/>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="set_userDni">Dni</label>
+		                        <input name="set_userDni" type="text" id="set_userDni" placeholder="" class="form-control" required/>
 		                    </div>
 
 		                    <div class="form-group">

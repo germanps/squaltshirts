@@ -1,11 +1,8 @@
 <?php 
   session_start();
   include 'header.php';
+  include 'slider.html';
  ?>
-
-
-<h3>Store</h3>
-
 
 <!--=============== LOGIN MODAL ===================-->
 <div id="loginModal" class="login-modal">

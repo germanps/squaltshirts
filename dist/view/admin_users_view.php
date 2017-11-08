@@ -13,6 +13,7 @@
 					<td>$id_usuario</td>
 					<td>$nombre</td>
 					<td>$apellido</td>
+					<td>$dni</td>
 					<td>$email</td>
 					<td>$password</td>
 					<td>$tipo_usuario</td>

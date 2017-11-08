@@ -37,6 +37,8 @@
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="../src/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="../src/js/plugins.js"></script>
+        <!-- load cubeportfolio -->
+        <script type="text/javascript" src="../src/js/vendor/jquery.cubeportfolio.min.js"></script>
         <script src="../src/js/main.js"></script>
     </body>
 </html>
