@@ -1,5 +1,4 @@
-		
-        <div style="margin-top: 10rem;text-align: center;" class="">ESTE ES EL FOOOOOOOTER!!!!!</div>
+
         
 		<footer class="site-footer">
             <div class="container clearfix">

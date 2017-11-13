@@ -926,13 +926,16 @@ header{
     margin-top: 1rem;
     margin-bottom: 6rem;
 }
+
+/*=========== MAIN CONTENT ===========*/
+.main-content{
+    margin-bottom: 4rem;
+}
 /* ===== GRID HOME ====*/
 .grid-wrapper{
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 545px 545px;
-    background-color: #fff;
-    color: #444;
 
     .grid-box.a{
         @mixin grid-home var(--vermilion), var(--white), 295px;
@@ -957,6 +960,11 @@ header{
 
 
 
+/* ======= FOOTER =======*/
+.site-footer{
+    background-color: var(--abbey);
+    color: var(--white);
+}
 
 
 
@@ -1081,14 +1089,3 @@ Grid con lost
 } */
 /********************************************************************/
 /********************************************************************/
-
-
-
-
-
-
-
-
-
-
-

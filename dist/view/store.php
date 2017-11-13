@@ -4,7 +4,7 @@
   include 'slider.html';
  ?>
 
- <div id="mainContent-main-content">
+ <div id="mainContent" class="main-content">
  	<div class="container">
  		<div class="grid-wrapper">
 		  	<div class="grid-box a">Destacado</div>
