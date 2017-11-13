@@ -812,7 +812,7 @@ header{
                         }
                         .input-search-btn{
                             position: relative;
-                            background-color: var(--black);
+                            background-color: transparent;
                             color: var(--white);
                             width: 40px;
                             height: 40px;
@@ -821,9 +821,27 @@ header{
                             align-items: center;
                             font-size: 1.5rem;
                             cursor: pointer;
+
+                            input{
+                                z-index: 10;
+                                position: relative;
+                                border: none;
+                                background-color: transparent;
+                            }
+                            
+                            &::before{
+                                position: absolute;
+                                background-color: var(--black);
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                z-index: 1;
+                            }
                         }
                     }
-                }
+                } 
 
                 .login-wrapper{
                     .login-name{
@@ -960,7 +978,7 @@ header{
 
 
 
-/* ======= FOOTER =======*/
+/* ============== FOOTER ==============*/
 .site-footer{
     background-color: var(--abbey);
     color: var(--white);
