@@ -4,6 +4,17 @@
   include 'slider.html';
  ?>
 
+ <div id="mainContent-main-content">
+ 	<div class="container">
+ 		<div class="grid-wrapper">
+		  	<div class="grid-box a">Destacado</div>
+		  	<div class="grid-box b">Outlet</div>
+		  	<div class="grid-box c">Oferta</div>
+		  	<div class="grid-box d">Te interesa</div>
+		</div>
+ 	</div>
+ </div>
+
 <!--=============== LOGIN MODAL ===================-->
 <div id="loginModal" class="login-modal">
 	<div class="admin-page">
@@ -30,7 +41,7 @@
 	            		</div>
 	            		<div class="form-container">
 	              			<div class="form-input">
-	                			<input type="text" placeholder="Set A Password*" name="password">
+	                			<input type="password" placeholder="Set A Password*" name="password">
 	              			</div>
 	            		</div>
 	            		<div class="form-container">

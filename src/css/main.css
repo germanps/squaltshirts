@@ -93,8 +93,29 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-    
+/* ========== MIXINS ===========*/
+  
+/* MIXIN PARA BOTONES */
+@define-mixin btn $bg, $color, $font, $size{
+    background-color: $bg;
+    color: $color;
+    font-family: $font;
+    font-size: $size;
+    padding: 10px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+    transition: .2s all ease;
+}
+/* MIXIN PARA EL HOME GRID */
+@define-mixin grid-home $fondo, $color, $alto{
+    background-color: $fondo;
+    color: $color;
+    padding: 1rem;
+    height: $alto;
+}
 
 html{
     box-sizing: border-box;
@@ -173,21 +194,6 @@ a{
 }
 .hide{
     display: none !important;
-}
-
-/**** MIXIN PARA BOTONES ****/
-@define-mixin btn $bg, $color, $font, $size{
-    background-color: $bg;
-    color: $color;
-    font-family: $font;
-    font-size: $size;
-    padding: 10px 40px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 20px;
-    display: inline-block;
-    transition: .2s all ease;
 }
 
 
@@ -746,8 +752,17 @@ a{
 /*======================================================================*/
 
 /* ====== HEADER ====== */
-.header{
-    
+header{
+    position: relative;
+        &:after{
+        display: block;
+        position: absolute;
+        content: "";
+        height: 4px;
+        bottom: -15px;
+        width: 100%;
+        background: linear-gradient(to bottom, #cacaca 0%, #f5f5f5 100%);
+    }
 }
 .top-bar{
     background-color: var(--black);
@@ -874,9 +889,68 @@ a{
     }
 }
 
+/*===== MAIN MENÚ=====*/
+.nav-bar-menu{
+    width: 100%;
+    margin-top: 2rem;
+
+    .main-menu{
+        display: flex;
+        justify-content: space-between;
+
+        .main-menu-item{
+            display: inline-block;
+
+            &:last-child{
+                text-align: right;
+            }
+
+            a{
+                font-size: 1rem;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+
+                img{
+                    width: 19%;
+                }
+            }
+        }
+    }
+}
+
+
+
 /* ====== SLIDER ====== */
 .home-slider{
-    margin-top: 2REM;
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+}
+/* ===== GRID HOME ====*/
+.grid-wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 545px 545px;
+    background-color: #fff;
+    color: #444;
+
+    .grid-box.a{
+        @mixin grid-home var(--vermilion), var(--white), 295px;
+        grid-column: 1/ span 1; 
+    }
+    .grid-box.b{
+        @mixin grid-home var(--mountainMeadow), var(--white), 600px;
+        grid-column: 2; 
+        grid-row: 1 / span 2;
+    }
+    .grid-box.c{
+        @mixin grid-home var(--abbey), var(--white), 295px;
+        grid-column: 1/ span 1; 
+    }
+    .grid-box.d{
+        @mixin grid-home var(--vermilion), var(--white), 300px;
+        grid-column: 1 / span 2;
+    }
 }
 
 
@@ -886,10 +960,6 @@ a{
 
 
 
-
-
-  
-  
 
 
 

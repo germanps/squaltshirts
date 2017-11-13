@@ -90,8 +90,14 @@
                     </ul>
             	</div>
                 <nav id="navBarMenu" class="nav-bar-menu">
-                    <ul id="menu-categories" class="menu-categories">
-                        
+                    <ul id="main-menu" class="main-menu">
+                        <li class="main-menu-item"><a href="#">Catálogo</a></li>
+                        <li class="main-menu-item"><a href="#">Outlet</a></li>
+                        <li class="main-menu-item"><a href="#">Faq</a></li>
+                        <li class="main-menu-item"><a href="#">Contacto</a></li>
+                        <li class="main-menu-item">
+                            <a href="#"><img src="../src/img/united-kingdom.svg" alt=""></a>
+                        </li>
                     </ul>
                 </nav>
             </div>

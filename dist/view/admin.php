@@ -301,10 +301,14 @@
 	                        <label for="apellidoUserId">Apellido</label>
 	                        <input name="apellidoUser" type="text" id="apellidoUserId" placeholder="" class="form-control" required/>
 	                    </div>
+	                    <div class="form-group">
+	                        <label for="diniUserId">Dni</label>
+	                        <input name="diniUser" type="text" id="diniUserId" placeholder="" class="form-control" required/>
+	                    </div>
 
 	                    <div class="form-group">
 	                        <label for="passwordUserId">Password</label>
-	                        <input name="passwordUser" type="text" id="passwordUserId" placeholder="" class="form-control" required/>
+	                        <input name="passwordUser" type="password" id="passwordUserId" placeholder="" class="form-control" required/>
 	                    </div>
 
 	                    <div class="form-group">
