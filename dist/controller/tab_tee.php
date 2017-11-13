@@ -13,7 +13,7 @@
             echo "<tr>
                     <td class='text-muted'>$contador_camiseta</td>
                     <td>$id_camiseta</td>
-                    <td>$nombre_camiseta</td>
+                    <td>$nombre</td>
                     <td>$descripcion</td>
                     <td>$cantidad</td>
                  </tr>";

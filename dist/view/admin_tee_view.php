@@ -1,6 +1,6 @@
 <?php 
  //$product_query = "select * from productos";
-	$product_query = "select p.id_camiseta, p.nombre_camiseta, p.descripcion, p.cantidad, p.imagen, p.precio, p.color, p.talla, c.nombre FROM camiseta p, categoria c where c.id_categoria = p.categoria_id_categoria order by id_camiseta;";
+	$product_query = "select p.id_camiseta, p.nombre, p.descripcion, p.cantidad, p.imagen, p.precio, p.color, p.talla, c.nombre FROM camiseta p, categoria c where c.id_categoria = p.categoria_id_categoria order by id_camiseta;";
 	$product_resul = $conexion->query($product_query);
 	$product_rows = $product_resul->num_rows;
 	$contador_camiseta = 1;
@@ -13,7 +13,7 @@
 	        echo "<tr>
 	                <td class='text-muted'>$contador_camiseta</td>
 	                <td>$id_camiseta</td>
-	                <td>$nombre_camiseta</td>
+	                <td>$nombre</td>
 	                <td>$descripcion</td>
 	                <td>$cantidad</td>
 	                <td>$precio</td>

@@ -14,7 +14,7 @@
 
 			if ($nombre == $nom_usu && $apellido == $ape_usu && $email == $email && $password == $pwd) {
 				//echo "coincide usuario<br>";
-				if ($tipo_usuario == 0) {
+				if ($tipo_usuario == 1) {
 					$_SESSION['admin_user'] = $nom_usu;
 					header('Location:../view/admin.php');
 				}else{
