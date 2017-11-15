@@ -754,7 +754,7 @@ a{
 /* ====== HEADER ====== */
 header{
     position: relative;
-        &:after{
+    /* &:after{
         display: block;
         position: absolute;
         content: "";
@@ -762,7 +762,7 @@ header{
         bottom: -15px;
         width: 100%;
         background: linear-gradient(to bottom, #cacaca 0%, #f5f5f5 100%);
-    }
+    } */
 }
 .top-bar{
     background-color: var(--black);
@@ -943,6 +943,7 @@ header{
 .home-slider{
     margin-top: 1rem;
     margin-bottom: 6rem;
+    box-shadow: 0px -5px 5px #d6d8d8;
 }
 
 /*=========== MAIN CONTENT ===========*/
