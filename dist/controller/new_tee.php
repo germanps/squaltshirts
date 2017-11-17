@@ -31,7 +31,7 @@
 		$id_cat = $id_categoria;
 	}
 
-	$insert_user_query = "insert into camiseta(id_camiseta, nombre_camiseta, descripcion, cantidad, imagen, precio, color, talla, categoria_id_categoria) values('null','$nombreCamiseta', '$descripcion', '$cantidad', '$imagen','$precio', '$color', '$talla', '$id_cat')";
+	$insert_user_query = "insert into camiseta(id_camiseta, nombre, descripcion, cantidad, imagen, precio, color, talla, categoria_id_categoria) values('null','$nombreCamiseta', '$descripcion', '$cantidad', '$imagen','$precio', '$color', '$talla', '$id_cat')";
 	$insert_user_resul = $conexion->query($insert_user_query);
 	$conexion->close();	
 	header("Location: ../view/admin.php");

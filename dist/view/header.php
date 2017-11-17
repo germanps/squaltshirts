@@ -91,7 +91,7 @@
             	</div>
                 <nav id="navBarMenu" class="nav-bar-menu">
                     <ul id="main-menu" class="main-menu">
-                        <li class="main-menu-item"><a href="#">Catálogo</a></li>
+                        <li class="main-menu-item"><a href="catalogo.php">Catálogo</a></li>
                         <li class="main-menu-item"><a href="#">Outlet</a></li>
                         <li class="main-menu-item"><a href="#">Faq</a></li>
                         <li class="main-menu-item"><a href="#">Contacto</a></li>

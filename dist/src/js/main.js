@@ -191,14 +191,13 @@ function ajaxSearchAdmin(){
 			//console.log("complete");
 			if ($('#userSearch').val() == "") {
 				$('#resultAjaxUsu').html("");
-			};
+			}
 		});
 		
 	});
 }
 function ajaxSearchCat(){
 	$('#catSearch').keyup(function(e) {
-		console.log($(this));
 		var search = $(this).val();
 		$.ajax({
 			url: '../controller/ajax_cat_search.php',
@@ -219,14 +218,13 @@ function ajaxSearchCat(){
 			console.log("complete");
 			if ($('#catSearch').val() == "") {
 				$('#resultAjaxCat').html("");
-			};
+			}
 		});
 		
 	});
 }
 function ajaxSearchTee(){
 	$('#teeSearch').keyup(function(e) {
-		console.log($(this));
 		var search = $(this).val();
 		$.ajax({
 			url: '../controller/ajax_tee_search.php',
@@ -247,11 +245,12 @@ function ajaxSearchTee(){
 			console.log("complete");
 			if ($('#teeSearch').val() == "") {
 				$('#resultAjaxTee').html("");
-			};
+			}
 		});
 		
 	});
 }
+
 
 /********SLIDER HOME********/
 (function($, window, document, undefined) {

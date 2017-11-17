@@ -580,8 +580,10 @@
 		        <div class="modal-content">					
 					<div id="deleteTee">
 					<p>Seguro que quieres borrar la camiseta con ID: <span id="deleteTeeId"></span></p>
-					<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
-					<a id="actionDeleteTee">Borrar</a>
+					<div class="btn-flex">
+						<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+						<a id="actionDeleteTee">Borrar</a>
+					</div>
 					</div> 
 		        </div>
 		    </div>

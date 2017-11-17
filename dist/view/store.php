@@ -4,7 +4,7 @@
   include 'slider.html';
  ?>
 
- <div id="mainContent" class="main-content">
+ <div id="mainContent" class="home main-content">
  	<div class="container">
  		<div class="grid-wrapper">
 		  	<div class="grid-box a">Destacado</div>
@@ -30,7 +30,7 @@
 	              			<div class="form-input">
 	                			<input type="text" placeholder="First Name*" name="nombre">
 	              			</div>
-				             <div class="form-input">
+				            <div class="form-input">
 				                <input type="text" placeholder="Second Name*" name="apellido">
 				            </div>
 	            		</div>
