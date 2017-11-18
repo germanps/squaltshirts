@@ -83,7 +83,11 @@ jQuery(document).ready(function($) {
 			//pasamos el id de la categoria a borrar por GET al servidor
 			$('#actionDeleteCat').attr("href", "../controller/delete_cat.php?item=" + idCat );
 		}
-		
+	});
+
+	//Show Detalls
+	$('#detalleTrigger').click(function(e) {
+		$('#showDetallsModal').show();
 	});
 
 

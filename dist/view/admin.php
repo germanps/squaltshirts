@@ -281,16 +281,13 @@
 	                                <th>Dirección</th>
 	                                <th>Descuento</th>
 	                                <th>Total a pagar</th>
-	                                <!-- <th class="text-right">Acciones</th> -->
+	                                <th class="text-right">Acción</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody>
 	                            <?php include "admin_sales_view.php" ?>
 	                        </tbody>
 	                    </table>
-	                    <div class="detalle-pedido">
-	                    	<?php include "admin_sale_detall.php" ?>
-	                    </div>
 					</div>
 
 				</section>
@@ -577,6 +574,20 @@
 		    </div>
 		</div>
 
+		<!--=========== Show Detalls ===========-->
+		<div class="modal show-detalls-modal" id="showDetallsModal">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">	
+					<div class="detalle-pedido container">
+			        	<?php include "admin_sale_detall.php" ?>
+			        </div>
+			        <div class="modal-footer container">
+	                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cerrar</button>
+	                    <!-- <button type="button" class="btn btn-add-sell" data-dismiss="modal">Añadir item</button> -->
+	                </div>
+		        </div>
+		    </div>
+		</div>
 
 		<!--============= DROPS =============-->
 		<!-- Delete user -->

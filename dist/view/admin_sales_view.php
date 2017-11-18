@@ -27,6 +27,9 @@
 	                <td>$direccion</td>
 	                <td>$descuento</td>
 	                <td>$monto_final </td>
+	                <td>
+	                	<span id='detalleTrigger' class='detalle-trigger'>Detalle</span>
+	                </td>
 	             </tr>";
 	             $contador_ventas++;
         }

@@ -641,6 +641,90 @@ a{
             }
         }
     }
+    /* ===== Detaller trigger ===== */
+    .detalle-trigger{
+        padding-bottom: .2rem;
+        border-bottom: 1px solid var(--abbey);
+        transition: .2s all ease;
+        cursor: pointer;
+        &:hover{
+            color: var(--vermilion);
+            border-color: var(--vermilion);
+        }
+    }
+}
+
+/* ===== Apartado Detalle del pedido ===== */
+.show-detalls-modal{
+
+    .modal-content{
+        width: 100% !important;
+
+        .detalle-pedido{
+            width: 100%;
+            padding: 2rem 0;
+            display: flex;
+            justify-content: flex-start;
+
+            .detalle-sale-result{
+                border: 1px solid var(--white);
+                padding: 1rem;
+                margin-bottom: .5rem;
+                margin-right: .5rem;
+
+                h4{
+                    font-size: 2rem;
+                    text-align: center;
+                    color: var(--mountainMeadow);
+                    text-decoration: underline;
+                }
+                p{
+                    margin: .5rem 0;
+                    display: flex;
+                    justify-content: space-between;
+
+                    span:first-child{
+                        color: var(--vermilion);
+                    }
+                }
+                
+                span.detall-img{
+                    width: 180px;
+                    display: block;
+                    img{
+                        width: 100%;
+                        height: auto;
+                        max-width: 100%;
+                    }
+                }
+                
+            }
+        }
+        .modal-footer{
+            .btn-cancel{
+                background-color: var(--vermilion);
+                border: none;
+                padding: .2rem .5rem;
+                transition: .2s all ease;
+                &:hover{
+                    background-color: var(--white);
+                    color: var(--vermilion);
+                    outline:1px solid var(--vermilion);
+                }
+            }
+            .btn-add-sell{
+                background-color: var(--mountainMeadow);
+                border: none;
+                padding: .2rem .5rem;
+                transition: .2s all ease;
+                &:hover{
+                    background-color: var(--white);
+                    color: var(--mountainMeadow);
+                    outline:1px solid var(--mountainMeadow);
+                }
+            }
+        }
+    }
 }
 
 .modal{

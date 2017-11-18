@@ -12,11 +12,20 @@
 			extract($fila_detall);
 			echo "
 			
-			<article class='detall-sale-result'>
+			<article class='detalle-sale-result'>
 				<h4>Artículo $contador_detall</h4>
-				<span class='detall-name'>$nombre</span>
-				<span class='detall-prize'>Precio unidad: $precio</span>
-				<span class='detall-units'>Cantidad: $cantidad</span>
+				<p class='detall-name'>
+					<span>Producto: </span>
+					<span>$nombre</span>
+				</p>
+				<p class='detall-prize'>
+					<span>Precio unidad:</span>
+					<span> $precio</span>
+				</p>
+				<p class='detall-units'>
+					<span>Cantidad</span>
+					<span> $cantidad</span>
+				</p>
 				<span class='detall-img'>
 					<img src='../src/img/camisetas/$imagen' alt='Imagen'>
 				</span>
@@ -29,8 +38,8 @@
 	}
 	
 	//Update del monto final en la tabla venta
-	$update_monto = "update venta set monto_final=$monto_final where id_venta=$detalle_id_venta;";
-	$update = $conexion->query($update_monto);
+	//$update_monto = "update venta set monto_final=$monto_final where id_venta=$detalle_id_venta;";
+	//$update = $conexion->query($update_monto);
 	
 
 
