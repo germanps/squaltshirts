@@ -11,9 +11,12 @@
 			echo "<tr>
 					<td class='text-muted'>$contador_usuarios</td>
 					<td>$id_usuario</td>
-					<td>$nombre</td>
-					<td>$apellido</td>
-					<td>$dni</td>
+					<td>
+						<span>$nombre</span>
+						<span>$apellido</span>
+						<span>$dni</span>
+					</td>
+					<td>$direccion</td>
 					<td>$email</td>
 					<td>$password</td>
 					<td>$tipo_usuario</td>

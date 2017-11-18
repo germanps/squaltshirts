@@ -188,9 +188,8 @@
 			            		<tr>
 			            			<th class='text-muted'>Item nº</th>
 			            			<th>ID usuario</th>
-			            			<th>Nombre</th>
-			            			<th>Apellido</th>
-			            			<th>Dni</th>
+			            			<th>Usuario</th>
+			            			<th>Dirección</th>
 			            			<th>Email</th>
 			            			<th>Password</th>
 			            			<th>Tipo usuario</th>
@@ -261,22 +260,36 @@
 	                    </table>
 					</div>
 					<div class="sales">
-						<h2>Ventas</h2>
-						<?php 
-							$img_query = "select imagen from camiseta where id_camiseta = 1";
-							$img_resul = $conexion->query($img_query);
-	                        $img_rows = $img_resul->num_rows;
-	                        if($img_rows == 0){
-	                        	echo "No se encuentra la imagen";
-	                        }else{
-	                        	while ($fila_img = $img_resul->fetch_array()) {
-	                        		extract($fila_img);
-	                        	}
-	                        	echo "string";
-	                        }
-						 ?>
-						 <p>Imagen de prueba</p>
-						 <img src="../src/img/camisetas/<?php echo $imagen ?>" alt="">
+						<header class="users-header">
+							<h2>Ventas</h2>
+							<div class="header-actions">
+								<input id="salesSearch" class="search" type="text" placeholder="Buscar">
+								<a id="addSales" href='#' class='open-modal btn btn-danger btn-sm'>Añadir Venta</a>
+							</div>
+						</header>
+						<table id="resultAjaxSales" class="results resultados-ajax">
+
+						</table>
+						<table class="results">
+	                        <thead>
+	                            <tr>
+	                                <th class='text-muted'>Item nº</th>
+	                                <th>ID venta</th>
+	                                <th>Fecha</th>
+	                                <th>ID Usuario</th>
+	                                <th>Usuario</th>
+	                                <th>Dirección</th>
+	                                <th>Descuento</th>
+	                                <!-- <th class="text-right">Acciones</th> -->
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+	                            <?php include "admin_sales_view.php" ?>
+	                        </tbody>
+	                    </table>
+	                    <div class="detalle-pedido">
+	                    	<?php //include "admin_sale_detall.php" ?>
+	                    </div>
 					</div>
 
 				</section>
@@ -449,6 +462,10 @@
 		                    <div class="form-group">
 		                        <label for="set_userDni">Dni</label>
 		                        <input name="set_userDni" type="text" id="set_userDni" placeholder="" class="form-control" required/>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="set_userDir">Dirección</label>
+		                        <input name="set_userDir" type="text" id="set_userDir" placeholder="" class="form-control" required/>
 		                    </div>
 
 		                    <div class="form-group">

@@ -99,17 +99,19 @@ jQuery(document).ready(function($) {
 	$('.edit-usu').click(function(e) {
 		var self = $(this);
 		var id = self.parent('td').parent('tr').find('td:nth-child(2)').text();
-		var nombre = self.parent('td').parent('tr').find('td:nth-child(3)').text();
-		var apellido = self.parent('td').parent('tr').find('td:nth-child(4)').text();
-		var dni = self.parent('td').parent('tr').find('td:nth-child(5)').text();
-		var email = self.parent('td').parent('tr').find('td:nth-child(6)').text();
-		var pass = self.parent('td').parent('tr').find('td:nth-child(7)').text();
-		var tipo = self.parent('td').parent('tr').find('td:nth-child(8)').text();
+		var nombre = self.parent('td').parent('tr').find('td:nth-child(3)').find('span:nth-child(1)').text();
+		var apellido = self.parent('td').parent('tr').find('td:nth-child(3)').find('span:nth-child(2)').text();
+		var dni = self.parent('td').parent('tr').find('td:nth-child(3)').find('span:nth-child(3)').text();
+		var dir = self.parent('td').parent('tr').find('td:nth-child(4)').text();
+		var email = self.parent('td').parent('tr').find('td:nth-child(5)').text();
+		var pass = self.parent('td').parent('tr').find('td:nth-child(6)').text();
+		var tipo = self.parent('td').parent('tr').find('td:nth-child(7)').text();
 		var modal = $('#editUserModal');
 		modal.find('#set_userId').val(id);
 		modal.find('#set_userName').val(nombre);
 		modal.find('#set_userApellido').val(apellido);
 		modal.find('#set_userDni').val(dni);
+		modal.find('#set_userDir').val(dir);
 		modal.find('#set_userEmail').val(email);
 		modal.find('#set_userPassword').val(pass);
 		modal.find('#set_userTipo').val(tipo);
