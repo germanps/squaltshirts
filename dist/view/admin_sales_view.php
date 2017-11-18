@@ -25,7 +25,8 @@
 	                	<span>$dni</span>
 	                </td>
 	                <td>$direccion</td>
-	                <td>$descuento</td>        
+	                <td>$descuento</td>
+	                <td>$monto_final </td>
 	             </tr>";
 	             $contador_ventas++;
         }

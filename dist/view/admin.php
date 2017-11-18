@@ -280,6 +280,7 @@
 	                                <th>Usuario</th>
 	                                <th>Dirección</th>
 	                                <th>Descuento</th>
+	                                <th>Total a pagar</th>
 	                                <!-- <th class="text-right">Acciones</th> -->
 	                            </tr>
 	                        </thead>
@@ -288,7 +289,7 @@
 	                        </tbody>
 	                    </table>
 	                    <div class="detalle-pedido">
-	                    	<?php //include "admin_sale_detall.php" ?>
+	                    	<?php include "admin_sale_detall.php" ?>
 	                    </div>
 					</div>
 
