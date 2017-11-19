@@ -16,6 +16,7 @@ function buscaAjax(){
 	ajaxSearchAdmin();
 	ajaxSearchCat();
 	ajaxSearchTee();
+	ajaxShowDetall();
 }
 
 jQuery(document).ready(function($) {
@@ -85,16 +86,21 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	//Show Detalls
-	$('#detalleTrigger').click(function(e) {
-		$('#showDetallsModal').show();
-	});
-
-
 	/***********Cerrar modales***********/
 	$('.btn-cancel').click(function(e) {
 		$('.modal').hide(200);
 	});
+
+	/* ====== SHOW DETALLS ====== */
+	/*$('.open-detalls').click(function(e) {
+		var modal = $('#showDetallsModal');
+		modal.css('display', 'block');
+	});*/
+	/*$('.show-detall').click(function(e) {
+		var self = $(this);
+		var row = self.parent('td').parent('tr');
+		row.next('tr').toggle(100);
+	});*/
 });
 
 /********Edit values********/
@@ -187,14 +193,14 @@ function ajaxSearchAdmin(){
 			}
 		})
 		.done(function(resultado) {
-			//console.log("success");
+			console.log("success");
 			$('#resultAjaxUsu').html(resultado);
 		})
 		.fail(function() {
-			//console.log("error");
+			console.log("error");
 		})
 		.always(function() {
-			//console.log("complete");
+			console.log("complete");
 			if ($('#userSearch').val() == "") {
 				$('#resultAjaxUsu').html("");
 			}
@@ -218,7 +224,7 @@ function ajaxSearchCat(){
 			$('#resultAjaxCat').html(resultado);
 		})
 		.fail(function() {
-			//console.log("error");
+			console.log("error");
 		})
 		.always(function() {
 			console.log("complete");
@@ -245,7 +251,7 @@ function ajaxSearchTee(){
 			$('#resultAjaxTee').html(resultado);
 		})
 		.fail(function() {
-			//console.log("error");
+			console.log("error");
 		})
 		.always(function() {
 			console.log("complete");
@@ -256,6 +262,39 @@ function ajaxSearchTee(){
 		
 	});
 }
+
+function ajaxShowDetall () {
+	$('.show-detall').click(function(e) {
+		var self = $(this);
+		var id_venta = self.attr('id');
+		$('#closeDetall').show();
+		$.ajax({
+			url: '../controller/ajax_see_detall.php',
+			type: 'POST',
+			data: {'search': id_venta},
+			beforeSend: function(){
+
+			}
+		})
+		.done(function(resultado) {
+			$('#resultAjaxSales').css('display', 'block');
+			$('#resultAjaxSales .results-ajax').html(resultado);
+			$('#closeDetall').click(function(e) {
+				$('#resultAjaxSales').hide();
+				$(this).hide();
+			});
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+	});
+}
+
+
 
 
 /********SLIDER HOME********/

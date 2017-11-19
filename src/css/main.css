@@ -530,6 +530,12 @@ a{
                         justify-content: space-between;
                     }
                 }
+                .detalls-row{
+                    display: none;
+                    td{
+                        display: table-cell !important;
+                    }
+                }
 
                  /*Resultados busqueda ajax*/
                 &.resultados-ajax{
@@ -655,78 +661,66 @@ a{
 }
 
 /* ===== Apartado Detalle del pedido ===== */
-.show-detalls-modal{
+.ajax-detalls{
+    width: 100%;
+    padding: 1rem;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--opaBlack);
+    width: 100%;
+    height: 100vh;
 
-    .modal-content{
-        width: 100% !important;
+    .results-ajax{
+        display: flex;
+        justify-content: flex-start;
+       
 
-        .detalle-pedido{
-            width: 100%;
-            padding: 2rem 0;
-            display: flex;
-            justify-content: flex-start;
+        .detalle-sale-result{
+            border: 1px solid var(--white);
+            padding: 1rem;
+            margin-bottom: .5rem;
+            margin-right: .5rem;
+            background-color: var(--abbey);
 
-            .detalle-sale-result{
-                border: 1px solid var(--white);
-                padding: 1rem;
-                margin-bottom: .5rem;
-                margin-right: .5rem;
-
-                h4{
-                    font-size: 2rem;
-                    text-align: center;
-                    color: var(--mountainMeadow);
-                    text-decoration: underline;
-                }
-                p{
-                    margin: .5rem 0;
-                    display: flex;
-                    justify-content: space-between;
-
-                    span:first-child{
-                        color: var(--vermilion);
-                    }
-                }
-                
-                span.detall-img{
-                    width: 180px;
-                    display: block;
-                    img{
-                        width: 100%;
-                        height: auto;
-                        max-width: 100%;
-                    }
-                }
-                
+            h4{
+                font-size: 1.5rem;
+                text-align: center;
+                color: var(--white) !important;
+                text-decoration: underline;
             }
-        }
-        .modal-footer{
-            .btn-cancel{
-                background-color: var(--vermilion);
-                border: none;
-                padding: .2rem .5rem;
-                transition: .2s all ease;
-                &:hover{
-                    background-color: var(--white);
+            p{
+                margin: .5rem 0;
+                display: flex;
+                justify-content: space-between;
+
+                span:first-child{
                     color: var(--vermilion);
-                    outline:1px solid var(--vermilion);
                 }
             }
-            .btn-add-sell{
-                background-color: var(--mountainMeadow);
-                border: none;
-                padding: .2rem .5rem;
-                transition: .2s all ease;
-                &:hover{
-                    background-color: var(--white);
-                    color: var(--mountainMeadow);
-                    outline:1px solid var(--mountainMeadow);
+            
+            span.detall-img{
+                width: 180px;
+                display: block;
+                img{
+                    width: 100%;
+                    height: auto;
+                    max-width: 100%;
                 }
             }
+            
         }
     }
 }
-
+#closeDetall{
+    display: none;
+    background-color: var(--vermilion);
+    color: var(--white);
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    border: 1px solid var(--white);
+}
 .modal{
     position: absolute;
     background-color: var(--opaModal);

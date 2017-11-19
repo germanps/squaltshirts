@@ -84,17 +84,13 @@
 							<div class="left-info">
 								<div class="lifetime-sales">
 									<h4>Total Ventas</h4>
-									<span class="lifetime-total-sales">
-										<?php
-
-									    echo "2500 €";
-
-									    ?>
-
-									</span>
+									<?php include "dashboard_sales.php"; ?>
 								</div>
 								<div class="best-order">
 									<h4>Mejor Venta</h4>
+									<ul>
+										<?php include "dashboard_best_sell.php" ?>
+									</ul>
 								</div>
 							</div>
 							<div class="right-info">
@@ -267,9 +263,9 @@
 								<a id="addSales" href='#' class='open-modal btn btn-danger btn-sm'>Añadir Venta</a>
 							</div>
 						</header>
-						<table id="resultAjaxSales" class="results resultados-ajax">
-
-						</table>
+						<!-- <table id="resultAjaxSales" class="results resultados-ajax">
+						
+						</table> -->
 						<table class="results">
 	                        <thead>
 	                            <tr>
@@ -288,6 +284,12 @@
 	                            <?php include "admin_sales_view.php" ?>
 	                        </tbody>
 	                    </table>
+	                    <div id="resultAjaxSales" class="results resultados-ajax ajax-detalls">
+							<div class="results-ajax">
+								
+							</div>
+							<button id='closeDetall' type='button' class='btn btn-cancel' data-dismiss='modal'>Cerrar</button>
+						</div>
 					</div>
 
 				</section>
@@ -315,6 +317,11 @@
 	                    <div class="form-group">
 	                        <label for="diniUserId">Dni</label>
 	                        <input name="diniUser" type="text" id="diniUserId" placeholder="" class="form-control" required/>
+	                    </div>
+
+	                    <div class="form-group">
+	                        <label for="dirUserId">Dirección</label>
+	                        <input name="dirUser" type="text" id="dirUserId" placeholder="" class="form-control" required/>
 	                    </div>
 
 	                    <div class="form-group">
@@ -570,21 +577,6 @@
 		                    <button type="submit" class="btn btn-success">Editar categoria</button>
 		                </div>
 		            </form>
-		        </div>
-		    </div>
-		</div>
-
-		<!--=========== Show Detalls ===========-->
-		<div class="modal show-detalls-modal" id="showDetallsModal">
-		    <div class="modal-dialog" role="document">
-		        <div class="modal-content">	
-					<div class="detalle-pedido container">
-			        	<?php include "admin_sale_detall.php" ?>
-			        </div>
-			        <div class="modal-footer container">
-	                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cerrar</button>
-	                    <!-- <button type="button" class="btn btn-add-sell" data-dismiss="modal">Añadir item</button> -->
-	                </div>
 		        </div>
 		    </div>
 		</div>

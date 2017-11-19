@@ -1,7 +1,6 @@
 <?php 
 	//$sale_query = "select v.id_venta, v.fecha, v.monto_final, v.descuento, v.usuario_id_usuario, d.detalle_id_venta, d.detalle_id_camiseta, d.cantidad, d.precio from venta v, venta_detalle d where  v.id_venta = d.detalle_id_venta group by v.id_venta order by v.id_venta;";
 	$sale_query = "select * from usuario u inner join venta v on u.id_usuario = v.usuario_id_usuario;";
-
 	$sale_resul = $conexion->query($sale_query);
 	$sale_rows = $sale_resul->num_rows;
 
@@ -14,7 +13,7 @@
 		while($fila_sale = $sale_resul->fetch_array()){
 			extract($fila_sale);
 			$id_user = $usuario_id_usuario;
-			echo "<tr>
+			echo "<tr data-target='$id_venta'>
 	                <td class='text-muted'>$contador_ventas</td>
 	                <td>$id_venta</td> 
 	                <td>$fecha</td>
@@ -28,9 +27,11 @@
 	                <td>$descuento</td>
 	                <td>$monto_final </td>
 	                <td>
-	                	<span id='detalleTrigger' class='detalle-trigger'>Detalle</span>
+	                	<span id='$id_venta' class='open-detalls show-detall'>Detalle</span>
 	                </td>
-	             </tr>";
+	             </tr>
+	             ";
+
 	             $contador_ventas++;
         }
 
@@ -42,4 +43,5 @@
 	    <a id='dropTee' class='btn btn-danger btn-sm open-modal delete-tee'>Delete</a>
 	</td>
 	*/
+
 ?>
