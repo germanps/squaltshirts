@@ -45,13 +45,13 @@
                             <div class="logo-wrapper">
                                 <a href="store.php" class="logo">
                                     <!-- <img src="../src/img/logo-squalo.png" alt="logo"> -->
-                                    <h1>SqüalTshirts</h1>
+                                    <!-- <h1>SqüalTshirts</h1> -->
                                 </a>
                             </div>
                         </li>
                         <li class="header-list-item">
                             <div class="search-wrapper">
-                                <form action="busqueda-camisetas.php" method="post">
+                                <form action="busqueda_camisetas.php" method="post">
                                     <input id="headerSearch" type="text" name="search" >
                                     <span class="input-search-btn fa fa-search">
                                         <input type="submit" aria-hidden="true" value="">
@@ -83,7 +83,15 @@
                             <div class="shopping-cart-wrapper">
                                 <a href="basket.php" id="cartSubmit" class="cart">
                                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                                    <span class="basket-number">0</span>
+                                    <span class="basket-number">
+                                        <?php 
+                                            if (isset($_SESSION['items_carrito'])) {
+                                               echo $_SESSION['items_carrito'];
+                                            }else{
+                                                echo "0";
+                                            }
+                                         ?>
+                                    </span>
                                 </a>
                             </div>
                         </li>

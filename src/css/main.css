@@ -1081,6 +1081,87 @@ header{
 }
 
 
+/* ================ PRUEBAS CARRITO DE COMPRA ================ */
+
+.prueba-busqueda-camiseta{
+
+    .results{
+        width: 100%;
+
+        tr{
+            border-bottom: 1px solid var(--opaBlack);
+        }
+
+        th{
+            text-align: left;
+            padding: .2rem .5rem;
+            background-color: var(--mineshaft);
+            color: var(--white);
+            font-weight: normal;
+        }
+
+        td{
+            text-align: left;
+            padding: .2rem .5rem;
+
+             a{
+                border-bottom: 1px solid var(--opaBlack);
+                transition: .2s all ease;
+                cursor: pointer;
+
+                &:hover{
+                    color: var(--vermilion);
+                    border-color: var(--vermilion);
+                }
+            }
+
+            &:last-child{
+                display:flex;
+                justify-content: space-between;
+            }
+        }
+        .detalls-row{
+            display: none;
+            td{
+                display: table-cell !important;
+            }
+        }
+
+         /*Resultados busqueda ajax*/
+        &.resultados-ajax{
+            color: var(--white);
+            margin-bottom: 1rem;
+
+            tr:last-child{
+                border-bottom: none;
+            }
+
+            h4{
+                color: var(--mineshaft);
+            }
+            td{
+                background-color: var(--mountainMeadow);
+            }
+            .bg-error{
+                background-color: var(--vermilion);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ============== FOOTER ==============*/
 .site-footer{
