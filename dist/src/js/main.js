@@ -17,6 +17,7 @@ function buscaAjax(){
 	ajaxSearchCat();
 	ajaxSearchTee();
 	ajaxShowDetall();
+	ajaxShowCatalogue();
 }
 
 jQuery(document).ready(function($) {
@@ -294,6 +295,32 @@ function ajaxShowDetall () {
 	});
 }
 
+function ajaxShowCatalogue () {
+	$('#catList li').click(function(e) {
+		var self = $(this);
+		var cat = self.attr('data-name');
+		$.ajax({
+			url: '../controller/ajax_print_cat.php',
+			type: 'POST',
+			data: {'search': cat},
+			beforeSend: function(){
+
+			}
+		})
+		.done(function(resultado) {
+			console.log("success");
+			$('#printTees').html(resultado);
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+	});
+
+}
 
 
 

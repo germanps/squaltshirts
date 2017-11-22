@@ -3,6 +3,7 @@
     include 'header.php';
     require('../controller/conexion.php');
     //$palabra_clave = $_POST['search'];
+    
  ?>
 
 <div class="prueba-busqueda-camiseta">
