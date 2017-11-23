@@ -21,7 +21,7 @@
 	</aside>
 	<section id="mainContent" class="main-content">
 		<div class="show-tee-by-cat">
-			<h4>Catalogo</h4>
+		<!-- <h4>Catalogo</h4> -->
 			<div id="printTees" class='print-tees wrapper'>
 				<?php 
 					include '../controller/show_all_tee.php';
@@ -61,7 +61,6 @@
 			-crear venta (-actualizar el total de la venta (id))
 			-rescatar la última venta (id)
 			-hacer los inserts en el detalle venta
-	
     	*/
 
 	 ?>

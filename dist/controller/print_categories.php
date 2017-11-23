@@ -7,7 +7,7 @@
     }else{
         while ($fila_cat = $cat_resul->fetch_array()) {
             extract($fila_cat);
-            echo "<li data-name='$id_categoria'>$nombre</li>";
+            echo "<li class='fa fa-arrow-right' data-name='$id_categoria'>$nombre</li>";
         }
     }
 

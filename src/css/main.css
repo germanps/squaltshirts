@@ -1082,7 +1082,7 @@ header{
 }
  
 
-/* ================ PRUEBAS CARRITO DE COMPRA ================ */
+/* ================ PRUEBAS CARRITO DE COMPRA (borrar al acabar)================ */
 
 .prueba-busqueda-camiseta{
 
@@ -1155,16 +1155,43 @@ header{
 
 /* ================ CATALOGO ================ */
 .main-grid{
-    //aside.left
+    /*aside.left*/
     .left-content{
-
-        .cat-list{
-            li{
-                cursor: pointer; 
-            }
+        h4{
+            text-align: center;
+            background-color: var(--mineshaft);
+            color: var(--white);
+            padding: .5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 .5rem;
         }
+        .cat-categories{
+            margin-top: 1rem;
+            padding: 0 .5rem;
+
+            .cat-list{
+                li{
+                    cursor: pointer; 
+                    padding: .5rem 0;
+                    border-bottom: 1px dashed var(--mercury);
+                    display: block;
+                    position: relative;
+                    font-family: var(--oswald);
+
+                    &:before{
+                        font-size: .5rem;
+                        position: absolute;
+                        right: 4px;
+                        top: 13px;
+                        font-family: FontAwesome !important;
+                    }
+                }
+            } 
+        }
+        
     }
-    //section.content
+    /*section.content*/
     .main-content{
 
     }
