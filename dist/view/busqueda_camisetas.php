@@ -1,9 +1,7 @@
 <?php 
     session_start();
     include 'header.php';
-    require('../controller/conexion.php');
-    //$palabra_clave = $_POST['search'];
-    
+    require('../controller/conexion.php');    
  ?>
 
 <div class="prueba-busqueda-camiseta">
@@ -19,18 +17,18 @@
 			    while ($fila_product = $product_resul->fetch_array()) {
 			        extract($fila_product);
 
-			        echo "<tr>
-			                <td class='text-muted'>$contador_camiseta</td>
-			                <td>$id_camiseta</td>
-			                <td>$fila_product[1]</td>
-			                <td>$descripcion</td>
-			                <td>$cantidad</td>
-			                <td>$precio</td>
-			                <td>$color</td>
-			                <td>$talla</td>
-			                <td>$imagen</td>
-			                <td>$nombre</td>
-			                <td> 
+			        echo "<ul class='product-single-list'>
+			                <li>$contador_camiseta</li>
+			                <li>$id_camiseta</li>
+			                <li>$fila_product[1]</li>
+			                <li>$descripcion</li>
+			                <li>$cantidad</li>
+			                <li>$precio</li>
+			                <li>$color</li>
+			                <li>$talla</li>
+			                <li>$imagen</li>
+			                <li>$nombre</li>
+			                <li> 
 			                    <form action='../controller/agregar_carrito.php' method='post'>
 			                    	<input type='hidden' name='id-tee' value='$id_camiseta'>
 			                    	<input type='hidden' name='nombre-tee' value='$fila_product[1]'>
@@ -44,8 +42,8 @@
 			                    	<input type='number' name='cantidad-compra'>
 			                    	<input type='submit' value='Añadir al carrito'>
 			                    </form>
-			                </td>
-			             </tr>";
+			                </li>
+			             </ul>";
 			             $contador_camiseta++;
 			        }
 			    }
