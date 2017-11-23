@@ -14,6 +14,7 @@
 		while ($fila = $cat_tee_resul->fetch_array()) {
 			extract($fila);
 			echo "
+				<div class='tee-wrapper'>
 					<ul class='product-single-list'>
 						<li>$nombre</li>
 						<li>$descripcion</li>
@@ -29,9 +30,9 @@
 								<input type='hidden' name='id-tee' value='$id_camiseta'>
 								<input type='submit' value='Ver detalles'>
 							</form>
-							
 						</li>
 					</ul>
+				</div>
 				";
 			$contador++;
 		}

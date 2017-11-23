@@ -10,24 +10,26 @@
 		while ($fila = $tee_resul->fetch_array()) {
 			extract($fila);
 			echo "
-				<ul class='product-single-list'>
-					<li>$nombre</li>
-					<li>$descripcion</li>
-					<li>$cantidad</li>
-					<li>
-						<img src='../src/imgcamisetas/$imagen' alt='camiseta'>
-					</li>
-					<li>$precio</li>
-					<li>$color</li>
-					<li>$talla</span>
-					<li>
-						<form action='../view/tee_detall.php' method='post'>
-							<input type='hidden' name='id-tee' value='$id_camiseta'>
-							<input type='submit' value='Ver detalles'>
-						</form>
-						
-					</li>
-				</ul>
+				<div class='tee-wrapper'>
+					<ul class='product-single-list'>
+						<li>$nombre</li>
+						<li>$descripcion</li>
+						<li>$cantidad</li>
+						<li>
+							<img src='../src/imgcamisetas/$imagen' alt='camiseta'>
+						</li>
+						<li>$precio</li>
+						<li>$color</li>
+						<li>$talla</span>
+						<li>
+							<form action='../view/tee_detall.php' method='post'>
+								<input type='hidden' name='id-tee' value='$id_camiseta'>
+								<input type='submit' value='Ver detalles'>
+							</form>
+							
+						</li>
+					</ul>
+				</div>
 			";
 		}
 	}
