@@ -21,23 +21,32 @@
 					<li>$color</li>
 					<li>$talla</span>
 					<li>
-						<form action='../controller/agregar_carrito.php' method='post'>
-	                    	<input type='hidden' name='id-tee' value='$id_camiseta'>
-	                    	<input type='hidden' name='nombre-tee' value='$fila[1]'>
-	                    	<input type='hidden' name='descripcion-tee' value='$descripcion'>
-	                    	<input type='hidden' name='stock-tee' value='$cantidad'>
-	                    	<input type='hidden' name='precio-tee' value='$precio'>
-	                    	<input type='hidden' name='color-tee' value='$color'>
-	                    	<input type='hidden' name='talla-tee' value='$talla'>
-	                    	<input type='hidden' name='imagen-tee' value='$imagen'>
-	                    	<input type='hidden' name='nombre-cat-tee' value='$nombre'>
-	                    	<input type='number' name='cantidad-compra'>
-	                    	<input type='submit' value='Añadir al carrito'>
-	                    </form>
+						<form action='../view/tee_detall.php' method='post'>
+							<input type='hidden' name='id-tee' value='$id_camiseta'>
+							<input type='submit' value='Ver detalles'>
+						</form>
+						
 					</li>
 				</ul>
 			";
 		}
 	}
+
+/*HTML PARA LA ACCIÓN DE AÑADIR AL CARRITO
+
+	<form action='../controller/agregar_carrito.php' method='post'>
+		<input type='hidden' name='id-tee' value='$id_camiseta'>
+		<input type='hidden' name='nombre-tee' value='$fila[1]'>
+		<input type='hidden' name='descripcion-tee' value='$descripcion'>
+		<input type='hidden' name='stock-tee' value='$cantidad'>
+		<input type='hidden' name='precio-tee' value='$precio'>
+		<input type='hidden' name='color-tee' value='$color'>
+		<input type='hidden' name='talla-tee' value='$talla'>
+		<input type='hidden' name='imagen-tee' value='$imagen'>
+		<input type='hidden' name='nombre-cat-tee' value='$nombre'>
+		<input type='number' name='cantidad-compra'>
+		<input type='submit' value='Añadir al carrito'>
+	</form>
+*/
 
  ?>

@@ -19,11 +19,18 @@
 						<li>$descripcion</li>
 						<li>$cantidad</li>
 						<li>
-							<img src='../src/img/camisetas/$imagen' alt='camiseta'>
+							<img src='../src/imgcamisetas/$imagen' alt='camiseta'>
 						</li>
 						<li>$precio</li>
 						<li>$color</li>
 						<li>$talla</span>
+						<li>
+							<form action='../view/tee_detall.php' method='post'>
+								<input type='hidden' name='id-tee' value='$id_camiseta'>
+								<input type='submit' value='Ver detalles'>
+							</form>
+							
+						</li>
 					</ul>
 				";
 			$contador++;
