@@ -32,19 +32,16 @@
 	</section>
 </div>
 
-
-<!-- ==== comprobar que el articulo va al array del carrito (refoactorizar y luego borrar html) ==== -->
 <div class="prueba-busqueda-camiseta">
 	<div class="results">
 	<?php 
 		 if (isset($_SESSION['carrito'])) {
 	    	$carrito = $_SESSION['carrito'];
-	    	//$items = $_SESSION['items'];
 
-	    	$_SESSION['items_carrito'] = count($carrito);
+	    	//$_SESSION['items_carrito'] = count($carrito);
 
 	    	echo count($carrito);
-	    	print_r($carrito);
+
 	    	$total_pedido = 0;
 	    	foreach ($carrito as $row => $value) {
     			foreach ($carrito[$row] as $keyItem => $valueItem) {
@@ -54,6 +51,7 @@
     				
     			}
 	    	}
+	    	print_r($carrito);
 	    	echo "<span>TOTAL:</span>";
 	    	echo "<span>$total_pedido</span>";
 	    }

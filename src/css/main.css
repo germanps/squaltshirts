@@ -1064,20 +1064,13 @@ header{
 .main-grid{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-top: 1rem;
-    box-shadow: 0px -5px 5px #d6d8d8;
 
     .left-content{
-        width: 200px;
-        //background-color: skyblue;
-        border-right: 1px solid #d6d8d8;
-        height: 800px;       
+        width: 200px;    
     }
     .main-content{
         width: calc(100% - 200px);
-        //background-color: teal;
-        height: 800px;
     }
 }
  
@@ -1087,67 +1080,9 @@ header{
 .prueba-busqueda-camiseta{
 
     .results{
-        width: 100%;
-
-        tr{
-            border-bottom: 1px solid var(--opaBlack);
-        }
-
-        th{
-            text-align: left;
-            padding: .2rem .5rem;
-            background-color: var(--mineshaft);
-            color: var(--white);
-            font-weight: normal;
-        }
-
-        td{
-            text-align: left;
-            padding: .2rem .5rem;
-
-             a{
-                border-bottom: 1px solid var(--opaBlack);
-                transition: .2s all ease;
-                cursor: pointer;
-
-                &:hover{
-                    color: var(--vermilion);
-                    border-color: var(--vermilion);
-                }
-            }
-
-            &:last-child{
-                display:flex;
-                justify-content: space-between;
-            }
-        }
-        .detalls-row{
-            display: none;
-            td{
-                display: table-cell !important;
-            }
-        }
-
-         /*Resultados busqueda ajax*/
-        &.resultados-ajax{
-            color: var(--white);
-            margin-bottom: 1rem;
-
-            tr:last-child{
-                border-bottom: none;
-            }
-
-            h4{
-                color: var(--mineshaft);
-            }
-            td{
-                background-color: var(--mountainMeadow);
-            }
-            .bg-error{
-                background-color: var(--vermilion);
-            }
-        }
+        width: 50%;
     }
+
 }
 
 
@@ -1159,12 +1094,12 @@ header{
     .left-content{
         h4{
             text-align: center;
-            background-color: var(--mineshaft);
-            color: var(--white);
+            color: var(--mineshaft);
             padding: .5rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin: 0 .5rem;
+            border-bottom: 1px solid var(--mercury);
         }
         .cat-categories{
             margin-top: 1rem;
@@ -1200,12 +1135,52 @@ header{
 
             .tee-wrapper{
                 width: 25%;
-                height: 300px;
+                height: 400px;
+                padding: 0 .5rem;
+
+                .product-single-list{
+                    li{
+                        text-align: center;
+                        margin-bottom: .5rem;
+
+                        &.ghost-button{
+                            input[type='submit']{
+                                background-color: var(--vermilion);
+                                border:1px solid var(--vermilion);
+                                color: var(--white);
+                                transition: .2s all ease;
+                                box-shadow: 3px 3px 1px var(--abbey);
+
+                                &:hover{
+                                    background-color: var(--white);
+                                    border:1px solid var(--vermilion);
+                                    color: var(--vermilion);
+                                    box-shadow: -1px -1px 3px var(--vermilion);
+                                }
+                            }
+                            
+                        }
+                    }
+                    img{
+                        width: 100%;
+                        max-width: 100%;
+                        height:auto;
+                    } 
+                }
+
+                /*Single page detall tee*/
+
+                &.single-page{
+                    
+                    input[type='number']{
+                        max-width: 35px;
+                    }
+                }
             }
         }
     }
-}
-
+}   
+ 
 
 
 

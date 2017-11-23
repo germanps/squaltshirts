@@ -11,7 +11,7 @@
 		while ($fila = $tee_resul->fetch_array()) {
 			extract($fila);
 			echo "
-				<div class='tee-wrapper'>
+				<div class='tee-wrapper single-page'>
 					<ul class='product-single-list'>
 						<li>$nombre</li>
 						<li>$descripcion</li>
@@ -22,7 +22,7 @@
 						<li>$precio</li>
 						<li>$color</li>
 						<li>$talla</span>
-						<li>
+						<li class='add-to-form'>
 							<form action='../controller/agregar_carrito.php' method='post'>
 								<input type='hidden' name='id-tee' value='$id_camiseta'>
 								<input type='hidden' name='nombre-tee' value='$fila[1]'>
@@ -33,8 +33,8 @@
 								<input type='hidden' name='talla-tee' value='$talla'>
 								<input type='hidden' name='imagen-tee' value='$imagen'>
 								<input type='hidden' name='nombre-cat-tee' value='$nombre'>
-								<input type='number' name='cantidad-compra'>
-								<input type='submit' value='Añadir al carrito'>
+								<input type='number' name='cantidad-compra' value='1'>
+								<input id='addCart' type='submit' value='Añadir al carrito'>
 							</form>
 		
 						</li>
@@ -45,6 +45,6 @@
 		}
 	}
 
-	echo "detalle camiseta: $id";
+	//echo "detalle camiseta: $id";
 
 ?>

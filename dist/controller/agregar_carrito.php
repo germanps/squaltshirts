@@ -45,14 +45,12 @@
 				$carrito = array();
 			}
 			array_push($carrito, $items);
+			//Array con el carrito de compra
 			$_SESSION['carrito'] = $carrito;
+			//contador para la cesta del header
+			$_SESSION['items_carrito'] = count($carrito);
 		}
 	}
-	//array_push($items, $id_camiseta, $nombre_camiseta, $descripcion, $stock, $precio, $color, $talla, $imagen, $nombre_cat, $cantidad_comprar, $total_monto_registro);
-	
 
-	//$_SESSION['items_carrito'] = count($carrito);
-
-	
 	header("location: ../view/catalogo.php");
 ?>
