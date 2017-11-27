@@ -20,7 +20,7 @@
 						<li>$descripcion</li>
 						<li>$cantidad</li>
 						<li>
-							<img src='../src/imgcamisetas/$imagen' alt='camiseta'>
+							<img src='../src/img/camisetas/$imagen' alt='camiseta'>
 						</li>
 						<li>$precio</li>
 						<li>$color</li>

@@ -1073,22 +1073,9 @@ header{
         width: calc(100% - 200px);
     }
 }
- 
-
-/* ================ PRUEBAS CARRITO DE COMPRA (borrar al acabar)================ */
-
-.prueba-busqueda-camiseta{
-
-    .results{
-        width: 50%;
-    }
-
-}
 
 
-
-
-/* ================ CATALOGO ================ */
+/* ============= CATALOGO ============ */
 .main-grid{
     /*aside.left*/
     .left-content{
@@ -1181,11 +1168,14 @@ header{
     }
 }   
  
+/* ============= DETALLE CAMISETA ============= */
+.single-tee{
+    width: 100% !important;
 
-
-
-
-
+    .show-single{
+        justify-content: space-between;
+    }
+}
 
 
 
