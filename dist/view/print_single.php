@@ -20,11 +20,17 @@
 				</div>
 				<div class='tee-wrapper-detalls single-page-detalls'>
 					<ul class='product-single-list'>
-						<li class='single-name'>$nombre</li>
-						<li class='single-description'>$descripcion</li>
-						<li class='single-price'>$precio</li>
-						<li class='single-color'>$color</li>
-						<li class='single-size'>$talla</span>
+						<li class='single-name'><span>$nombre</span><span>( $talla )</span></li>
+						<li class='single-description'><p>$descripcion</p></li>
+						<li class='single-price'><p>$precio</p></li>
+						<li class='single-color'>
+							<span class='color-circle'></span>
+							<span class='color-circle'></span>
+							<span class='color-circle'></span>
+							<span class='color-circle'></span>
+							<span class='color-circle'></span>
+							<p>$color</p>
+						</li>
 						<li class='add-to-form'>
 							<form action='../controller/agregar_carrito.php' method='post'>
 								<input type='hidden' name='id-tee' value='$id_camiseta'>
@@ -43,7 +49,7 @@
 				";
 
 				if ($stock) {
-					echo "<li class='stock'>En stock!</li>";
+					echo "<li class='stock'><p>En stock! Recíbelo el Lunes!</p></li>";
 				}
 
 				echo"

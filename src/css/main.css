@@ -108,6 +108,14 @@ textarea {
     margin-top: 20px;
     display: inline-block;
     transition: .2s all ease;
+    box-shadow: 3px 3px 1px #2e2e2e;
+
+    &:hover{
+        background-color: $color;
+        border: 1px solid $bg;
+        color: $bg;
+        box-shadow: -1px -1px 3px $bg;
+    }
 }
 /* MIXIN PARA EL HOME GRID */
 @define-mixin grid-home $fondo, $color, $alto{
@@ -115,6 +123,16 @@ textarea {
     color: $color;
     padding: 1rem;
     height: $alto;
+}
+/* MIXIN PARA LOS CIRCULOS DEL DETALLE CAMISETA */
+@define-mixin colorRound $color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $color;
+    display: inline-block;
+    margin-right: 1rem;
+    border: 1px solid var(--black);
 }
 
 html{
@@ -1176,10 +1194,81 @@ header{
 
     .show-single{
         justify-content: space-between;
+
+        .tee-wrapper-image{
+            
+        }
+        .tee-wrapper-detalls{
+            p{
+                margin: 0;
+            }
+            li{
+                margin-bottom: 1rem;
+            
+                &.single-name{
+                    span{
+                        font-size: 2rem;
+                        font-weight: bold;
+                        &:first-child{
+                            padding-right:1rem;
+                        }
+                    }
+                }
+                &.single-description{
+                    font-size: 1.2rem;
+                }
+                &.single-price{
+                    font-size: 3rem;
+                }
+                &.single-color{
+                    margin-top: 2rem;
+
+                    span{
+                        &:nth-child(1){
+                            @mixin colorRound var(--vermilion);
+                        }
+                        &:nth-child(2){
+                            @mixin colorRound var(--mountainMeadow);
+                        }
+                        &:nth-child(3){
+                            @mixin colorRound var(--mercury);
+                        }
+                        &:nth-child(4){
+                            @mixin colorRound var(--white);
+                        }
+                        &:nth-child(5){
+                            @mixin colorRound var(--black);
+                        }
+                    }
+                    p{
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                    }
+                }
+                &.add-to-form{
+                    input[type="number"]{
+                        width: 30%;
+                        height: 40px;
+                        display: block;
+                        padding: .5rem;
+                        margin: auto;
+                    }
+                    input[type="submit"]{
+                        @mixin btn var(--vermilion),var(--white),var(--oswald),1rem;
+                        width: 100%;
+                        border:none;
+                    }
+                }
+                &.stock{
+                    margin-top: 2rem;
+                    p{
+                        color: var(--mountainMeadow);
+                    }
+                }
+            }
+        }
     }
 }
-
-
 
 /* ============== FOOTER ==============*/
 .site-footer{
