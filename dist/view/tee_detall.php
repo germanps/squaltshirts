@@ -25,11 +25,10 @@
 					
 
 				<?php 
-					include '../controller/print_single.php';
+					include 'print_single.php';
 				 ?>
 			<div>
-		</div>
-		
+		</div>	
 	</section>
 </div>
 

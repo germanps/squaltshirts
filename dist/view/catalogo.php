@@ -24,7 +24,7 @@
 		<!-- <h4>Catalogo</h4> -->
 			<div id="printTees" class='print-tees wrapper'>
 				<?php 
-					include '../controller/show_all_tee.php';
+					include 'show_all_tee.php';
 				?>
 			<div>
 		</div>
@@ -40,7 +40,7 @@
 
 	    	//$_SESSION['items_carrito'] = count($carrito);
 
-	    	echo count($carrito);
+	    	//echo count($carrito);
 
 	    	$total_pedido = 0;
 	    	foreach ($carrito as $row => $value) {
@@ -51,9 +51,9 @@
     				
     			}
 	    	}
-	    	print_r($carrito);
-	    	echo "<span>TOTAL:</span>";
-	    	echo "<span>$total_pedido</span>";
+	    	//print_r($carrito);
+	    	//echo "<span>TOTAL:</span>";
+	    	//echo "<span>$total_pedido</span>";
 	    }
 
     	/* Para crear una venta (mysql)

@@ -1,5 +1,5 @@
 <?php 
-	require("conexion.php");
+	require("../controller/conexion.php");
 	$query = "select * from camiseta order by nombre;";
 	$tee_resul = $conexion->query($query);
 	$tee_rows = $tee_resul->num_rows;
@@ -18,7 +18,7 @@
 						<li>$nombre</li>
 						<li>$precio</li>
 						<li class='ghost-button'>
-							<form action='../view/tee_detall.php' method='post'>
+							<form action='tee_detall.php' method='post'>
 								<input type='hidden' name='id-tee' value='$id_camiseta'>
 								<input type='submit' value='Ver detalles'>
 							</form>
