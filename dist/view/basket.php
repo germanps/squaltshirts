@@ -22,15 +22,22 @@
 		<div class="show-tee-by-cat">
 		<!-- <h4>Catalogo</h4> -->
 			<div id="printTees" class='print-tees wrapper'>
-					
+				
 
 				<?php 
+					//Si no hay items en el carrito, redireccionamos al home		    	
+					if (!isset($_SESSION['carrito'])) {
+						echo '<script type="text/javascript">
+									window.location.assign("store.php");
+							  </script>';
+					}
+
 					if (isset($_SESSION['carrito'])) {
 			    	$carrito = $_SESSION['carrito'];
 
 			    	//$_SESSION['items_carrito'] = count($carrito);
-
-			    	echo count($carrito);
+			    	//Si el carrito está vacio cargamos la store
+			    	echo "NºItems: " . count($carrito) . "<br>";
 
 			    	$total_pedido = 0;
 			    	foreach ($carrito as $row => $value) {
