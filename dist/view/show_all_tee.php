@@ -21,8 +21,7 @@
 							<form action='tee_detall.php' method='post'>
 								<input type='hidden' name='id-tee' value='$id_camiseta'>
 								<input type='submit' value='Ver detalles'>
-							</form>
-							
+							</form>						
 						</li>
 					</ul>
 				</div>

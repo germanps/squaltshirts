@@ -838,6 +838,9 @@ a{
 /* ====== HEADER ====== */
 header{
     position: relative;
+    box-shadow: 0px 5px 5px #d6d8d8;
+    margin-bottom: .5rem;
+    padding-bottom: 1rem;
     /* &:after{
         display: block;
         position: absolute;
@@ -1025,9 +1028,8 @@ header{
 
 /* ====== SLIDER ====== */
 .home-slider{
-    margin-top: 1rem;
     margin-bottom: 6rem;
-    box-shadow: 0px -5px 5px #d6d8d8;
+    
 }
 
 /*=========== MAIN CONTENT HOME===========*/
