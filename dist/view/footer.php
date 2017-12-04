@@ -38,10 +38,11 @@
             </div>
             <div class="footer-bottom container clearfix">
                 <div class="footer-info">
-                    <h4>Descuentos, ofertas, noticias y más...</h4>
+                    <h3>Descuentos, ofertas, noticias y más...</h3>
                     <div class="news-letter">
+                        <p>Suscríbete a nuestras newsletters</p>
                         <form action="busqueda_camisetas.php" method="post">
-                            <input id="newsLetter" type="text" name="newsletter" >
+                            <input id="newsLetter" type="text" name="newsletter" placeholder="Tu dirección de correo">
                             <span class="input-newsletter-btn fa fa-search">
                                 <input type="submit" aria-hidden="true" value="">
                             </span>
@@ -49,9 +50,9 @@
                     </div>
                 </div>
                 <div class="footer-about">
-                    <h4>Sobre <span>SQUALTSHIRTS</span></h4>
+                    <h3>Sobre <span>SQUALTSHIRTS</span></h3>
                     <div class="company">
-                        <h3>La compañía</h3>
+                        <h4>La compañía</h4>
                         <ul>
                             <li>
                                 <p>Sobre Nosotros</p>
@@ -68,7 +69,7 @@
                         </ul>
                     </div>
                     <div class="service">
-                        <h3>Servicio</h3>
+                        <h4>Servicio</h4>
                         <ul>
                             <li>
                                 
@@ -82,7 +83,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="menu">
+                <div class="footer-menu-social">
                     <h3>Redes <span>sociales</span></h3>
                     <nav class="social">
                         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>

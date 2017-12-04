@@ -49,8 +49,9 @@
 		    			}
 			    	}
 			    	print_r($carrito);
-			    	echo "<span>TOTAL:</span>";
-			    	echo "<span>$total_pedido</span>";
+
+			    	echo "<p>TOTAL:</p>";
+			    	echo "<p>$total_pedido</p>";
 			    }
 				?>
 			<div>
