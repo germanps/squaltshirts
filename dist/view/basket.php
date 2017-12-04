@@ -18,42 +18,54 @@
 			</div>
 		</div>
 	</aside> -->
-	<section id="mainContent" class="main-content single-tee">
-		<div class="show-tee-by-cat">
+	<section id="mainContent" class="main-content basket-shop">
+		<div class="show-basket">
 		<!-- <h4>Catalogo</h4> -->
-			<div id="printTees" class='print-tees wrapper'>
+			<div id="buyShop" class='buy-shop wrapper'>
 				
-
 				<?php 
-					//Si no hay items en el carrito, redireccionamos al home		    	
+					//Si no hay items en el carrito, redireccionamos al home	
 					if (!isset($_SESSION['carrito'])) {
 						echo '<script type="text/javascript">
 									window.location.assign("store.php");
 							  </script>';
 					}
 
-					if (isset($_SESSION['carrito'])) {
-			    	$carrito = $_SESSION['carrito'];
+					if (isset($_SESSION['carrito'])) {	
+				    	$carrito = $_SESSION['carrito'];
 
-			    	//$_SESSION['items_carrito'] = count($carrito);
-			    	//Si el carrito está vacio cargamos la store
-			    	echo "NºItems: " . count($carrito) . "<br>";
+				    	//$_SESSION['items_carrito'] = count($carrito);
 
-			    	$total_pedido = 0;
-			    	foreach ($carrito as $row => $value) {
-		    			foreach ($carrito[$row] as $keyItem => $valueItem) {
-		    				if ($keyItem == 'total_monto_registro') {
-		    					$total_pedido += $valueItem;
-		    				}
-		    				
-		    			}
-			    	}
-			    	print_r($carrito);
+				    	//echo "<p>NºItems: " . count($carrito) . "<p>";
 
-			    	echo "<p>TOTAL:</p>";
-			    	echo "<p>$total_pedido</p>";
-			    }
+				    	$total_pedido = 0;
+				    	foreach ($carrito as $row => $value) {
+			    			foreach ($value as $keyItem => $valueItem) {
+			    				if ($keyItem == 'total_monto_registro') {
+			    					$total_pedido += $valueItem;
+			    				}	
+			    			}
+				    	}
+				    	//print_r($carrito);
 				?>
+
+				<div class="buy-basket-container container">
+
+					<?php
+					    	echo "<article class='buy-basket'>";
+					    	foreach ($carrito as $key => $value) {
+					    		//echo $key;
+					    		foreach ($value as $num_item => $valor) {
+					    			echo "<p>" . $num_item . " => " . $valor . "</p>";
+					    		}
+					    	}
+					    	echo "<p>TOTAL:</p>";
+					    	echo "<p>$total_pedido</p>";
+				    		echo "</article>";
+				    	} // END if isset($_SESSION['carrito'])
+					?>
+
+				</div>
 			<div>
 		</div>
 		
