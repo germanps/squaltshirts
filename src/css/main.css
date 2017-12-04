@@ -870,7 +870,7 @@ header{
     } */
 }
 .top-bar{
-    background-color: var(--black);
+    background-color: var(--abbey);
     border-bottom: 5px solid var(--vermilion);
     line-height: 3;
 
@@ -1272,14 +1272,153 @@ header{
 
 /* ============== FOOTER ==============*/
 .site-footer{
-    background-color: var(--abbey);
-    color: var(--white);
+    background-color: var(--mercury);
+    color: var(--abbey);
+
+    .pre-footer-wrapper{
+        background-color: var(--abbey);
+        color: var(--white);
+        border-bottom: 4px solid var(--vermilion);
+
+        & > div{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .pre-footer-column {
+            width: 33.3%;
+            text-align: center;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+
+            .credit-card-list{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 65%;
+                align-items: center;
+                i{
+                    font-size: 2rem;
+                }
+            }
+            .delivery-list{
+                width: 100%;
+                height: 65%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i{
+                    font-size: 2rem;
+                    padding-right: 1rem;
+                }
+            }
+            .delivery-cost{
+                width: 100%;
+                height: 35%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                i{
+                    font-size: 1rem;
+                    padding-right: 1rem;
+                }
+                a{
+                    color: var(--mercury);
+                    border-bottom: 2px solid var(--mercury);
+                    padding-bottom: 2px;
+                }
+            }
+            .satisfaction-slogan{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h3{
+                    font-size: 1.5rem;
+                }
+
+                i{
+                    padding-right: 1rem;
+                    font-size: 2rem;
+                }
+                p{
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    .footer-bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        & > div{
+            padding-top: 2rem;
+        }
+
+        .footer-info{
+            h4{
+ 
+            }
+            .news-letter{
+                form{
+                    display: flex;
+                    //justify-content: center;
+                    //align-items: center;
+
+                    input[type="text"]{
+                        width: 200px;
+                        height: 40px;
+                        display: inline-block;
+                    }
+                    .input-newsletter-btn{
+                        position: relative;
+                        background-color: transparent;
+                        color: #fff;
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 24px;
+                        font-size: 1.5rem;
+                        cursor: pointer;
+
+                        &::before{
+                            content: "\f002";
+                            position: absolute;
+                            background-color: #000;
+                            width: 100%;
+                            height: 100%;
+                            display: -webkit-box;
+                            display: flex;
+                            -webkit-box-pack: center;
+                            justify-content: center;
+                            -webkit-box-align: center;
+                            align-items: center;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        & > div{
+            width: 33.3%;
+
+        }
+    }
 }
 
 
 
 
-
+ 
 
 /********************************************************************/
 /***********************  example postcss ***************************/

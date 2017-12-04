@@ -3,7 +3,7 @@
 	if (!isset($_POST['search'])) exit('No se han recibido datos');
 
 	$search = $conexion->real_escape_string($_POST['search']);
-	$query = "select * from camiseta where nombre_camiseta like '%$search%' ";
+	$query = "select * from camiseta where nombre like '%$search%' ";
 	$usu_resul = $conexion->query($query);
 	$usu_rows = $usu_resul->num_rows;
 	$contador = 1;
@@ -27,7 +27,7 @@
 				<tr>
 					<td>$contador</td>
 					<td>$id_camiseta</td>
-					<td>$nombre_camiseta</td>
+					<td>$nombre</td>
 					<td>$cantidad</td>
 					<td>$precio</td>
 					<td>$color</td>

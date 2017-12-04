@@ -1,18 +1,86 @@
 
         
 		<footer class="site-footer">
-            <div class="container clearfix">
-                <div class="footer-info">
-                    <h3>Sobre <span>SQUALTSHIRTS</span></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum minima aut neque. Doloremque, vitae at neque velit vero iusto blanditiis voluptas, possimus temporibus, voluptatibus repellendus dolorum sint aut et enim.</p>
+            <div class="pre-footer-wrapper ">
+                <div class="container clearfix">
+                    <div class="pre-footer-column">
+                        <ul class="credit-card-list">
+                            <li><i class="fa fa-cc-visa" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-cc-amex" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-cc-diners-club" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-cc-mastercard" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-paypal" aria-hidden="true"></i></li>
+                        </ul>
+                        <div class="delivery-cost">
+                            <i class="fa fa-arrow-right"></i>
+                            <a href="#">Ver costes y tiempos de entrega</a>
+                        </div>
+                    </div>
+                    <div class="pre-footer-column">
+                        <h3>Nuestra promesa para ti</h3>
+                        <div class="satisfaction-slogan">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            <p>Si no estás 100% satisfecho, te devolveremos tu pedido dentro del plazo de 30 días</p>
+                        </div>
+                    </div>
+                    <div class="pre-footer-column">
+                        <ul class="delivery-list">
+                            <li><i class="fa fa-ship" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-truck" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-plane" aria-hidden="true"></i></li>
+                        </ul>
+                        <div class="delivery-cost">
+                            <i class="fa fa-arrow-right"></i>
+                            <a href="#">Ver costes y tiempos de entrega</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="last-tweets">
-                    <h3>Últimos <span>tweets</span></h3>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum hic deserunt culpa fugiat iure, at aspernatur totam cum eum libero, harum, commodi voluptatem.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum hic deserunt culpa fugiat iure, at aspernatur totam cum eum libero, harum, commodi voluptatem.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum hic deserunt culpa fugiat iure, at aspernatur totam cum eum libero, harum, commodi voluptatem.</li>
-                    </ul>
+            </div>
+            <div class="footer-bottom container clearfix">
+                <div class="footer-info">
+                    <h4>Descuentos, ofertas, noticias y más...</h4>
+                    <div class="news-letter">
+                        <form action="busqueda_camisetas.php" method="post">
+                            <input id="newsLetter" type="text" name="newsletter" >
+                            <span class="input-newsletter-btn fa fa-search">
+                                <input type="submit" aria-hidden="true" value="">
+                            </span>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-about">
+                    <h4>Sobre <span>SQUALTSHIRTS</span></h4>
+                    <div class="company">
+                        <h3>La compañía</h3>
+                        <ul>
+                            <li>
+                                <p>Sobre Nosotros</p>
+                            </li>
+                            <li>
+                                <p>Empleo</p>
+                            </li>
+                            <li>
+                                <p>Términos y condiciones</p>
+                            </li>
+                            <li>
+                                <p>Privacidad</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service">
+                        <h3>Servicio</h3>
+                        <ul>
+                            <li>
+                                
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li>
+                                
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="menu">
                     <h3>Redes <span>sociales</span></h3>

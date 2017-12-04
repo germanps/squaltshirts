@@ -315,8 +315,8 @@
 	                        <input name="apellidoUser" type="text" id="apellidoUserId" placeholder="" class="form-control" required/>
 	                    </div>
 	                    <div class="form-group">
-	                        <label for="diniUserId">Dni</label>
-	                        <input name="diniUser" type="text" id="diniUserId" placeholder="" class="form-control" required/>
+	                        <label for="dniUserId">Dni</label>
+	                        <input name="dniUser" type="text" id="dniUserId" placeholder="" class="form-control" required/>
 	                    </div>
 
 	                    <div class="form-group">
