@@ -87,6 +87,7 @@
                                         <?php 
                                             if (isset($_SESSION['items_carrito'])) {
                                                echo $_SESSION['items_carrito'];
+
                                             }else{
                                                 echo "0";
                                             }

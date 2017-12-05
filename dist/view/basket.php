@@ -92,15 +92,6 @@
 						<hr>
 						<p>Total del pedido: <span class='total-order'><?php echo $total_pedido ?></span> €</p>
 						<input type="submit" value="Confirmar pedido">
-						<?php
-							print_r($carrito);
-
-							/* Para crear una venta (mysql)
-								-crear venta (-actualizar el total de la venta (id))
-								-rescatar la última venta (id)
-								-hacer los inserts en el detalle venta
-					    	*/
-						 ?>
 					</form>
 				</div>
 			</aside>

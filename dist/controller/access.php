@@ -19,6 +19,7 @@
 					header('Location:../view/admin.php');
 				}else{
 					$_SESSION['usu_user'] = $nom_usu;
+					$_SESSION['usu_mail'] = $email;
 					header('Location:../view/store.php');
 				}
 				

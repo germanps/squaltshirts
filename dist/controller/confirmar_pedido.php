@@ -5,6 +5,7 @@
 	if (isset($_SESSION['carrito']) && isset($_SESSION['usu_user'])) {	
 		$carrito = $_SESSION['carrito'];
 		$usuario = $_SESSION['usu_user'];
+		$usu_correo = $_SESSION['usu_mail'];
 		//print_r($carrito);
 		foreach ($carrito as $key => $value) {
 			foreach ($value as $num_item => $valor) {
@@ -16,18 +17,50 @@
 		}
 
 		//Capturamos el id del usuario que está comprando
-		$user_query = "select * from usuario where nombre='$usuario';";
+		$user_query = "select * from usuario where email='$usu_correo';";
 		$usu_resul = $conexion->query($user_query);
 		$usu_rows = $usu_resul->num_rows;
-
 		while ($fila = $usu_resul->fetch_array()) {
 			extract($fila);
 		}
+
+		//Hacemos el insert de la venta
+		$insert_venta = "insert into venta (id_venta, fecha, monto_final, descuento, usuario_id_usuario) values('null', CURRENT_TIMESTAMP, $total_compra, 0, $id_usuario);";
+		//$insert_venta_resul = $conexion->query($insert_venta);
+
+		//Cogemos el id del último insert de la tabla venta
+		$id_de_la_venta = mysqli_insert_id($conexion);
+
+		//Hacemos un insert en la tabla venta_detalle por cada registro del array $carrito
+		foreach ($carrito as $key => $value) {
+			foreach ($value as $num_item => $valor) {
+				//Guardamos los valores que necesitamos para el insert final
+				if ($num_item == "id_camiseta") {
+					$id_de_la_camiseta = $valor;
+				}
+
+				if ($num_item == "cantidad_comprar") {
+					$la_cantidad = $valor;
+				}
+
+				if ($num_item == "precio") {
+					$el_precio = $valor;
+				}
+			}
+			$insert_detalle_camiseta = "insert into venta_detalle (detalle_id_venta, detalle_id_usuario, detalle_id_camiseta, cantidad, precio) values($id_de_la_venta, $id_usuario, $id_de_la_camiseta, $la_cantidad, $el_precio); ";
+			$insert_detalle_camiseta_resul = $conexion->query($insert_detalle_camiseta);
+		}
 		
-		echo $total_compra;
-		echo $usuario;
-		echo $id_usuario;
+		$conexion->close();	
+		
 	}
-	
+
+	$_SESSION['carrito'] = null;
+
+	$_SESSION['items_carrito'] = null;
+
+	/*echo '<script type="text/javascript">
+				window.location.assign("../view/store.php");
+		  </script>';*/
 
 ?>
