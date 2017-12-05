@@ -52,15 +52,29 @@
 		}
 		
 		$conexion->close();	
+		//Vaciamos el carrito
+		$_SESSION['carrito'] = null;
+		$_SESSION['items_carrito'] = null;
+
+		echo '<script type="text/javascript">
+					window.location.assign("../view/store.php");
+			  </script>';
 		
+	}else{
+		if (!isset($_SESSION['carrito'])) {
+			echo "Debes ingresar algún articulo al carrito";
+			//Vaciamos el carrito
+			$_SESSION['carrito'] = null;
+			$_SESSION['items_carrito'] = null;
+			header("Refresh: 3; url=".$_SERVER['HTTP_REFERER']);//volvemos atrás
+		}
+		if (!isset($_SESSION['usu_user'])) {
+			echo "Debes iniciar sesión con tu usuario";
+			//Vaciamos el carrito
+			$_SESSION['carrito'] = null;
+			$_SESSION['items_carrito'] = null;
+			header("Refresh: 3; url=".$_SERVER['HTTP_REFERER']);//volvemos atrás
+		}
 	}
-
-	$_SESSION['carrito'] = null;
-
-	$_SESSION['items_carrito'] = null;
-
-	/*echo '<script type="text/javascript">
-				window.location.assign("../view/store.php");
-		  </script>';*/
 
 ?>
