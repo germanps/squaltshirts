@@ -859,6 +859,7 @@ header{
     box-shadow: 0px 5px 5px #d6d8d8;
     margin-bottom: .5rem;
     padding-bottom: 1rem;
+    background: url("../img/snow-header.png") repeat-x scroll 0 0;
     /* &:after{
         display: block;
         position: absolute;
@@ -1270,6 +1271,51 @@ header{
     }
 }
 
+/* ============== CARRITO DE LA COMPRA ==============*/
+.main-content.basket-shop{
+    width: 100%;
+    padding-top: 2rem;
+    h2{
+        font-weight: normal;
+        &::after{
+            font-family: FontAwesome;
+            content: "\f132";
+            color: var(--mountainMeadow);
+            padding-left: 1rem;
+        }
+    }
+    .flex-container{
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid var(--concrete);
+    }
+    .show-basket-content{ 
+        width: calc(100% - 320px);
+
+        .buy-shop{
+            border: 1px solid var(--abbey);
+        }
+    }
+
+    .show-basket-aside{
+        width: 320px;
+
+        .detall-shop{
+            height: 100%;
+            border: 1px solid var(--abbey);
+
+            form{
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+
+
 /* ============== FOOTER ==============*/
 .site-footer{
     background-color: var(--mercury);
@@ -1366,7 +1412,7 @@ header{
 
             h3{
                 margin-bottom: 2rem;
-                border-bottom: 2px solid var(--vermilion);
+                //border-bottom: 2px solid var(--vermilion);
                 display: inline-block;
             }
 
@@ -1413,14 +1459,14 @@ header{
         .footer-about{
             h3{
                 margin-bottom: 2rem;
-                border-bottom: 2px solid var(--vermilion);
+                //border-bottom: 2px solid var(--vermilion);
                 display: inline-block;
             }
         }
         .footer-menu-social{
             h3{
                 margin-bottom: 2rem;
-                border-bottom: 2px solid var(--vermilion);
+                //border-bottom: 2px solid var(--vermilion);
                 display: inline-block;
             }
             nav.social{
@@ -1450,6 +1496,7 @@ header{
         padding: 1rem 0;
         background-color: var(--abbey);
         color: var(--white);
+        margin-bottom: 0;
     }
 }
 

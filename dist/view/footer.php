@@ -38,7 +38,7 @@
             </div>
             <div class="footer-bottom container clearfix">
                 <div class="footer-info">
-                    <h3>Descuentos, ofertas, noticias y más...</h3>
+                    <h3>{ Descuentos, ofertas, noticias y más... }</h3>
                     <div class="news-letter">
                         <p>Suscríbete a nuestras newsletters</p>
                         <form action="busqueda_camisetas.php" method="post">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="footer-about">
-                    <h3>Sobre <span>SQUALTSHIRTS</span></h3>
+                    <h3>{ Sobre <span>SQUALTSHIRTS</span> }</h3>
                     <div class="company">
                         <h4>La compañía</h4>
                         <ul>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="footer-menu-social">
-                    <h3>Redes <span>sociales</span></h3>
+                    <h3>{ Redes <span>sociales</span> }</h3>
                     <nav class="social">
                         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
