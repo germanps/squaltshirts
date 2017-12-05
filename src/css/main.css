@@ -1295,6 +1295,11 @@ header{
         .buy-shop{
             border: 1px solid var(--abbey);
         }
+
+        /*Articulos*/
+        .buy-basket-item{
+            
+        }
     }
 
     .show-basket-aside{

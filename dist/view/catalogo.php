@@ -51,16 +51,7 @@
     				
     			}
 	    	}
-	    	//print_r($carrito);
-	    	//echo "<span>TOTAL:</span>";
-	    	//echo "<span>$total_pedido</span>";
 	    }
-
-    	/* Para crear una venta (mysql)
-			-crear venta (-actualizar el total de la venta (id))
-			-rescatar la última venta (id)
-			-hacer los inserts en el detalle venta
-    	*/
 
 	 ?>
 	 </div>
