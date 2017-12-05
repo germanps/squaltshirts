@@ -11,11 +11,10 @@
 			foreach ($value as $num_item => $valor) {
 				echo $valor . "<br>";
 				if ($num_item == 'total_monto_registro') {
-					$total_compra = $valor;
+					$total_compra += $valor;
 				}
 			}
 		}
-
 		//Capturamos el id del usuario que está comprando
 		$user_query = "select * from usuario where email='$usu_correo';";
 		$usu_resul = $conexion->query($user_query);
@@ -26,7 +25,7 @@
 
 		//Hacemos el insert de la venta
 		$insert_venta = "insert into venta (id_venta, fecha, monto_final, descuento, usuario_id_usuario) values('null', CURRENT_TIMESTAMP, $total_compra, 0, $id_usuario);";
-		//$insert_venta_resul = $conexion->query($insert_venta);
+		$insert_venta_resul = $conexion->query($insert_venta);
 
 		//Cogemos el id del último insert de la tabla venta
 		$id_de_la_venta = mysqli_insert_id($conexion);
