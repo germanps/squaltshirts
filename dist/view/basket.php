@@ -13,8 +13,9 @@
 				<div id="buyShop" class='buy-shop'>
 					
 					<?php 
+
 						//Si no hay items en el carrito, redireccionamos al home	
-						if (!isset($_SESSION['carrito'])) {
+						if (!isset($_SESSION['carrito']) || empty($_SESSION['carrito'])) {
 							echo '<script type="text/javascript">
 										window.location.assign("store.php");
 								  </script>';
@@ -33,10 +34,12 @@
 					    	}
 					?>
 					<?php
-
+							echo $_SESSION['items_carrito'];
 					    	foreach ($carrito as $key => $value) {
 					    		echo "<article class='buy-basket-item'>";
+					    		$indice_array = $key;
 					    		foreach ($value as $num_item => $valor) {
+
 					    			if ($num_item == 'id_camiseta') {
 										$query = "select * from camiseta where id_camiseta=$valor";
 										$usu_resul = $conexion->query($query);
@@ -46,37 +49,42 @@
 											echo "<p>Error, no se encuentran items</p>";
 										}else{
 											while ($fila = $usu_resul->fetch_array()) {
+
 												extract($fila);
 												echo "
 													<div class='detal-img'>
-							    						<img src='../src/imgcamisetas/$imagen' alt='$imagen'>
+							    						<img src='../src/img/camisetas/$imagen' alt='$imagen'>
 							    					</div>
 							    					<div class='detall-center'>
-														<p>$nombre</p>
+														<h3>$nombre</h3>
 														<p>$descripcion</p>
-														<p>$precio</p>
+														<p class='value'>$precio</p>
+														<span>En stock!</span>
 							    					</div>
 												";
 											}
 										}
 					    			}
 				    				if ($num_item == 'talla') {
-				    					echo "<div class='detall-left'>";
+				    					echo "<div class='detall-right'>";
 				    						echo "<p>Talla: $valor</p>";
 				    				}
 				    				if ($num_item == 'total_monto_registro') {
-				    						echo "<p>Total registro: $valor</p>";
+				    						echo "<p class='value'>Total: $valor</p>";
+				    					echo "</div>";
 				    				}
 				    				if ($num_item == 'cantidad_comprar') {
 				    						echo "<p>Cantidad a comprar: $valor</p>";
-				    						echo "<span>En stock!</span>";
-				    					echo "</div>";
+				    						echo "<form action='../controller/borrar_item_carrito.php' method='post'>";
+				    							echo "<input type='hidden' name='id-tee' value='$indice_array'>";
+				    							echo "<input type='submit' value='Borrar' />";
+				    						echo "</form>";
 				    				}
 
 					    		}
 					    		echo "</article>";
 					    	}
-					    	echo "<p>TOTAL DEL PEDIDO: <span class='total-order'>$total_pedido<span></p>";
+					    	/*echo "<p>TOTAL DEL PEDIDO: <span class='total-order'>$total_pedido<span></p>";*/
 
 				    	} // END if isset($_SESSION['carrito'])
 

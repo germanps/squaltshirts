@@ -1359,27 +1359,87 @@ header{
     .flex-container{
         display: flex;
         justify-content: space-between;
-        border: 1px solid var(--concrete);
     }
     .show-basket-content{ 
         width: calc(100% - 320px);
+        margin-right: .5rem;
 
         .buy-shop{
-            border: 1px solid var(--abbey);
+            border: 1px solid var(--gray);
+            padding: 1rem;
+
+            /*Articulos*/
+            .buy-basket-item{
+                display: flex;
+                justify-content: flex-start;
+                margin-bottom: 1rem;
+                border-bottom: 1px solid var(--gray);
+                padding-bottom: 1rem;
+                &:last-child{
+                    border-bottom: none;
+                }
+                
+                .detal-img{
+                    width: 150px;
+
+                    img{
+                        width: 100%;
+                        height: auto;
+                        max-width: 100;
+                    }
+                }
+                .detall-right{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    position: relative;
+
+                    i{
+                        position: absolute;
+                        top: 70px;
+                        right: 2rem;
+                        font-size: 2rem;
+                        border: 1px solid;
+                        border-radius: 50%;
+                        padding: 0 3px;
+                        cursor: pointer;
+                    }
+                }
+                & > div{
+                    width: calc(50% - 75px);
+                    padding-left: 1rem;
+                    
+                    h3{
+                        margin: 0 0 1rem 0;
+                    }
+
+                    p{
+                        margin: 0 0 1rem 0;
+
+                        &.value{
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                        }
+                    }
+
+                    span{
+                        color: var(--mountainMeadow);
+                    }
+                }
+            }
         }
 
-        /*Articulos*/
-        .buy-basket-item{
-            
-        }
+        
     }
 
     .show-basket-aside{
         width: 320px;
+        margin-left: .5rem;
 
         .detall-shop{
             height: 100%;
-            border: 1px solid var(--abbey);
+            border: 1px solid var(--gray);
+            padding: 1rem;
 
             form{
                 height: 100%;
