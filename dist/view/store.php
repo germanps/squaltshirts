@@ -7,10 +7,10 @@
  <div id="mainContent" class="home main-content">
  	<div class="container">
  		<div class="grid-wrapper">
-		  	<div class="grid-box a">Destacado</div>
-		  	<div class="grid-box b">Outlet</div>
-		  	<div class="grid-box c">Oferta</div>
-		  	<div class="grid-box d">Te interesa</div>
+		  	<div class="grid-box a"><h3 id="destacado">Destacado</h3></div>
+		  	<div class="grid-box b"><h3 id="outlet">Outlet</h3></div>
+		  	<div class="grid-box c"><h3 id="ofertaDia">Oferta del día</h3></div>
+		  	<div class="grid-box d"><h3 id="teInteresa">Te interesa</h3></div>
 		</div>
  	</div>
  </div>

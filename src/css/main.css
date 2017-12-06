@@ -121,8 +121,22 @@ textarea {
 @define-mixin grid-home $fondo, $color, $alto{
     background-color: $fondo;
     color: $color;
-    padding: 1rem;
+    //padding: 1rem;
     height: $alto;
+}
+/*MIXIN PARA LOS TÍTULOS DE LA GRID DE LA HOME*/
+@define-mixin grid-title $fondo, $color{
+    width: 100%;
+    background: $fondo;
+    color: $color;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 5px;
+    font-size: 2rem;
+    transition: .5s all ease;
+    cursor: pointer;
 }
 /* MIXIN PARA LOS CIRCULOS DEL DETALLE CAMISETA */
 @define-mixin colorRound $color{
@@ -859,16 +873,9 @@ header{
     box-shadow: 0px 5px 5px #d6d8d8;
     margin-bottom: .5rem;
     padding-bottom: 1rem;
-    background: url("../img/snow-header.png") repeat-x scroll 0 0;
-    /* &:after{
-        display: block;
-        position: absolute;
-        content: "";
-        height: 4px;
-        bottom: -15px;
-        width: 100%;
-        background: linear-gradient(to bottom, #cacaca 0%, #f5f5f5 100%);
-    } */
+    &.header{
+        background: url("../img/snow-header.png") repeat-x scroll 0 0;
+    }
 }
 .top-bar{
     background-color: var(--abbey);
@@ -1063,20 +1070,68 @@ header{
 
     .grid-box.a{
         @mixin grid-home var(--vermilion), var(--white), 295px;
-        grid-column: 1/ span 1; 
+        grid-column: 1/ span 1;
+        background: url("../img/slider7.jpg") repeat-x scroll 2% 6%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        
+        h3{
+            @mixin grid-title var(--opaBlack), var(--white);
+        }
+        &:hover h3{
+            height: 100%;
+            background-color: var(--mountainMeadow);
+        }
     }
     .grid-box.b{
         @mixin grid-home var(--mountainMeadow), var(--white), 600px;
         grid-column: 2; 
         grid-row: 1 / span 2;
+        background: url(../img/deathnote.jpg) no-repeat scroll 0% 0%;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        h3{
+            @mixin grid-title var(--opaBlack), var(--white);
+        }
+        &:hover h3{
+            height: 100%;
+            background-color: var(--mineshaft);
+        }
     }
     .grid-box.c{
         @mixin grid-home var(--abbey), var(--white), 295px;
-        grid-column: 1/ span 1; 
+        grid-column: 1/ span 1;
+        background: url(../img/bazinga.jpg) no-repeat scroll center center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        h3{
+            @mixin grid-title var(--opaBlack), var(--white);
+        }
+        &:hover h3{
+            height: 100%;
+            background-color: var(--vermilion);
+        }
     }
     .grid-box.d{
         @mixin grid-home var(--vermilion), var(--white), 300px;
         grid-column: 1 / span 2;
+        background: url("../img/wakeup.jpg") repeat-x scroll 0 0;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        h3{
+            @mixin grid-title var(--opaBlack), var(--white);
+        }
+        &:hover h3{
+            height: 100%;
+            background-color: var(--ebonyClark);
+        }
     }
 }
 
@@ -1147,10 +1202,11 @@ header{
                 padding: 0 .5rem;
 
                 .product-single-list{
+                    position: relative;
                     li{
                         text-align: center;
                         margin-bottom: .5rem;
-
+                        
                         &.ghost-button{
                             input[type='submit']{
                                 background-color: var(--vermilion);
@@ -1173,13 +1229,29 @@ header{
                         width: 100%;
                         max-width: 100%;
                         height:auto;
+                        -moz-transition: all 0.3s;
+                        -webkit-transition: all 0.3s;
+                        transition: all 0.3s;
+                        overflow: hidden;
+                        position: relative;
+                        &:hover{
+                            box-shadow: 0px 0px 50px var(--mercury);
+                            z-index: 2;
+                            -webkit-transition: all 200ms ease-in;
+                            -webkit-transform: scale(1.05);
+                            -ms-transition: all 200ms ease-in;
+                            -ms-transform: scale(1.05);   
+                            -moz-transition: all 200ms ease-in;
+                            -moz-transform: scale(1.05);
+                            transition: all 200ms ease-in;
+                            transform: scale(1.05);
+                        }
                     } 
                 }
 
                 /*Single page detall tee*/
 
                 &.single-page{
-                    
                     input[type='number']{
                         max-width: 35px;
                     }
