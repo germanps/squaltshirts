@@ -6,7 +6,7 @@
 
  <div id="mainContent" class="home main-content">
  	<div class="container">
- 		<h2><?php include '../controller/tee_counter.php' ?> Camisetas para regalar a tus amigos y familiares!</h2>
+ 		<h2 class="home-slogan"><span>{ <?php include '../controller/tee_counter.php' ?> }</span> Camisetas para regalar a tus amigos y familiares!</h2>
  		<div class="grid-wrapper">
 		  	<div class="grid-box a"><h3 id="destacado">Destacado</h3></div>
 		  	<div class="grid-box b"><h3 id="outlet">Outlet</h3></div>

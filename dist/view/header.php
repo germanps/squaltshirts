@@ -68,7 +68,7 @@
 
                                         echo "
                                             <span class='login-name'>$usuario_registrado</span>
-                                            <a href='../controller/disconnect.php' class='disconnect'>Desconectar</span>
+                                            <a href='../controller/disconnect.php' class='disconnect'>Desconectar</a>
                                         ";
                                     }else{
                                         $usuario_registrado = "";
@@ -98,6 +98,14 @@
                         </li>
                     </ul>
             	</div>
+                <div class="search-wrapper-secondary">
+                    <form action="busqueda_camisetas.php" method="post">
+                        <input id="headerSearch" type="text" name="search" >
+                        <span class="input-search-btn fa fa-search">
+                            <input type="submit" aria-hidden="true" value="">
+                        </span>
+                    </form>
+                </div>
                 <nav id="navBarMenu" class="nav-bar-menu">
                     <ul id="main-menu" class="main-menu">
                         <li class="main-menu-item"><a href="catalogo.php">Catálogo</a></li>
