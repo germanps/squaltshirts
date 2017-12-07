@@ -20,10 +20,9 @@
 	</aside> -->
 	<section id="mainContent" class="main-content single-tee">
 		<div class="show-tee-by-cat">
-		<!-- <h4>Catalogo</h4> -->
+		<!-- <h3 class="show-title">{ Te gusta? }</h3> -->
 			<div id="printTees" class='print-tees wrapper show-single'>
-					
-
+				
 				<?php 
 					include 'print_single.php';
 				 ?>

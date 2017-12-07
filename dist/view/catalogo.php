@@ -16,9 +16,6 @@
 					?>
 					</ul>
 				</div>
-				<div class="cat-categories-select">
-					<?php //include '' ?>
-				</div>
 			</div>
 		</div>
 	</aside>

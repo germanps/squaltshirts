@@ -34,7 +34,6 @@
 					    	}
 					?>
 					<?php
-							echo $_SESSION['items_carrito'];
 					    	foreach ($carrito as $key => $value) {
 					    		echo "<article class='buy-basket-item'>";
 					    		$indice_array = $key;
@@ -77,7 +76,10 @@
 				    						echo "<p>Cantidad a comprar: $valor</p>";
 				    						echo "<form action='../controller/borrar_item_carrito.php' method='post'>";
 				    							echo "<input type='hidden' name='id-tee' value='$indice_array'>";
-				    							echo "<input type='submit' value='Borrar' />";
+				    							echo "<i class='input-delete-btn fa fa-close'>
+				    									<input type='submit' value='' />
+				    								  </i>
+				    								";
 				    						echo "</form>";
 				    				}
 

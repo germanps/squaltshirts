@@ -1360,6 +1360,9 @@ header{
                         top: 13px;
                         font-family: FontAwesome !important;
                     }
+                    a{
+                        display: block;
+                    }
                 }
             } 
         }
@@ -1561,6 +1564,8 @@ header{
                 padding-bottom: 1rem;
                 &:last-child{
                     border-bottom: none;
+                    margin-bottom: 0;
+                    padding-bottom: 0;
                 }
                 
                 .detal-img{
@@ -1578,15 +1583,60 @@ header{
                     justify-content: space-between;
                     position: relative;
 
-                    i{
+                    form{
                         position: absolute;
+                        right: 0;
                         top: 70px;
-                        right: 2rem;
-                        font-size: 2rem;
-                        border: 1px solid;
-                        border-radius: 50%;
-                        padding: 0 3px;
+                    }
+
+                    i{
+                        position: relative;
+                        background-color: transparent;
+                        color: #fff;
+                        width: 30px;
+                        height: 30px;
+                        display: -webkit-box;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        align-items: center;
+                        font-size: 1rem;
                         cursor: pointer;
+
+
+                        &::before{
+                            position: absolute;
+                            background-color: var(--abbey);
+                            border-radius: 50%;
+                            width: 100%;
+                            height: 100%;
+                            display: -webkit-box;
+                            display: flex;
+                            -webkit-box-pack: center;
+                            justify-content: center;
+                            -webkit-box-align: center;
+                            align-items: center;
+                            z-index: 1;
+                            transition: .2s all ease;
+                        }
+                        
+                        &:hover::before{
+                            background-color: var(--vermilion);
+                            box-shadow: 1px 1px 5px var(--abbey);
+                            width: 40px;
+                            height: 40px;
+                            font-size: 1.5rem;
+                        }
+
+                    }
+                    input[type="submit"]{
+                        z-index: 10;
+                        position: relative;
+                        border: none;
+                        background-color: transparent;
+                        width: 30px;
+                        height: 30px;
                     }
                 }
                 & > div{
