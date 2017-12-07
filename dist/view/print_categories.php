@@ -1,4 +1,5 @@
 <?php 
+    require("../controller/conexion.php");
 	$cat_query = "select * from categoria order by id_categoria";
     $cat_resul = $conexion->query($cat_query);
     $cat_rows = $cat_resul->num_rows;

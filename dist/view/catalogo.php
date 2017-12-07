@@ -12,16 +12,19 @@
 				<div class="cat-categories">
 					<ul id="catList" class="cat-list">
 					<?php 
-						include '../controller/print_categories.php';
+						include 'print_categories.php';
 					?>
 					</ul>
+				</div>
+				<div class="cat-categories-select">
+					<?php //include '' ?>
 				</div>
 			</div>
 		</div>
 	</aside>
 	<section id="mainContent" class="main-content">
 		<div class="show-tee-by-cat">
-		<!-- <h4>Catalogo</h4> -->
+		<h3 class="show-title">{ Aqui tienes nuestro catálogo de camisetas }</h3>
 			<div id="printTees" class='print-tees wrapper'>
 				<?php 
 					include 'show_all_tee.php';
