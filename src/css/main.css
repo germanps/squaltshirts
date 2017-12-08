@@ -933,7 +933,8 @@ header{
 
                 .logo-wrapper{
                     h1{
-                        font-size: 3rem;
+                        font-size: 2rem;
+                        text-transform: uppercase;
                         font-family: var(--oswald);
                         color: var(--black);
 
@@ -1678,6 +1679,39 @@ header{
             form{
                 height: 100%;
                 width: 100%;
+
+                input{
+                    width: 100%;
+
+                    &[type="submit"]{
+                        background-color: var(--vermilion);
+                        border-color: var(--vermilion);
+                        color: #fff;
+                        font-size: 1.2rem;
+                        height: 40px;
+                        line-height: 20px;
+                        text-transform: uppercase;
+                        outline: 1px solid #fff;
+                        outline-offset: -8px;
+                        transition: .2s all ease;
+
+                        &:hover{
+                            background-color: transparent;
+                            color: #1ab188;
+                            border-color: #1ab188;
+                            outline: 1px solid #1ab188;
+                            outline-offset: -2px;
+                        }
+                        &:active{
+                            color: #1ab188;
+                            border-color: #1ab188;
+                            outline: 1px solid #1ab188;
+                            color: #1ab188;
+                            border-color: #1ab188;
+                            outline: 1px solid #1ab188;
+                        }
+                    }
+                }
             }
         }
     }
