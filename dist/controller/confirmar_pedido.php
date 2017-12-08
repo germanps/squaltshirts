@@ -48,6 +48,8 @@
 			}
 			$insert_detalle_camiseta = "insert into venta_detalle (detalle_id_venta, detalle_id_usuario, detalle_id_camiseta, cantidad, precio) values($id_de_la_venta, $id_usuario, $id_de_la_camiseta, $la_cantidad, $el_precio); ";
 			$insert_detalle_camiseta_resul = $conexion->query($insert_detalle_camiseta);
+
+			//Faltan los updates en las tablas de los articulos comprados
 		}
 		
 		$conexion->close();	

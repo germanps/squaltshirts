@@ -78,6 +78,14 @@ fieldset {
 textarea {
     resize: vertical;
 }
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
 
 /* ==========================================================================
    Browser Upgrade Prompt
@@ -1712,14 +1720,165 @@ header{
                         }
                     }
                 }
-            }
+                .total-order{
+                    color: var(--mountainMeadow);
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            } 
         }
     }
 }
 
+/* ============== ORDER ==============*/
+.main-content.order-shop{
+    width: 100%;
+    padding-top: 2rem;  
+    h2{
+        font-weight: normal;
+        
+    }
+    .flex-container{
+        display: flex;
+        justify-content: space-between;
+    }
 
+    .show-send-content{
+        width: 60%;
+        margin-right: .5rem;
 
+        h2{
+            background-color: var(--abbey);
+            color: var(--white);
+            padding: 0 .5rem;
+            &::after{
+                font-family: FontAwesome;
+                content: "\f015";
+                color: var(--white);
+                padding-left: 1rem;
+            }
+        }
 
+        .flex-column{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            height: calc(100% - 60px);
+        }
+
+        .send-direction{
+            padding-bottom: 0;
+        }
+        .total-order-container{
+            border-top: 1px solid var(--gray);
+            .shipping{
+                color: var(--grenadier);
+            }
+            p{
+                margin-bottom: 0;
+            }
+            .iva{
+                display: block;
+                margin-bottom: 1rem;
+                font-size: .8rem;
+            }
+            .total-order{
+                color: var(--mountainMeadow);
+                font-size: 2rem;
+                font-weight: bold;
+            }
+            input[type="submit"]{
+                background-color: var(--vermilion);
+                border-color: var(--vermilion);
+                color: #fff;
+                font-size: 1.2rem;
+                height: 50px;
+                width: 320px;
+                line-height: 20px;
+                text-transform: uppercase;
+                outline: 1px solid #fff;
+                outline-offset: -8px;
+                transition: .2s all ease;
+
+                &:hover{
+                    background-color: transparent;
+                    color: #1ab188;
+                    border-color: #1ab188;
+                    outline: 1px solid #1ab188;
+                    outline-offset: -2px;
+                }
+                &:active{
+                    color: #1ab188;
+                    border-color: #1ab188;
+                    outline: 1px solid #1ab188;
+                    color: #1ab188;
+                    border-color: #1ab188;
+                    outline: 1px solid #1ab188;
+                }
+            }  
+        }
+    }
+    .aside-resume{
+        width: 40%;
+        margin-left: .5rem;
+        margin-bottom: .5rem;
+        h2{
+            background-color: var(--abbey);
+            color: var(--white);
+            padding: 0 .5rem;
+            &::after{
+                font-family: FontAwesome;
+                content: "\f0cb";
+                color: var(--white);
+                padding-left: 1rem;
+            }
+        }
+        .resume-order{
+            border: 1px solid var(--gray);
+            
+            .buy-resume-item{
+                padding: .5rem .2rem;
+
+                .detal-img{
+                    width: 100px;
+                    float: left;
+                    img{
+                        width: 100%;
+                        height: auto;
+                        max-width: 100%;
+                    }
+                }
+                .detall-center{
+                    width: calc(100% - 100px);
+                    float: left;
+                    padding-left: 1rem;
+
+                    p{
+                        margin: 0;
+                        font-size: .9rem;
+                    }
+                    span{
+                        font-size: .9rem;
+                        &.value{
+                            color: var(--ebonyClark);
+                            font-size: 1.05rem;
+                        }
+                        &.stock{
+                            padding-left: 1rem;
+                            color: var(--mountainMeadow);
+                        }
+                    }
+                }
+                .subtotal{
+                    float: left;
+                    padding-left: 2rem;
+                }
+            }
+        }
+    }
+}
+  
+  
 
 /* ============== FOOTER ==============*/
 .site-footer{

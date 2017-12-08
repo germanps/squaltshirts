@@ -32,8 +32,7 @@
 				    				}	
 				    			}
 					    	}
-					?>
-					<?php
+
 					    	foreach ($carrito as $key => $value) {
 					    		echo "<article class='buy-basket-item'>";
 					    		$indice_array = $key;
@@ -96,12 +95,12 @@
 
 			<aside class="show-basket-aside wrapper">
 				<div class="detall-shop">
-					<form action="../controller/confirmar_pedido.php" method="post">
+					<form action="pedido.php" method="post">
 						<input type="text" placeholder="Tengo un cupón">
 						<p>Gastos de invío <span> 5.90</span> €</p>
 						<hr>
-						<p>Total del pedido: <span class='total-order'><?php echo $total_pedido ?></span> €</p>
-						<input type="submit" value="Confirmar pedido">
+						<p>Total del pedido: <span class='total-order'><?php echo $total_pedido+5.9 ?> €</span></p>
+						<input type="submit" value="Hacer pedido">
 					</form>
 				</div>
 			</aside>
@@ -109,7 +108,6 @@
 		</div> <!-- .flex-container -->
 	</section>
 </div>
-
 
 
  <?php 
