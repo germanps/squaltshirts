@@ -6,10 +6,11 @@
 		$carrito = $_SESSION['carrito'];
 		$usuario = $_SESSION['usu_user'];
 		$usu_correo = $_SESSION['usu_mail'];
+		$total_compra = 0;
 		//print_r($carrito);
 		foreach ($carrito as $key => $value) {
 			foreach ($value as $num_item => $valor) {
-				echo $valor . "<br>";
+				//echo $valor . "<br>";
 				if ($num_item == 'total_monto_registro') {
 					$total_compra += $valor;
 				}
@@ -25,7 +26,7 @@
 
 		//Hacemos el insert de la venta
 		$insert_venta = "insert into venta (id_venta, fecha, monto_final, descuento, usuario_id_usuario) values('null', CURRENT_TIMESTAMP, $total_compra, 0, $id_usuario);";
-		//$insert_venta_resul = $conexion->query($insert_venta);
+		$insert_venta_resul = $conexion->query($insert_venta);
 
 		//Cogemos el id del último insert de la tabla venta
 		$id_de_la_venta = mysqli_insert_id($conexion);
@@ -46,10 +47,24 @@
 					$el_precio = $valor;
 				}
 			}
+			//inserts por cada camiseta que hay en la venta
 			$insert_detalle_camiseta = "insert into venta_detalle (detalle_id_venta, detalle_id_usuario, detalle_id_camiseta, cantidad, precio) values($id_de_la_venta, $id_usuario, $id_de_la_camiseta, $la_cantidad, $el_precio); ";
 			$insert_detalle_camiseta_resul = $conexion->query($insert_detalle_camiseta);
 
-			//Faltan los updates en las tablas de los articulos comprados
+			//Extraemos la cantidad principal de cada camiseta
+			$cantidad_query = "select cantidad from camiseta where id_camiseta = $id_de_la_camiseta;";
+			$cantidad_resul = $conexion->query($cantidad_query);
+			$cantidad_rows = $cantidad_resul->num_rows;
+			while ($fila = $cantidad_resul->fetch_array()) {
+				extract($fila);
+				
+			}
+			//Restamos las camisetas compradas
+			$cantidad_retirar = ($cantidad - $la_cantidad);
+
+			//update de la tabla camiseta (según la cantidad comprada)
+			$update_camiseta = "update camiseta set cantidad = $cantidad_retirar where id_camiseta = $id_de_la_camiseta;";
+			$insert_update_camiseta = $conexion->query($update_camiseta);
 		}
 		
 		$conexion->close();	

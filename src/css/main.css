@@ -236,6 +236,98 @@ a{
 .hide{
     display: none !important;
 }
+/* ====== INDEX USER LOGIN ====== */
+.index-login{
+    width: 390px;
+    margin: 2rem auto; 
+    
+    h2{
+        text-align: center;
+        font-weight: bold;
+        font-family: var(--oswald);
+        margin-bottom: 1rem;
+    }
+
+    .form-container{
+        margin-bottom: 1rem;
+        &:first-child{
+            display: flex;
+            
+            .form-input{
+                &:first-child{
+                    padding-right: .5rem;
+                }
+                &:last-child{
+                    padding-left: .5rem;
+                }
+            }
+        }
+
+        &.form-double{
+            margin-bottom: 1rem;
+        }
+    }
+    .form-input{
+
+        input{
+            background-color: var(--transparent);
+            border: 1px solid var(--mercury);
+            color: var(--mountainMeadow);
+            padding: 1rem 1.5rem;
+            width: 100%;
+            outline: none;
+            transition: .5s all ease;
+
+            &:focus{
+                border: 1px solid var(--mountainMeadow);
+
+                &::-webkit-input-placeholder{
+                    transition: .5s all ease;
+                    color: var(--mountainMeadow);
+                }
+                 &::-moz-placeholder{
+                    transition: .5s all ease;
+                    color: var(--mountainMeadow);
+                }
+                &:-ms-input-placeholder{
+                    transition: .5s all ease;
+                    color: var(--mountainMeadow);
+                }
+                &:-moz-placeholder{
+                    transition: .5s all ease;
+                    color: var(--mountainMeadow);
+                }
+            }  
+        }
+
+        input[type="submit"]{
+            background-color: var(--vermilion);
+            border-color: var(--vermilion);
+            color: var(--white);
+            font-size: 1.5rem;
+            max-height: 52px;
+            line-height: 20px;
+            text-transform: uppercase;
+            outline: 1px solid var(--white);
+            outline-offset: -8px;
+            transition: .2s all ease;
+
+            &:hover{
+                background-color: var(--transparent);
+                color: var(--mountainMeadow);
+                border-color: var(--mountainMeadow);
+                outline: 1px solid var(--mountainMeadow);
+                outline-offset: -2px;
+            }
+            &:active{
+                color: var(--mountainMeadow);
+                border-color: var(--mountainMeadow);
+                outline: 1px solid var(--mountainMeadow);
+            }
+        }
+    }
+
+}
 
 
 /* ====== ADMIN FORM HOME PAGE && LOGIN====== */
