@@ -156,6 +156,61 @@ textarea {
     margin-right: 1rem;
     border: 1px solid var(--black);
 }
+/*MIXIN PARA LOS INPUT DE LOS FORMULARIOS*/
+@define-mixin textBox{
+    background-color: var(--transparent);
+    border: 1px solid var(--mercury);
+    color: var(--mountainMeadow);
+    padding: 1rem 1.5rem;
+    width: 100%; 
+    outline: none;
+    transition: .5s all ease;
+    &:focus{
+        border: 1px solid var(--mountainMeadow);
+
+        &::-webkit-input-placeholder{
+            transition: .5s all ease;
+            color: var(--mountainMeadow);
+        }
+         &::-moz-placeholder{
+            transition: .5s all ease;
+            color: var(--mountainMeadow);
+        }
+        &:-ms-input-placeholder{
+            transition: .5s all ease;
+            color: var(--mountainMeadow);
+        }
+        &:-moz-placeholder{
+            transition: .5s all ease;
+            color: var(--mountainMeadow);
+        }
+    }
+    &[type="submit"]{
+        background-color: var(--vermilion);
+        border-color: var(--vermilion);
+        color: var(--white);
+        font-size: 1.5rem;
+        max-height: 52px;
+        line-height: 20px;
+        text-transform: uppercase;
+        outline: 1px solid var(--white);
+        outline-offset: -8px;
+        transition: .2s all ease; 
+
+        &:hover{
+            background-color: var(--transparent);
+            color: var(--mountainMeadow);
+            border-color: var(--mountainMeadow);
+            outline: 1px solid var(--mountainMeadow);
+            outline-offset: -2px;
+        }
+        &:active{
+            color: var(--mountainMeadow);
+            border-color: var(--mountainMeadow);
+            outline: 1px solid var(--mountainMeadow);
+        }
+    }
+} 
 
 html{
     box-sizing: border-box;
@@ -213,8 +268,6 @@ a{
 .container{
     width: 98%;
     margin: 0 auto;
-
-    c
     @media(--tablet) {
        &{
         width: 90%;
@@ -270,62 +323,9 @@ a{
     .form-input{
 
         input{
-            background-color: var(--transparent);
-            border: 1px solid var(--mercury);
-            color: var(--mountainMeadow);
-            padding: 1rem 1.5rem;
-            width: 100%;
-            outline: none;
-            transition: .5s all ease;
-
-            &:focus{
-                border: 1px solid var(--mountainMeadow);
-
-                &::-webkit-input-placeholder{
-                    transition: .5s all ease;
-                    color: var(--mountainMeadow);
-                }
-                 &::-moz-placeholder{
-                    transition: .5s all ease;
-                    color: var(--mountainMeadow);
-                }
-                &:-ms-input-placeholder{
-                    transition: .5s all ease;
-                    color: var(--mountainMeadow);
-                }
-                &:-moz-placeholder{
-                    transition: .5s all ease;
-                    color: var(--mountainMeadow);
-                }
-            }  
+            @mixin textBox;
         }
-
-        input[type="submit"]{
-            background-color: var(--vermilion);
-            border-color: var(--vermilion);
-            color: var(--white);
-            font-size: 1.5rem;
-            max-height: 52px;
-            line-height: 20px;
-            text-transform: uppercase;
-            outline: 1px solid var(--white);
-            outline-offset: -8px;
-            transition: .2s all ease;
-
-            &:hover{
-                background-color: var(--transparent);
-                color: var(--mountainMeadow);
-                border-color: var(--mountainMeadow);
-                outline: 1px solid var(--mountainMeadow);
-                outline-offset: -2px;
-            }
-            &:active{
-                color: var(--mountainMeadow);
-                border-color: var(--mountainMeadow);
-                outline: 1px solid var(--mountainMeadow);
-            }
-        }
-    }
+    } 
 
 }
 
@@ -407,65 +407,14 @@ a{
             .form-input{
 
                 input{
-                    background-color: var(--transparent);
-                    border: 1px solid var(--mercury);
-                    color: var(--mountainMeadow);
-                    padding: 1rem 1.5rem;
-                    width: 100%;
-                    outline: none;
-                    transition: .5s all ease;
-
-                    &:focus{
-                        border: 1px solid var(--mountainMeadow);
-
-                        &::-webkit-input-placeholder{
-                            transition: .5s all ease;
-                            color: var(--mountainMeadow);
-                        }
-                         &::-moz-placeholder{
-                            transition: .5s all ease;
-                            color: var(--mountainMeadow);
-                        }
-                        &:-ms-input-placeholder{
-                            transition: .5s all ease;
-                            color: var(--mountainMeadow);
-                        }
-                        &:-moz-placeholder{
-                            transition: .5s all ease;
-                            color: var(--mountainMeadow);
-                        }
-                    }  
-                }
-
-                input[type="submit"]{
-                    background-color: var(--vermilion);
-                    border-color: var(--vermilion);
-                    color: var(--white);
-                    font-size: 1.5rem;
-                    max-height: 52px;
-                    line-height: 20px;
-                    text-transform: uppercase;
-                    outline: 1px solid var(--white);
-                    outline-offset: -8px;
-                    transition: .2s all ease;
-
-                    &:hover{
-                        background-color: var(--transparent);
-                        color: var(--mountainMeadow);
-                        border-color: var(--mountainMeadow);
-                        outline: 1px solid var(--mountainMeadow);
-                        outline-offset: -2px;
-                    }
-                    &:active{
-                        color: var(--mountainMeadow);
-                        border-color: var(--mountainMeadow);
-                        outline: 1px solid var(--mountainMeadow);
-                    }
+                    @mixin textBox;
                 }
             }
         }
     }
 }
+
+
 
 
 /* ====== ADMIN AREA ====== */
@@ -961,6 +910,49 @@ a{
 /*======================================================================*/
 /*=============================== STORE ===============================*/
 /*======================================================================*/
+/* ====== REGISTER ====== */
+
+.register-wrapper{
+   
+    .header-login-wrapper{
+        margin-bottom: 1rem;
+        h3{
+            color: var(--mountainMeadow);
+        }
+    }
+    .form-input{
+        margin-bottom: .5rem;
+        input{
+            @mixin textBox;
+        } 
+
+        input[type="submit"]{
+            background-color: var(--vermilion);
+            border-color: var(--vermilion);
+            color: var(--white);
+            font-size: 1.5rem;
+            max-height: 52px;
+            line-height: 20px;
+            text-transform: uppercase;
+            outline: 1px solid var(--white);
+            outline-offset: -8px;
+            transition: .2s all ease;
+
+            &:hover{
+                background-color: var(--transparent);
+                color: var(--mountainMeadow);
+                border-color: var(--mountainMeadow);
+                outline: 1px solid var(--mountainMeadow);
+                outline-offset: -2px;
+            }
+            &:active{
+                color: var(--mountainMeadow);
+                border-color: var(--mountainMeadow);
+                outline: 1px solid var(--mountainMeadow);
+            }
+        }
+    }
+}
 
 /* ====== HEADER ====== */
 header{
@@ -2107,8 +2099,8 @@ header{
                 }
            }
         }
-
-
+ 
+  
         .footer-info{
 
             h3{

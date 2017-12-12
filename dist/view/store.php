@@ -2,12 +2,6 @@
   session_start();
   include 'header.php';
   include 'slider.html';
-  	/*if (!isset($_SESSION['enter_ok'])) {
-        //header('Location:../index.php');
-        echo '<script type="text/javascript">
-				window.location.assign("../index.php");
-		  </script>';
-    }*/
  ?>
 
  <div id="mainContent" class="home main-content">
