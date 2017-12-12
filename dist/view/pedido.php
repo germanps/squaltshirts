@@ -36,10 +36,12 @@
 									
 								}
 							}else{
-								echo "Debes iniciar sesión con tu usuario";
+								echo "<h3>Debes iniciar sesión con tu usuario</h3>";
 								echo '<script type="text/javascript">
-											window.location.assign("store.php");
+											window.location.assign("basket.php");
+											alert("Debes hacer login para hacer un pedido");
 									  </script>';
+																
 							}
 
 						?>
