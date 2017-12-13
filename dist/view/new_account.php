@@ -1,6 +1,7 @@
 <?php 
 	session_start();
   	include 'header.php';
+
 	$nombre = $_POST['nombre'];
 	$apellidos = $_POST['apellidos'];
 	$dni = $_POST['dni'];
@@ -8,12 +9,37 @@
 	$email = $_POST['email'];
 	$pass = $_POST['password'];
 
-	$insert_user_query = "insert into usuario(id_usuario, nombre, apellido, dni, direccion, email, password, tipo_usuario) values('null','$nombre', '$apellidos', '$dni', '$dir', '$email', '$pass', 0)";
-	$insert_user_resul = $conexion->query($insert_user_query);
-	$conexion->close();	
-	//Iniciamos sesion
-	$_SESSION['usu_user'] = $nombre;
-	$_SESSION['usu_mail'] = $email;
+	//verificar formulario
+	$control = true;
+	if (isset($_POST['creaNuevoUser'])) {
+  		if ($nombre == '') {
+  			$control = false;
+  		}elseif ($apellidos == '') {
+  			$control = false;
+  		}elseif ($dni == '') {
+  			$control = false;
+  		}elseif ($dir == '') {
+  			$control = false;
+  		}elseif ($email == '' or !preg_match("/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/",$_POST['email'])) {
+  			$control = false;
+  		}elseif ($pass == '') {
+  			$control = false;
+  		}
+
+  		if ($control) {
+			$insert_user_query = "insert into usuario(id_usuario, nombre, apellido, dni, direccion, email, password, tipo_usuario) values('null','$nombre', '$apellidos', '$dni', '$dir', '$email', '$pass', 0)";
+			$insert_user_resul = $conexion->query($insert_user_query);
+			$conexion->close();	
+			//Iniciamos sesion
+			$_SESSION['usu_user'] = $nombre;
+			$_SESSION['usu_mail'] = $email;
+		}else{
+			echo '<script type="text/javascript">
+					window.location.assign("register_error.php");
+			     </script>';
+		}
+  	}
+
 ?>
 
 <div id="mainContent" class="home main-content register">

@@ -44,7 +44,7 @@
         		</div>
         		<div class="form-container">
           			<div class="form-input">
-            			<input type="submit" value="Crear cuenta" name="submit">
+            			<input type="submit" value="Crear cuenta" name="creaNuevoUser">
           			</div>
         		</div>
         	</form>
