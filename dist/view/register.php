@@ -11,7 +11,7 @@
 			<div class="header-login-wrapper">
             	<h3>Join us!</h3>
         	</div>
-        	<form method="post" action="../controller/new_user.php">         
+        	<form method="post" action="new_account.php">         
         		<div class="form-container">
           			<div class="form-input">
             			<input type="text" placeholder="Nombre*" name="nombre">

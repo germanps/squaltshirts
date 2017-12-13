@@ -1839,7 +1839,7 @@ header{
                 font-family: FontAwesome;
                 content: "\f015";
                 color: var(--white);
-                padding-left: 1rem;
+                padding-left: 1rem;  
             }
         }
 
@@ -1847,7 +1847,7 @@ header{
             display: flex;
             justify-content: space-between;
             flex-direction: column;
-            height: calc(100% - 60px);
+            height: calc(100% - 60px);  
         }
 
         .send-direction{
@@ -1855,10 +1855,11 @@ header{
         }
         .total-order-container{
             border-top: 1px solid var(--gray);
+            margin-bottom: 2rem;
             .shipping{
                 color: var(--grenadier);
             }
-            p{
+            p{ 
                 margin-bottom: 0;
             }
             .iva{
@@ -1869,7 +1870,7 @@ header{
             .total-order{
                 color: var(--mountainMeadow);
                 font-size: 2rem;
-                font-weight: bold;
+                font-weight: bold;  
             }
             input[type="submit"]{
                 background-color: var(--vermilion);
@@ -1880,9 +1881,10 @@ header{
                 width: 320px;
                 line-height: 20px;
                 text-transform: uppercase;
-                outline: 1px solid #fff;
+                outline: 1px solid #fff; 
                 outline-offset: -8px;
                 transition: .2s all ease;
+                margin-top: 1rem;
 
                 &:hover{
                     background-color: transparent;

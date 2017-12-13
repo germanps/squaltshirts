@@ -6,7 +6,7 @@
 
 	if (isset($nombre) && isset($apellido) && isset($pass)) {
 
-		if ($nombre == "gps" && $apellido == "" && $pass == 10203040) {
+		if ($nombre == "gps" && $apellido == "a" && $pass == "m12") {
 			$_SESSION['enter_ok'] = true;
 			header('Location:../view/store.php');
 		}else{
