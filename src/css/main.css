@@ -212,6 +212,57 @@ textarea {
     }
 } 
 
+@define-mixin boton{
+
+    background-color: var(--vermilion);
+    border-color: var(--vermilion);
+    color: var(--white);
+    font-size: 1.5rem;
+    max-height: 52px;
+    line-height: 20px;
+    text-transform: uppercase;
+    outline: 1px solid var(--white);
+    outline-offset: -8px;
+    transition: .2s all ease; 
+
+    &:hover{
+        background-color: var(--transparent);
+        color: var(--mountainMeadow);
+        border-color: var(--mountainMeadow);
+        outline: 1px solid var(--mountainMeadow);
+        outline-offset: -2px;
+    }
+    &:active{
+        color: var(--mountainMeadow);
+        border-color: var(--mountainMeadow);
+        outline: 1px solid var(--mountainMeadow);
+    }
+
+    &:focus{
+        border: 1px solid var(--mountainMeadow);
+
+        &::-webkit-input-placeholder{
+            transition: .5s all ease;
+            color: var(--mountainMeadow);
+        }
+         &::-moz-placeholder{
+            transition: .5s all ease;
+            color: var(--mountainMeadow);
+        }
+        &:-ms-input-placeholder{
+            transition: .5s all ease;
+            color: var(--mountainMeadow);
+        }
+        &:-moz-placeholder{
+            transition: .5s all ease;
+            color: var(--mountainMeadow);
+        }
+    }
+
+       
+    
+} 
+
 html{
     box-sizing: border-box;
 }
@@ -954,6 +1005,13 @@ a{
     }
 }
 
+.register-error{
+    a{
+        @mixin boton;
+        font-size: 1rem;
+    }
+}
+
 /* ====== HEADER ====== */
 header{
     position: relative;
@@ -1281,6 +1339,7 @@ header{
     .home-slogan{
         text-align: center;
         font-size: 2rem;
+        margin-top: 1rem;
         margin-bottom: 2rem;
         text-transform: uppercase;
         color: var(--abbey); 

@@ -54,7 +54,6 @@
     				if ($keyItem == 'total_monto_registro') {
     					$total_pedido += $valueItem;
     				}
-    				
     			}
 	    	}
 	    }

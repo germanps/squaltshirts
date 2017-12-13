@@ -58,9 +58,9 @@
                         <li class="header-list-item">
                             <div class="search-wrapper">
                                 <form action="busqueda_camisetas.php" method="post">
-                                    <input id="headerSearch" type="text" name="search" >
+                                    <input id="headerSearch" type="text" name="main-search" >
                                     <span class="input-search-btn fa fa-search">
-                                        <input type="submit" aria-hidden="true" value="">
+                                        <input type="submit" aria-hidden="true" value="" name="main-submit">
                                     </span>
                                 </form>
                             </div>
