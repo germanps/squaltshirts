@@ -10,10 +10,15 @@
 	$email = $_POST["set_userEmail"];
 	$tipo = $_POST["set_userTipo"];
 
-	$update_user_query = "update usuario set nombre='$nombre', apellido='$apellido', dni='$dni', direccion='$dir', email='$email', password='$password', tipo_usuario=$tipo WHERE id_usuario=$id";
-	$update_user_resul = $conexion->query($update_user_query);
-	
-	$conexion->close();	
-	header("Location: ../view/admin.php");
+	if (isset($_SESSION['enter_ok'])) {
+		$update_user_query = "update usuario set nombre='$nombre', apellido='$apellido', dni='$dni', direccion='$dir', email='$email', password='$password', tipo_usuario=$tipo WHERE id_usuario=$id";
+		$update_user_resul = $conexion->query($update_user_query);
+		
+		$conexion->close();	
+		header("Location: ../view/admin.php");
+	}else{
+		echo "Has llegado aqui de manera extraña...";
+		header('Refresh: 3; url="../index.php"');
+	}
 
  ?>

@@ -24,7 +24,7 @@
 					<td>$contador</td>
 					<td>$id_categoria</td>
 					<td>$nombre</td>
-				 </tr>";
+				</tr>";
 		}
 	}
  ?>

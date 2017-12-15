@@ -5,6 +5,7 @@
         //echo "No existe el usuario...";
         header('Location:../index.php');
     }
+
  ?>
 <!doctype html>
 <html class="no-js" lang="es">

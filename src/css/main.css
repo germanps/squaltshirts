@@ -257,11 +257,20 @@ textarea {
             transition: .5s all ease;
             color: var(--mountainMeadow);
         }
+    } 
+}
+ 
+@define-mixin botonCancel{
+    background-color: var(--vermilion);
+    border: none;
+    padding: .2rem .5rem;
+    transition: .2s all ease;
+    &:hover{
+        background-color: var(--white);
+        color: var(--vermilion);
+        outline:1px solid var(--vermilion);
     }
-
-       
-    
-} 
+}
 
 html{
     box-sizing: border-box;
@@ -938,7 +947,7 @@ a{
                         background-color: var(--white);
                         color: var(--vermilion);
                         outline:1px solid var(--vermilion);
-                    }
+                    } 
                 }
                 .btn-success{
                     background-color: var(--mountainMeadow);
@@ -1004,7 +1013,11 @@ a{
         }
     }
 }
-
+.drop-modal{
+    .btn-cancel{
+        @mixin botonCancel;
+    }
+}
 .register-error{
     a{
         @mixin boton;
