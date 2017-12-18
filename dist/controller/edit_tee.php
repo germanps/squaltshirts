@@ -26,10 +26,10 @@
 			}
 
 			//Hacemos la query del update
-			$update_user_query = "update camiseta set nombre_camiseta='$nombre', descripcion='$descripcion', cantidad='$cantidad', imagen='$imagen', precio=$precio, color='$color', talla='$talla'  WHERE id_camiseta=$id";
+			$update_user_query = "update camiseta set nombre='$nombre', descripcion='$descripcion', cantidad='$cantidad', imagen='$imagen', precio=$precio, color='$color', talla='$talla'  WHERE id_camiseta=$id";
 		}else{
 			//si el campo imagen viene vacio hacemos la query del update sin cambiar la imagen
-			$update_user_query = "update camiseta set nombre_camiseta='$nombre', descripcion='$descripcion', cantidad='$cantidad', precio=$precio, color='$color', talla='$talla'  WHERE id_camiseta=$id";
+			$update_user_query = "update camiseta set nombre='$nombre', descripcion='$descripcion', cantidad=$cantidad, precio=$precio, color='$color', talla='$talla'  WHERE id_camiseta=$id";
 		}
 
 		$update_user_resul = $conexion->query($update_user_query);
