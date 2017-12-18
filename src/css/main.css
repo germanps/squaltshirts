@@ -272,6 +272,18 @@ textarea {
     }
 }
 
+@define-mixin botonBorrar{
+    background-color: var(--mercury);
+    border: none;
+    padding: .2rem .5rem;
+    transition: .2s all ease;
+    &:hover{
+        background-color: var(--white);
+        color: var(--vermilion);
+        outline:1px solid var(--vermilion);
+    }
+}
+
 html{
     box-sizing: border-box;
 }
@@ -811,6 +823,7 @@ a{
     .results-ajax{
         display: flex;
         justify-content: flex-start;
+        flex-wrap: wrap;
        
 
         .detalle-sale-result{
@@ -1014,8 +1027,17 @@ a{
     }
 }
 .drop-modal{
-    .btn-cancel{
-        @mixin botonCancel;
+    .btn-flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn-cancel{
+            @mixin botonCancel;
+        }
+        a{
+            @mixin botonBorrar;
+        }
     }
 }
 .register-error{

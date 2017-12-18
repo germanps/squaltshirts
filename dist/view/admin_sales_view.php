@@ -27,7 +27,8 @@
 	                <td>$descuento</td>
 	                <td>$monto_final </td>
 	                <td>
-	                	<span id='$id_venta' class='open-detalls show-detall'>Detalle</span>
+	                	<a id='$id_venta' class='open-detalls show-detall'>Detalle</a>
+
 	                </td>
 	             </tr>
 	             ";
@@ -36,12 +37,5 @@
         }
 
 	}
-	
-	/*
-	<td> 
-	    <a id='editTee' class='btn btn-danger btn-sm open-modal edit-tee'>Edit</a>
-	    <a id='dropTee' class='btn btn-danger btn-sm open-modal delete-tee'>Delete</a>
-	</td>
-	*/
 
 ?>

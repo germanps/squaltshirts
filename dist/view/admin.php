@@ -588,9 +588,11 @@
 		    <div class="modal-dialog" role="document">
 		        <div class="modal-content">					
 					<div id="deleteUser">
-					<p>Seguro que quieres borrar al usuario con ID: <span id="deleteUserId"></span></p>
-					<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
-					<a id="actionDeleteUser">Borrar</a>
+						<p>Seguro que quieres borrar al usuario con ID: <span id="deleteUserId"></span></p>
+						<div class="btn-flex">
+							<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+							<a id="actionDeleteUser">Borrar</a>
+						</div>
 					</div> 
 		        </div>
 		    </div>
@@ -601,11 +603,11 @@
 		    <div class="modal-dialog" role="document">
 		        <div class="modal-content">					
 					<div id="deleteTee">
-					<p>Seguro que quieres borrar la camiseta con ID: <span id="deleteTeeId"></span></p>
-					<div class="btn-flex">
-						<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
-						<a id="actionDeleteTee">Borrar</a>
-					</div>
+						<p>Seguro que quieres borrar la camiseta con ID: <span id="deleteTeeId"></span></p>
+						<div class="btn-flex">
+							<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+							<a id="actionDeleteTee">Borrar</a>
+						</div>
 					</div> 
 		        </div>
 		    </div>
@@ -616,9 +618,11 @@
 		    <div class="modal-dialog" role="document">
 		        <div class="modal-content">					
 					<div id="deleteCat">
-					<p>Seguro que quieres borrar la categoria con ID: <span id="deleteCatId"></span></p>
-					<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
-					<a id="actionDeleteCat">Borrar</a>
+						<div class="btn-flex">
+						<p>Seguro que quieres borrar la categoria con ID: <span id="deleteCatId"></span></p>
+						<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+						<a id="actionDeleteCat">Borrar</a>
+						</div>
 					</div> 
 		        </div>
 		    </div>
