@@ -618,10 +618,10 @@
 		    <div class="modal-dialog" role="document">
 		        <div class="modal-content">					
 					<div id="deleteCat">
-						<div class="btn-flex">
 						<p>Seguro que quieres borrar la categoria con ID: <span id="deleteCatId"></span></p>
-						<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
-						<a id="actionDeleteCat">Borrar</a>
+						<div class="btn-flex">
+							<button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+							<a id="actionDeleteCat">Borrar</a>
 						</div>
 					</div> 
 		        </div>
