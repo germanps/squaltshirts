@@ -1043,8 +1043,9 @@ a{
 .register-error{
     a{
         @mixin boton;
+        padding: .8rem 1rem;
         font-size: 1rem;
-    }
+    } 
 }
 
 /* ====== HEADER ====== */
