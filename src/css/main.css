@@ -1948,6 +1948,26 @@ header{
             } 
         }
     }
+
+    @media(max-width: 1024px){
+        &{
+            .flex-container{
+                display: inline-block;
+                width: 100%;
+
+                .show-basket-content{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @media(max-width: 500px){
+        &{
+            .show-basket-aside{
+                width: 100%;
+            }
+        }
+    }
 }
 
 /* ============== ORDER ==============*/
