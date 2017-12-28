@@ -118,8 +118,19 @@
                         <li class="main-menu-item"><a href="#">Outlet</a></li>
                         <li class="main-menu-item"><a href="#">Faq</a></li>
                         <li class="main-menu-item"><a href="#">Contacto</a></li>
-                        <li class="main-menu-item">
+                        <!-- <li class="main-menu-item">
                             <a href="#"><img src="../src/img/united-kingdom.svg" alt=""></a>
+                        </li> -->
+                        <li class="main-menu-item">
+                            <?php 
+                                if (isset($_SESSION['usu_user'])) {
+                                    echo "<a class='register-off' href='#'>{Bienvenido}</a>";
+                                }else{
+                                    echo "<a class='register' href='register.php'>Crear cuenta</a>";
+                                }
+                             ?>
+                           <!--  <a class="register" href="register.php">Crear cuenta</a> -->
+
                         </li>
                     </ul>
                 </nav>

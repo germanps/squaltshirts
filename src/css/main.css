@@ -1330,8 +1330,19 @@ header{
             &:last-child{
                 text-align: right;
 
-                a:hover{
-                    border-bottom:none;
+                a{
+                    color: var(--mountainMeadow);
+                    &:hover{
+                        border-color: var(--mountainMeadow);
+                    }
+
+                    &.register-off{
+                        color: var(--ebonyClark);
+                        cursor: default;
+                        &:hover{
+                            border-bottom: none;
+                        }
+                    }
                 }
             }
 
