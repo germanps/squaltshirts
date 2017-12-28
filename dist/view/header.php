@@ -51,7 +51,7 @@
                             <div class="logo-wrapper">
                                 <a href="store.php" class="logo">
                                     <!-- <img src="../src/img/logo-squalo.png" alt="logo"> -->
-                                    <!-- <h1>SqüalTshirts</h1> -->
+                                    <h1>SqüalTshirts</h1>
                                 </a>
                             </div>
                         </li>
