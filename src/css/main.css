@@ -2129,9 +2129,23 @@ header{
             }
         }
     }
+    @media (max-width: 768px) {
+        &{
+            .flex-container{
+                display: inline-block;
+                width: 100%;
+
+                .show-send-content{
+                    width: 100%;
+                }
+                .aside-resume{
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
-  
 
 /* ============== FOOTER ==============*/
 .site-footer{

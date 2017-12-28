@@ -51,7 +51,7 @@
 					";
 
 					if ($stock) {
-						echo "<li class='stock'><p>En stock! Recíbelo el Lunes!</p></li>";
+						echo "<li class='stock'><p>En stock! Recíbelo mañana!</p></li>";
 					}
 
 					echo"
@@ -66,7 +66,5 @@
 		echo "Has llegado aqui de manera extraña...";
         header('Refresh: 3; url="../index.php"');
 	}
-
-	//echo "detalle camiseta: $id";
 
 ?>
