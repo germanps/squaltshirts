@@ -334,7 +334,7 @@ function ajaxShowCatalogue () {
         layoutMode: 'slider',
         drag: true,
         auto: true,
-        autoTimeout: 3000,
+        autoTimeout: 5000,
         autoPauseOnHover: true,
         showNavigation: true,
         showPagination: true,
