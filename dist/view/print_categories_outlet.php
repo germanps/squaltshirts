@@ -1,0 +1,21 @@
+<?php 
+    require("../controller/conexion.php");
+    if (isset($_SESSION['enter_ok'])) {
+    	$cat_query = "select * from categoria order by id_categoria";
+        $cat_resul = $conexion->query($cat_query);
+        $cat_rows = $cat_resul->num_rows;
+        if ($cat_rows == 0) {
+            echo "No se encuentras categorias en la base de datos";
+        }else{
+             echo "<li class='fa fa-arrow-right all-categories'><a href='outlet.php'>Todas</a></li>";
+            while ($fila_cat = $cat_resul->fetch_array()) {
+                extract($fila_cat);
+                echo "<li class='fa fa-arrow-right'>$nombre</li>";
+            }
+        }
+    }else{
+        echo "Has llegado aqui de manera extraña...";
+        header('Refresh: 3; url="../index.php"');
+    }
+
+?>
