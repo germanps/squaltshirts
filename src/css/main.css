@@ -1912,12 +1912,17 @@ header{
 
         .detall-shop{
             height: 100%;
-            border: 1px solid var(--gray);
+            border: 1px solid var(--gray); 
             padding: 1rem;
 
-            form{
+            form{ 
                 height: 100%;
                 width: 100%;
+
+                .gastos-envio-exentos{
+                    font-size: .8rem;
+                    color: var(--mountainMeadow);
+                }
 
                 input{
                     width: 100%;

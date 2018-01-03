@@ -92,14 +92,22 @@
 					?>
 				</div> <!-- .buy-shop -->
 			</div> <!-- .show-basket -->
+			<?php 
+				if ($total_pedido >= 50) {
+					$gastos_envio = 0;
+				}else{
+					$gastos_envio = 5.95;
+				}
+			?>
 
 			<aside class="show-basket-aside wrapper">
 				<div class="detall-shop">
 					<form action="pedido.php" method="post">
 						<input type="text" placeholder="Tengo un cupón">
-						<p>Gastos de invío <span> 5.90</span> €</p>
+						<p class="gastos-envio-exentos">Si el pedido es mayor a 50€ no pagas gastos de envío!</p>
+						<p>Gastos de invío <span> <?php echo $gastos_envio; ?></span> €</p>
 						<hr>
-						<p>Total del pedido: <span class='total-order'><?php echo $total_pedido+5.9 ?> €</span></p>
+						<p>Total del pedido: <span class='total-order'><?php echo $total_pedido+$gastos_envio ?> €</span></p>
 						<input type="submit" value="Hacer pedido">
 					</form>
 				</div>
