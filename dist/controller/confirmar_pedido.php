@@ -67,6 +67,22 @@
 				//update de la tabla camiseta (según la cantidad comprada)
 				$update_camiseta = "update camiseta set cantidad = $cantidad_retirar where id_camiseta = $id_de_la_camiseta;";
 				$insert_update_camiseta = $conexion->query($update_camiseta);
+
+				/*======= Enviar mensaje al realizar la compra =======*/
+				/*$mensaje = "Prueba de mensaje";
+				$titulo = "PRUEBA DE TITULO";
+				$headers = "MIME-Version: 1.0\r\n"; 
+				$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+				$headers .= "From: Geeky Theory < info@squaltshirts.com >\r\n";
+				$bool = mail($usu_correo, $titulo, $mensaje, $headers);
+				if ($bool) {
+					echo '<script type="text/javascript">
+								alert("* Comprueba tu mail para verificar el pedido *");
+								window.location.assign("../view/store.php");
+						  </script>';
+				}else{
+					echo "Mensaje no enviado!";
+				}*/
 			}
 			
 			$conexion->close();	
