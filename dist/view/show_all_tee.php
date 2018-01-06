@@ -1,7 +1,7 @@
 <?php 
 	require("../controller/conexion.php");
 	if (isset($_SESSION['enter_ok'])) {
-		$query = "select * from camiseta order by nombre;";
+		$query = "select * from camiseta where cantidad > 0 order by nombre;";
 		$tee_resul = $conexion->query($query);
 		$tee_rows = $tee_resul->num_rows;
 		if ($tee_rows == 0) {

@@ -54,10 +54,18 @@
 						
 					</div> 
 
+					<?php 
+						if ($total_pedido >= 50) {
+							$gastos_envio = 0;
+						}else{
+							$gastos_envio = 5.95;
+						}
+					?>
+
 					<div class="total-order-container">
 						<form action="../controller/confirmar_pedido.php" method="post">
-							<p>Gastos de invío <span class="shipping"> 5.90€</span> </p>
-							<p>Total del pedido: <span class='total-order'><?php echo $total_pedido+5.9 ?> €</span></p>
+							<p>Gastos de invío <span class="shipping"> <?php echo $gastos_envio; ?></span> </p>
+							<p>Total del pedido: <span class='total-order'><?php echo $total_pedido + $gastos_envio?> €</span></p>
 							<span class="iva">(IVA incluido)</span>
 							<input type="submit" value="Confirmar pedido">
 						</form>
