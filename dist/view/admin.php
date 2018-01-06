@@ -549,7 +549,7 @@
 		                </div>
 		                <div class="modal-footer">
 		                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
-		                    <button type="submit" class="btn btn-success">Editar usuario</button>
+		                    <button type="submit" class="btn btn-success">Editar camiseta</button>
 		                </div>
 		            </form>
 		        </div>
