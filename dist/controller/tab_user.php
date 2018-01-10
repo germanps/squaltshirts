@@ -1,5 +1,5 @@
 <?php 
-	$user_query = "SELECT * FROM usuario WHERE RAND()<(SELECT ((3/COUNT(*))*10) FROM usuario) ORDER BY RAND() LIMIT 2";
+	$user_query = "SELECT * FROM usuario WHERE RAND()<(SELECT ((3/COUNT(*))*10) FROM usuario) ORDER BY RAND() LIMIT 4";
 
 	//$user_query = "select * from usuario order by id_usuario limit 2";
 	$usu_resul = $conexion->query($user_query);

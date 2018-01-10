@@ -1,5 +1,5 @@
 <?php 
-    $cat_query = "SELECT * FROM categoria WHERE RAND()<(SELECT ((3/COUNT(*))*10) FROM categoria) ORDER BY RAND() LIMIT 4";
+    $cat_query = "SELECT * FROM venta WHERE RAND()<(SELECT ((3/COUNT(*))*10) FROM venta) ORDER BY RAND() LIMIT 4";
 	//$cat_query = "select * from categoria order by id_categoria limit 2";
     $cat_resul = $conexion->query($cat_query);
     $cat_rows = $cat_resul->num_rows;
@@ -11,8 +11,10 @@
             extract($fila_cat);
             echo "<tr>
                     <td class='text-muted'>$contador_cat</td>
-                    <td>$id_categoria</td>
-                    <td>$nombre</td>
+                    <td>$id_venta</td>
+                    <td>$fecha</td>
+                    <td>$descuento</td>
+                    <td>$monto_final</td>
                  </tr>";
                  $contador_cat++;
         }

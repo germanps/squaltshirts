@@ -160,8 +160,21 @@
 						                    </table>
 										</div>
 										<div class="tab-content" data-tab="4">
-											<h4>ventas</h4>
-											<p>Aqui saldrán las ventas</p>
+											<table class="results">
+						                        <thead>
+						                            <tr>
+						                                <th class='text-muted'>Item nº</th>
+						                                <th>ID venta</th>
+						                                <th>Fecha</th>
+						                                <th>Descuento</th>
+						                                <th>Total</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            <?php include "../controller/tab_ventas.php" ?>
+						                        </tbody>
+						                        
+						                    </table>
 										</div>
 									</div>
 								</div>
