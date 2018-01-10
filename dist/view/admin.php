@@ -165,6 +165,7 @@
 						                            <tr>
 						                                <th class='text-muted'>Item nº</th>
 						                                <th>ID venta</th>
+						                                <th>Usuario</th>
 						                                <th>Fecha</th>
 						                                <th>Descuento</th>
 						                                <th>Total</th>
