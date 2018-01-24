@@ -989,19 +989,11 @@ a{
 }
 
 .register-wrapper{
-
-    min-height: 250px;
-    width: 450px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid var(--mountainMeadow);
-   
+    width: 100%;   
     .header-login-wrapper{
         margin-bottom: 1rem;
         h3{
             color: var(--mountainMeadow);
-            margin-bottom: 4rem;
         }
     }
     .form-input{
